@@ -11,11 +11,15 @@
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
+import { networkInterfaces } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const HOST = "127.0.0.1";
+// Local-only by default; --lan (npm run lan) opens it to the local network. Deliberately not an env var:
+// zsh sets $HOST to the machine name, and an exported one would expose the server without anyone asking.
+const LAN = process.argv.includes("--lan");
+const HOST = LAN ? "0.0.0.0" : "127.0.0.1";
 const PORT = Number(process.env.PORT) || 8080;
 const TYPES = { ".html": "text/html; charset=utf-8", ".json": "application/json; charset=utf-8" };
 const FETCH_MAX_AGE_HOURS = 6;
@@ -63,4 +67,10 @@ createServer(async (req, res) => {
   } catch {
     res.writeHead(404, { "content-type": "text/plain" }).end("Not found");
   }
-}).listen(PORT, HOST, () => console.log(`Serving on http://127.0.0.1:${PORT}`));
+}).listen(PORT, HOST, () => {
+  console.log(`Serving on http://127.0.0.1:${PORT}`);
+  if (!LAN) return;
+  const lan = Object.values(networkInterfaces()).flat().filter((i) => i.family === "IPv4" && !i.internal);
+  lan.forEach((i) => console.log(`             http://${i.address}:${PORT}  (local network)`));
+  console.warn("Anyone on the same network can open this page. Stop the server (Ctrl+C) when you are done.");
+});
