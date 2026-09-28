@@ -183,6 +183,10 @@
     background: var(--page); border: 1px solid var(--line); border-radius: 999px; padding: 6px 4px;
   }
   .mix input.invalid { border-color: var(--bad); }
+  .mix input:disabled, .mix select:disabled { opacity: .55; }
+  .usage input[type=number] { width: 76px; }
+  .usage .pair { display: inline-flex; align-items: center; gap: 6px; }
+  .usage button { font: inherit; font-size: 13px; color: var(--accent-ink); background: none; border: 0; padding: 0 2px; cursor: pointer; }
   .cap.legacy { color: var(--ink); }
   #tbl th:first-child, #tbl td:first-child { position: sticky; left: 0; background: var(--surface); z-index: 1; }
   #tbl tbody tr:hover td:first-child { background: #f7f6f1; }
@@ -261,6 +265,12 @@
       <option value="">직접 입력</option>
     </select>
   </div>
+  <div class="mix usage" title="한 달에 쓰는 토큰 양(100만 단위). 넣으면 비율은 자동으로 계산되고, 차트·예산표·표가 월 예상 비용으로 바뀝니다">
+    <span>월 사용량(100만 토큰)</span>
+    <span class="pair">입력 <input type="number" id="useIn" min="0" step="any" placeholder="예: 50" aria-label="월 입력 토큰(100만 단위)"></span>
+    <span class="pair">출력 <input type="number" id="useOut" min="0" step="any" placeholder="예: 10" aria-label="월 출력 토큰(100만 단위)"></span>
+    <button type="button" id="useClear" hidden>지우기</button>
+  </div>
   <div class="mk" id="mk">
     <button type="button" class="mk-btn" id="mkBtn" aria-haspopup="true" aria-expanded="false" aria-controls="mkPanel">제조사: 전체 ▾</button>
     <div class="mk-panel" id="mkPanel" hidden>
@@ -288,7 +298,7 @@
   <p class="cap" id="budgetCap">가성비 경계선을 표로 옮긴 것입니다. 예산이 속한 행을 찾으면, 그 가격대에서 가장 점수가 높은 모델이 추천 모델이고 같은 예산 안에서 그다음으로 좋은 모델이 차선입니다. 제조사를 선택하면 선택한 제조사 모델만으로 계산합니다.</p>
   <div class="tbl-wrap">
     <table id="budget" class="budget">
-      <thead><tr><th>100만 토큰당 예산</th><th>추천 모델</th><th>점수</th><th>가격</th><th>차선</th></tr></thead>
+      <thead><tr><th id="budgetHead">100만 토큰당 예산</th><th>추천 모델</th><th>점수</th><th id="budgetPriceHead">가격</th><th>차선</th></tr></thead>
       <tbody></tbody>
     </table>
   </div>
@@ -338,6 +348,7 @@
       <li><b>혼합 단가</b>는 Artificial Analysis가 입력:출력을 3:1로 섞어 계산한 100만 토큰당 가격입니다. 캐시 입력 할인, 배치 가격, 고속 모드는 반영하지 않습니다.</li>
       <li><b>"모델별 대표만"</b>을 켜면 같은 이름의 모델 중 effort·reasoning 변형에서 점수가 가장 높은 것만 남깁니다(점수가 같으면 싼 쪽). 끄면 AA가 따로 측정한 low, medium, high, xhigh, max effort 같은 변형이 모두 보입니다.</li>
       <li><b>사용 패턴</b>은 내 사용량의 입력:출력 토큰 비율입니다. 비율을 바꾸면 <code>(입력 단가×입력 비율 + 출력 단가×출력 비율) ÷ 비율 합</code>으로 단가를 다시 계산하고, 가성비 경계선과 예산표도 그 단가로 다시 그립니다. 기본값 3:1은 AA 혼합 단가와 같습니다. 문서를 많이 넣고 짧게 답받는 RAG·요약은 입력 비중이, 코드·글 생성은 출력 비중이 큽니다.</li>
+      <li><b>월 사용량</b>을 넣으면(입력·출력 토큰, 100만 단위) 비율은 그 양에서 자동으로 계산되고, 차트 가로축·예산표·표가 <code>입력 단가×입력량 + 출력 단가×출력량</code>으로 계산한 월 예상 비용으로 바뀝니다. 월 비용은 단가에 총량을 곱한 값이라 경계선 위 모델은 같은 비율일 때와 같고, 단위만 "월 얼마"로 바뀝니다. 지우면 원래 비율 설정으로 돌아갑니다.</li>
       <li><b>세부 벤치마크</b>는 AA가 측정한 개별 벤치마크의 정답률(%)입니다. 지표로 고르면 차트·예산표·순위가 그 점수로 바뀝니다. 모든 모델이 모든 벤치마크를 측정한 것은 아니어서, 점수가 없는 모델은 해당 지표에서 빠집니다. 특히 MMLU-Pro, LiveCodeBench, AIME 2025 등은 AA가 최신 모델에서 더 이상 측정하지 않아 <b>"이전 측정"</b>으로 분류되고, 고르면 경고가 표시됩니다(Math Index도 마찬가지). 분류는 데이터에서 상위 30개 모델의 점수 보유 여부로 자동 판단합니다.</li>
       <li><b>"출시 시기"</b>를 고르면 데이터 기준일로부터 그 기간 안에 출시된 모델만 차트와 경계선 계산에 넣습니다. 오래된 모델이 경계선을 차지하지 않게 하고, 지금 쓸 만한 모델끼리 비교할 때 씁니다.</li>
       <li><b>"최소 점수"</b>보다 낮은 모델은 차트와 경계선 계산에서 모두 빠집니다. 아주 싸고 오래된 소형 모델이 경계선의 시작점을 차지하지 않게 하기 위해서입니다.</li>
@@ -357,7 +368,7 @@
   const NS = "http://www.w3.org/2000/svg";
   const el = (t, a = {}) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); return n; };
   const h = (t, cls, text) => { const n = document.createElement(t); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
-  const money = (v) => v == null ? "—" : "$" + (v >= 10 ? v.toFixed(2) : v >= 1 ? v.toFixed(2) : v.toFixed(v < 0.1 ? 3 : 2));
+  const money = (v) => v == null ? "—" : "$" + (v >= 1000 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(2) : v >= 1 ? v.toFixed(2) : v.toFixed(v < 0.1 ? 3 : 2));
   // two prices that round to the same text get more decimals so a budget range never reads "$0.18 to $0.18"
   const moneyPair = (a, b) => { let x = money(a), y = money(b); for (let dp = 3; x === y && dp <= 5; dp++) { x = "$" + a.toFixed(dp); y = "$" + b.toFixed(dp); } return [x, y]; };
   const num = (v, dp = 0) => v == null ? "—" : (+v).toFixed(dp);
@@ -376,10 +387,16 @@
 
   // usage pattern: input:output token ratio. 3:1 uses AA's own blended price, so the default view is unchanged.
   const mix = { a: 3, b: 1 };
-  const isDefaultMix = () => mix.a === 3 && mix.b === 1;
+  const isDefaultMix = () => mix.b > 0 && Math.abs(mix.a / mix.b - 3) < 1e-9;
   const mixText = () => `입력:출력 ${mix.a}:${mix.b}`;
   const priceName = () => isDefaultMix() ? "혼합 단가" : "가중 단가";
   const priceOf = (m) => isDefaultMix() ? m.blended : (mix.a * m.input + mix.b * m.output) / (mix.a + mix.b);
+  // monthly usage in millions of tokens; when set, the ratio follows it and prices become monthly cost (unit price x total)
+  const usage = { on: false, inM: 0, outM: 0 };
+  const fmtM = (v) => `${+v.toFixed(2)}M`;
+  const usageText = () => `입력 ${fmtM(usage.inM)}·출력 ${fmtM(usage.outM)} 토큰`;
+  const costOf = (m) => usage.on ? priceOf(m) * (usage.inM + usage.outM) : priceOf(m);
+  const xName = () => usage.on ? `월 예상 비용(${usageText()}` : `100만 토큰당 ${priceName()}(${mixText()}`;
   const FIELD_LABEL = { index: "Intelligence Index", blended: "혼합 단가", input: "입력 가격", output: "출력 가격" };
 
   // Maker colors: validated for all-pairs use on the scatter (dataviz validate_palette, --pairs all).
@@ -520,7 +537,7 @@
   function compute() {
     const k = state.metric;
     const cutoff = state.recentMonths ? releaseCutoff(state.recentMonths) : null;
-    let rows = ALL.filter((m) => m[k] != null && m[k] >= state.minIdx && (!cutoff || (m.release_date && m.release_date >= cutoff))).map((m) => ({ ...m, v: m[k], p: priceOf(m) })).filter((d) => d.p > 0);
+    let rows = ALL.filter((m) => m[k] != null && m[k] >= state.minIdx && (!cutoff || (m.release_date && m.release_date >= cutoff))).map((m) => ({ ...m, v: m[k], unit: priceOf(m), p: costOf(m) })).filter((d) => d.p > 0);
     if (state.collapse) {
       const best = new Map();
       rows.forEach((d) => { const b = best.get(d.base); if (!b || d.v > b.v || (d.v === b.v && d.p < b.p)) best.set(d.base, d); });
@@ -550,7 +567,8 @@
     if (d.short !== d.name) { const full = h("div", null, d.name); full.style.cssText = "color:var(--ink-3);font-size:11px;margin:-4px 0 7px"; tip.appendChild(full); }
     const rows = [
       [METRIC_LABEL[state.metric], fmtV(d.v)],
-      [isDefaultMix() ? "혼합 단가" : `가중 단가 (${mix.a}:${mix.b})`, money(d.p) + " /1M 토큰"],
+      [isDefaultMix() ? "혼합 단가" : `가중 단가 (${mix.a}:${mix.b})`, money(d.unit) + " /1M 토큰"],
+      ...(usage.on ? [["월 예상 비용", money(d.p)]] : []),
       ["입력 / 출력", money(d.input) + " / " + money(d.output)],
       ["제조사", d.creator],
     ];
@@ -589,7 +607,7 @@
     }
     return out;
   }
-  const fmtTick = (v) => "$" + (v >= 1 ? String(v) : v.toFixed(v < 0.1 ? 2 : 1).replace(/0+$/, "").replace(/\.$/, ""));
+  const fmtTick = (v) => "$" + (v >= 1000 ? v.toLocaleString("en-US") : v >= 1 ? String(v) : v.toFixed(v < 0.1 ? 2 : 1).replace(/0+$/, "").replace(/\.$/, ""));
 
   /* ---------- legend ---------- */
   function legend() {
@@ -631,7 +649,7 @@
       const t = el("text", { x: X(v), y: M.t + ph + 22, "text-anchor": "middle", class: "tick" }); t.textContent = fmtTick(v); svg.appendChild(t);
     });
     svg.appendChild(el("line", { x1: M.l, x2: M.l + pw, y1: M.t + ph, y2: M.t + ph, stroke: "var(--axis)", "stroke-width": 1 }));
-    const xt = el("text", { x: M.l + pw / 2, y: M.t + ph + 46, "text-anchor": "middle", class: "axis-title" }); xt.textContent = `100만 토큰당 ${priceName()} (${mixText()}, 로그 스케일)`; svg.appendChild(xt);
+    const xt = el("text", { x: M.l + pw / 2, y: M.t + ph + 46, "text-anchor": "middle", class: "axis-title" }); xt.textContent = `${xName()}, 로그 스케일)`; svg.appendChild(xt);
     const yt = el("text", { x: 16, y: M.t + ph / 2, "text-anchor": "middle", class: "axis-title", transform: `rotate(-90 16 ${M.t + ph / 2})` }); yt.textContent = isBench(state.metric) ? `${METRIC_LABEL[state.metric]} (%)` : "Artificial Analysis " + METRIC_LABEL[state.metric]; svg.appendChild(yt);
 
     // frontier line (always the full-set frontier, so filtering shows context)
@@ -659,7 +677,7 @@
         svg.appendChild(el("circle", { cx, cy, r: 7.5, fill: "var(--surface)" })); // 2px surface ring
         svg.appendChild(el("circle", { cx, cy, r: 5.5, fill: c }));
       }
-      const hit = el("circle", { cx, cy, r: 14, fill: "transparent", class: "hit", tabindex: "0", role: "img", "aria-label": `${d.short} (${d.creator}): ${METRIC_LABEL[state.metric]} ${fmtV(d.v)}, 100만 토큰당 ${money(d.p)}` });
+      const hit = el("circle", { cx, cy, r: 14, fill: "transparent", class: "hit", tabindex: "0", role: "img", "aria-label": `${d.short} (${d.creator}): ${METRIC_LABEL[state.metric]} ${fmtV(d.v)}, ${usage.on ? "월" : "100만 토큰당"} ${money(d.p)}` });
       hit.style.cursor = "pointer";
       const ring = el("circle", { cx, cy, r: 10, class: "focus-ring" });
       bindHover(hit, d, () => { const b = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal; return [b.left + cx / vb.width * b.width, b.top + cy / vb.height * b.height]; });
@@ -804,9 +822,11 @@
     $("scatterTitle").textContent = `가격 대비 성능: ${METRIC_LABEL[state.metric]}`;
     $("barIndexTitle").textContent = `순수 성능: ${METRIC_LABEL[state.metric]}`;
     const legacyNote = isLegacy(state.metric) ? ` 주의: AA가 최신 모델에서는 ${METRIC_LABEL[state.metric]}를 측정하지 않아, 최근 모델이 대부분 빠져 있습니다. 이전 세대 모델끼리의 비교로만 보세요.` : "";
-    $("scatterCap").textContent = `가로축은 100만 토큰당 ${priceName()}(${mixText()}, 로그 스케일), 세로축은 ${METRIC_LABEL[state.metric]}${isBench(state.metric) ? " 정답률(%)" : " 점수"}입니다. 점에 마우스를 올리거나 Tab 키로 이동하면 자세한 내용이 보입니다.` + legacyNote;
+    $("scatterCap").textContent = `가로축은 ${xName()}, 로그 스케일), 세로축은 ${METRIC_LABEL[state.metric]}${isBench(state.metric) ? " 정답률(%)" : " 점수"}입니다. 점에 마우스를 올리거나 Tab 키로 이동하면 자세한 내용이 보입니다.` + legacyNote;
     $("scatterCap").classList.toggle("legacy", !!legacyNote);
-    document.querySelector('#tbl th[data-k="p"]').textContent = isDefaultMix() ? "혼합 단가 $/1M" : `가중 단가(${mix.a}:${mix.b}) $/1M`;
+    document.querySelector('#tbl th[data-k="p"]').textContent = usage.on ? "월 예상 비용 $" : isDefaultMix() ? "혼합 단가 $/1M" : `가중 단가(${mix.a}:${mix.b}) $/1M`;
+    $("budgetHead").textContent = usage.on ? "월 예산" : "100만 토큰당 예산";
+    $("budgetPriceHead").textContent = usage.on ? "월 비용" : "가격";
     legend();
     drawScatter(rows, vis, frontier);
     budgetTable(vis);
@@ -842,6 +862,33 @@
     const [a, b] = e.target.value.split(":");
     $("mixIn").value = a; $("mixOut").value = b; applyMix();
   });
+  let mixBeforeUsage = null; // ratio inputs as they were, restored when usage is cleared
+  function applyUsage() {
+    const ri = $("useIn").value.trim(), ro = $("useOut").value.trim();
+    const setMixLock = (lock) => ["mixIn", "mixOut", "mixPreset"].forEach((id) => ($(id).disabled = lock));
+    $("useClear").hidden = !ri && !ro;
+    if (!ri && !ro) {
+      $("useIn").classList.remove("invalid"); $("useOut").classList.remove("invalid");
+      if (usage.on) {
+        usage.on = false; setMixLock(false);
+        if (mixBeforeUsage) { $("mixIn").value = mixBeforeUsage.a; $("mixOut").value = mixBeforeUsage.b; $("mixPreset").value = mixBeforeUsage.preset; }
+        applyMix();
+      }
+      return;
+    }
+    const a = ri ? parseFloat(ri) : 0, b = ro ? parseFloat(ro) : 0;
+    const ok = Number.isFinite(a) && Number.isFinite(b) && a >= 0 && b >= 0 && a + b > 0;
+    $("useIn").classList.toggle("invalid", !ok); $("useOut").classList.toggle("invalid", !ok);
+    if (!ok) return;
+    if (!usage.on) mixBeforeUsage = { a: $("mixIn").value, b: $("mixOut").value, preset: $("mixPreset").value };
+    usage.on = true; usage.inM = a; usage.outM = b;
+    mix.a = a; mix.b = b;
+    $("mixIn").value = a; $("mixOut").value = b; $("mixPreset").value = ""; setMixLock(true);
+    render();
+  }
+  $("useIn").addEventListener("input", applyUsage);
+  $("useOut").addEventListener("input", applyUsage);
+  $("useClear").addEventListener("click", () => { $("useIn").value = ""; $("useOut").value = ""; applyUsage(); $("useIn").focus(); });
   $("minIdx").addEventListener("input", (e) => { state.minIdx = +e.target.value; $("minIdxVal").textContent = e.target.value; render(); });
   $("recentSel").addEventListener("change", (e) => { state.recentMonths = +e.target.value; render(); });
   $("collapse").addEventListener("change", (e) => { state.collapse = e.target.checked; render(); });
