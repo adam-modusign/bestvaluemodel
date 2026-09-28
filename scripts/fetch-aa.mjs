@@ -33,6 +33,7 @@ if (!apiKey) {
 
 const positive = (v) => (v != null && v > 0 ? v : null); // AA reports 0 when a speed benchmark has not run
 const round = (v, dp = 2) => (v == null || Number.isNaN(+v) ? null : Math.round(+v * 10 ** dp) / 10 ** dp);
+const pct = (v) => (v == null || Number.isNaN(+v) ? null : round(+v * 100, 1));
 
 function normalise(raw) {
   const ev = raw.evaluations ?? {};
@@ -46,6 +47,19 @@ function normalise(raw) {
     index: round(ev.artificial_analysis_intelligence_index, 1),
     coding: round(ev.artificial_analysis_coding_index, 1),
     math: round(ev.artificial_analysis_math_index, 1),
+    // individual benchmarks: AA reports 0-1 fractions, stored as percentages
+    mmlu_pro: pct(ev.mmlu_pro),
+    gpqa: pct(ev.gpqa),
+    hle: pct(ev.hle),
+    livecodebench: pct(ev.livecodebench),
+    scicode: pct(ev.scicode),
+    aime25: pct(ev.aime_25),
+    ifbench: pct(ev.ifbench),
+    lcr: pct(ev.lcr),
+    terminalbench_hard: pct(ev.terminalbench_hard),
+    terminalbench_v2_1: pct(ev.terminalbench_v2_1),
+    tau2: pct(ev.tau2),
+    tau_banking: pct(ev.tau_banking),
     blended: round(pr.price_1m_blended_3_to_1, 3),
     input: round(pr.price_1m_input_tokens, 3),
     output: round(pr.price_1m_output_tokens, 3),

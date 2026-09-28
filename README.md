@@ -59,7 +59,12 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 - **출처**: Artificial Analysis API `https://artificialanalysis.ai/api/v2/data/llms/models`
 - **포함 모델**: Intelligence Index 점수가 있고 혼합 단가가 0보다 큰 모델만 넣습니다. 받아온 모델이 10개 미만이면 API 이상으로 보고 기존 스냅샷을 덮어쓰지 않습니다.
 - **점수**: AA Intelligence / Coding / Math Index(소수점 첫째 자리)
+- **세부 벤치마크**: 정답률(%)로 저장합니다(AA는 0~1 비율로 제공).
+  - 현재 측정: GPQA Diamond, Humanity's Last Exam, SciCode, AA-LCR, Terminal-Bench 2.1, τ²-Bench Banking
+  - 이전 측정: MMLU-Pro, LiveCodeBench, AIME 2025, IFBench, Terminal-Bench Hard, τ²-Bench Telecom. AA가 최신 모델에서는 측정하지 않아 최근 모델 점수가 없습니다. Math Index도 같은 상태입니다.
+  - 페이지는 상위 30개 모델 중 절반 이상이 점수를 가진 지표를 "현재 측정"으로 자동 분류하고, 나머지를 고르면 경고를 표시합니다.
 - **가격**: 100만 토큰당 USD. 혼합 단가는 입력:출력을 3:1로 섞은 AA 값입니다. 캐시 입력, 배치, 고속 모드 가격은 반영하지 않습니다.
+- **사용 패턴**: 페이지에서 입력:출력 비율을 바꾸면 `(입력 단가×입력 비율 + 출력 단가×출력 비율) ÷ 비율 합`으로 다시 계산합니다. AA 혼합 단가도 같은 공식(3:1)이라, 기본값에서는 AA 값을 그대로 씁니다.
 - **속도**: 출력 속도(tok/s)와 첫 토큰까지 걸린 시간(초)의 중앙값. AA 측정 조건은 `models.json`의 `prompt_options`에 기록됩니다(예: 1,000토큰 프롬프트, 동시 요청 1개). 측정되지 않은 값은 비워 둡니다.
 - **측정 시점**: `models.json`의 `fetched_at`(UTC)이며, 페이지 상단에도 표시됩니다.
 
