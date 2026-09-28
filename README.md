@@ -1,55 +1,39 @@
 # Best value LLM
 
-Live: https://bestvaluemodel.terrydjony.workers.dev/
+A single static page that plots every model on the [Artificial Analysis](https://artificialanalysis.ai/) Intelligence Index against its blended API price and highlights the **value frontier** (models where nothing cheaper is also smarter). Runs locally with plain Node, no dependencies.
 
-A single static page that plots every model on the [Artificial Analysis](https://artificialanalysis.ai/) Intelligence Index against its blended API price and highlights the **value frontier** (models where nothing cheaper is also smarter). A GitHub Actions cron refreshes the data daily and redeploys to Cloudflare only when something actually changed.
+Based on [terryds/bestvaluemodel](https://github.com/terryds/bestvaluemodel), with the GitHub Actions / Cloudflare deploy removed.
 
-Inspired by [vps.sonnylab.com/model-value-2026-07](https://vps.sonnylab.com/model-value-2026-07.html), but data-driven instead of hand-maintained.
+## Run
+
+Requires Node 20.12+.
+
+```sh
+cp .env.example .env   # then put your key in .env
+npm start              # refresh data/ from the API, then serve http://127.0.0.1:8080
+```
+
+Get a free API key at https://artificialanalysis.ai/ (Insights Platform → API keys; 1,000 requests/day, attribution required).
+
+Without a key, or if the fetch fails, `npm start` serves the snapshot already in `data/`.
+
+| Command | What it does |
+|---|---|
+| `npm start` | Fetch latest data (if `AA_API_KEY` is set), then serve |
+| `npm run serve` | Serve only, no fetch |
+| `npm run fetch` | Fetch only |
+
+Set `PORT` to use a port other than 8080.
 
 ## Layout
 
 | Path | What it is |
 |---|---|
-| `index.html` | The page. Vanilla HTML/SVG/JS, no build step. Loads `data/models.json` at runtime. |
-| `data/models.json` | Trimmed snapshot of the AA `/data/llms/models` response. Ships with a hand-entered seed so the page renders before the first fetch. |
-| `data/changelog.json` | Per-run diff (added / removed / re-scored / re-priced), newest first, capped at 90 entries. Rendered in the "What changed" card. |
+| `index.html` | The page. Vanilla HTML/SVG/JS. Loads `data/models.json` at runtime. |
+| `data/models.json` | Trimmed snapshot of the AA `/data/llms/models` response. |
+| `data/changelog.json` | Per-fetch diff (added / removed / re-scored / re-priced), newest first, capped at 90 entries. |
 | `scripts/fetch-aa.mjs` | Fetches the API, normalises, diffs against the previous snapshot, writes both files. Writes nothing if the data is identical. |
-| `.github/workflows/update-and-deploy.yml` | Daily cron + manual trigger + push to `main`. Fetch, commit if changed, deploy to Cloudflare Workers (static assets). |
-| `wrangler.jsonc`, `scripts/build.sh`, `_headers` | Cloudflare Workers static-assets config. `build.sh` copies the page, data and headers into `dist/`, which wrangler uploads. |
-
-## Setup
-
-1. Get a free API key: sign up at https://artificialanalysis.ai/, open the Insights Platform, create an API key (1,000 requests/day, attribution required).
-2. Create the GitHub repo and push:
-   ```sh
-   git init -b main && git add -A && git commit -m "Initial site"
-   gh repo create bestvaluemodel --public --source=. --push
-   ```
-3. Add the key as a repository secret named `AA_API_KEY`:
-   ```sh
-   gh secret set AA_API_KEY
-   ```
-4. Create a Cloudflare API token with the **Edit Cloudflare Workers** template at https://dash.cloudflare.com/profile/api-tokens and store it as a secret:
-   ```sh
-   gh secret set CLOUDFLARE_API_TOKEN
-   ```
-5. Run the workflow once by hand so the seed data is replaced and the first deploy happens:
-   ```sh
-   gh workflow run update-and-deploy.yml
-   ```
-
-The cron runs at 06:17 UTC daily. Scheduled runs on a repo with no activity for 60 days get paused by GitHub; a manual run re-enables them.
-
-## Local
-
-```sh
-export AA_API_KEY=...      # or copy .env.example to .env and source it
-npm run fetch              # writes data/models.json + data/changelog.json
-npm run serve              # http://localhost:8080
-npm run deploy             # build dist/ and push it to Cloudflare (needs `npx wrangler login` once)
-```
-
-The page fetches JSON, so open it over HTTP rather than as a `file://` URL.
+| `scripts/serve.mjs` | Runs the fetch, then serves the page and data files on 127.0.0.1. |
 
 ## Notes
 

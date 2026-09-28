@@ -22,9 +22,11 @@ const CHANGELOG_PATH = path.join(DATA_DIR, "changelog.json");
 const ENDPOINT = "https://artificialanalysis.ai/api/v2/data/llms/models";
 const CHANGELOG_MAX = 90;
 
+try { process.loadEnvFile(path.join(ROOT, ".env")); } catch {} // .env is optional
+
 const apiKey = process.env.AA_API_KEY;
 if (!apiKey) {
-  console.error("AA_API_KEY is not set. Get a free key at https://artificialanalysis.ai/ and export it (or add it as a GitHub Actions secret).");
+  console.error("AA_API_KEY is not set. Get a free key at https://artificialanalysis.ai/ and put it in .env (see .env.example) or export it.");
   process.exit(1);
 }
 

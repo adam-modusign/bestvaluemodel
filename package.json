@@ -3,18 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Which LLM is worth it: Artificial Analysis Intelligence Index vs blended API price, refreshed daily.",
+  "description": "Which LLM is worth it: Artificial Analysis Intelligence Index vs blended API price.",
   "scripts": {
-    "fetch": "node scripts/fetch-aa.mjs",
-    "build": "sh scripts/build.sh",
-    "serve": "python3 -m http.server 8080",
-    "deploy": "npm run build && wrangler deploy",
-    "preview": "wrangler dev"
+    "start": "node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs --no-fetch",
+    "fetch": "node scripts/fetch-aa.mjs"
   },
   "engines": {
-    "node": ">=20"
-  },
-  "devDependencies": {
-    "wrangler": "^4.138.0"
+    "node": ">=20.12"
   }
 }
