@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Best value LLM</title>
-<meta name="description" content="Which LLM is worth it: Artificial Analysis Intelligence Index against blended API price, with the value frontier highlighted. Refreshed daily.">
+<meta name="description" content="Which LLM is worth it: Artificial Analysis Intelligence Index against blended API price, with the value frontier highlighted.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -235,7 +235,7 @@
 
 <div class="card">
   <h2>What changed</h2>
-  <p class="cap">Diff between consecutive daily fetches: new models, removed models, and re-scored or re-priced ones.</p>
+  <p class="cap">Diff between consecutive fetches: new models, removed models, and re-scored or re-priced ones.</p>
   <ul class="log" id="log"></ul>
 </div>
 
@@ -271,7 +271,7 @@
       <li><b>"Min score"</b> hides models below that index from both the chart and the frontier calculation, so an old, tiny model at a rock-bottom price does not anchor the line.</li>
       <li><b>Scores move.</b> AA re-bases the Index between versions, so compare against this page only, not against an older snapshot.</li>
     </ul>
-    <p style="margin-top:14px">Source: <a href="https://artificialanalysis.ai/" rel="noopener">Artificial Analysis</a> free data API, fetched daily by a GitHub Actions cron. Code and data: <a href="https://github.com/terryds/bestvaluemodel" rel="noopener">github.com/terryds/bestvaluemodel</a>. <span id="src"></span></p>
+    <p style="margin-top:14px">Source: <a href="https://artificialanalysis.ai/" rel="noopener">Artificial Analysis</a> free data API, refreshed each time the local server starts. Based on <a href="https://github.com/terryds/bestvaluemodel" rel="noopener">github.com/terryds/bestvaluemodel</a>. <span id="src"></span></p>
   </div>
 </div>
 
@@ -565,7 +565,7 @@
   function log() {
     const ul = $("log"); ul.replaceChildren();
     const entries = changelog.filter((e) => e.added?.length || e.removed?.length || e.changed?.length).slice(0, 12);
-    if (!entries.length) { ul.appendChild(h("li", "empty", snapshot.source === "seed" ? "No fetches yet. Once the workflow runs with an API key, changes between days appear here." : "No changes recorded yet.")); return; }
+    if (!entries.length) { ul.appendChild(h("li", "empty", snapshot.source === "seed" ? "No fetches yet. Run `npm start` with AA_API_KEY set and changes between fetches appear here." : "No changes recorded yet.")); return; }
     entries.forEach((e) => {
       const li = h("li"); li.appendChild(h("span", "d", e.date));
       const bits = [];
