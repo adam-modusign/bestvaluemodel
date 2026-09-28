@@ -240,6 +240,13 @@
   </div>
   <label><select id="benchSel" aria-label="세부 벤치마크"><option value="">세부 벤치마크 ▾</option></select></label>
   <label>최소 점수 <input type="range" id="minIdx" min="0" max="50" step="5" value="30" aria-label="최소 점수"> <span id="minIdxVal">30</span></label>
+  <label title="데이터 기준일로부터 이 기간 안에 출시된 모델만 차트와 경계선 계산에 넣습니다">출시 시기 <select id="recentSel">
+    <option value="0">전체</option>
+    <option value="3">최근 3개월</option>
+    <option value="6">최근 6개월</option>
+    <option value="12">최근 1년</option>
+    <option value="24">최근 2년</option>
+  </select></label>
   <label title="모델마다 effort·reasoning 변형 중 점수가 가장 높은 것만 남깁니다"><input type="checkbox" id="collapse" checked> 모델별 대표만</label>
   <div class="mix" title="내 사용량의 입력 토큰과 출력 토큰 비율. 기본값 3:1은 AA 혼합 단가와 같습니다">
     <span>사용 패턴 입력:출력</span>
@@ -308,6 +315,7 @@
       <thead><tr>
         <th data-k="name" aria-sort="none">모델</th>
         <th data-k="creator" aria-sort="none">제조사</th>
+        <th data-k="release_date" aria-sort="none">출시일</th>
         <th data-k="index" aria-sort="descending">종합 지능</th>
         <th data-k="coding" aria-sort="none">코딩</th>
         <th data-k="math" aria-sort="none">수학</th>
@@ -331,6 +339,7 @@
       <li><b>"모델별 대표만"</b>을 켜면 같은 이름의 모델 중 effort·reasoning 변형에서 점수가 가장 높은 것만 남깁니다(점수가 같으면 싼 쪽). 끄면 AA가 따로 측정한 low, medium, high, xhigh, max effort 같은 변형이 모두 보입니다.</li>
       <li><b>사용 패턴</b>은 내 사용량의 입력:출력 토큰 비율입니다. 비율을 바꾸면 <code>(입력 단가×입력 비율 + 출력 단가×출력 비율) ÷ 비율 합</code>으로 단가를 다시 계산하고, 가성비 경계선과 예산표도 그 단가로 다시 그립니다. 기본값 3:1은 AA 혼합 단가와 같습니다. 문서를 많이 넣고 짧게 답받는 RAG·요약은 입력 비중이, 코드·글 생성은 출력 비중이 큽니다.</li>
       <li><b>세부 벤치마크</b>는 AA가 측정한 개별 벤치마크의 정답률(%)입니다. 지표로 고르면 차트·예산표·순위가 그 점수로 바뀝니다. 모든 모델이 모든 벤치마크를 측정한 것은 아니어서, 점수가 없는 모델은 해당 지표에서 빠집니다. 특히 MMLU-Pro, LiveCodeBench, AIME 2025 등은 AA가 최신 모델에서 더 이상 측정하지 않아 <b>"이전 측정"</b>으로 분류되고, 고르면 경고가 표시됩니다(Math Index도 마찬가지). 분류는 데이터에서 상위 30개 모델의 점수 보유 여부로 자동 판단합니다.</li>
+      <li><b>"출시 시기"</b>를 고르면 데이터 기준일로부터 그 기간 안에 출시된 모델만 차트와 경계선 계산에 넣습니다. 오래된 모델이 경계선을 차지하지 않게 하고, 지금 쓸 만한 모델끼리 비교할 때 씁니다.</li>
       <li><b>"최소 점수"</b>보다 낮은 모델은 차트와 경계선 계산에서 모두 빠집니다. 아주 싸고 오래된 소형 모델이 경계선의 시작점을 차지하지 않게 하기 위해서입니다.</li>
       <li><b>제조사</b>는 최대 6곳까지 함께 선택할 수 있고, 제조사마다 색과 점 모양이 다릅니다. 채운 도형은 경계선 위, 빈 도형은 경계선 아래 모델입니다. 가성비 경계선은 항상 전체 모델 기준으로 그려서, 선택한 제조사가 전체 중 어디쯤 있는지 볼 수 있습니다.</li>
       <li><b>점수는 바뀝니다.</b> AA는 버전이 바뀔 때 Index 기준을 다시 잡으므로, 예전 스냅샷과 비교하지 말고 이 페이지 안에서만 비교하세요.</li>
@@ -418,8 +427,12 @@
   const when = isNaN(dt) ? snapshot.fetched_at : dt.toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" });
   $("meta").textContent = `모델 ${ALL.length}개 · ${when} 기준` + (snapshot.source === "seed" ? " · 초기 샘플 데이터(첫 API 갱신 전)" : " · 출처: artificialanalysis.ai");
 
+  // "recent" windows count back from the snapshot date, not today, so an old snapshot still reads consistently
+  const asOf = isNaN(dt) ? new Date() : dt;
+  const releaseCutoff = (months) => { const c = new Date(asOf); c.setMonth(c.getMonth() - months); return c.toISOString().slice(0, 10); };
+
   /* ---------- state ---------- */
-  const state = { metric: "index", minIdx: 30, collapse: true, q: "", frontierOnly: false, labelsAll: false, showAllIndex: false, sortK: "index", sortDir: -1 };
+  const state = { metric: "index", minIdx: 30, recentMonths: 0, collapse: true, q: "", frontierOnly: false, labelsAll: false, showAllIndex: false, sortK: "index", sortDir: -1 };
 
   // "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)" -> "Claude Opus 5.5 (max)"
   const baseName = (name) => name.replace(/\s*\([^)]*\)/g, "").trim();
@@ -506,7 +519,8 @@
   /* ---------- derive ---------- */
   function compute() {
     const k = state.metric;
-    let rows = ALL.filter((m) => m[k] != null && m[k] >= state.minIdx).map((m) => ({ ...m, v: m[k], p: priceOf(m) })).filter((d) => d.p > 0);
+    const cutoff = state.recentMonths ? releaseCutoff(state.recentMonths) : null;
+    let rows = ALL.filter((m) => m[k] != null && m[k] >= state.minIdx && (!cutoff || (m.release_date && m.release_date >= cutoff))).map((m) => ({ ...m, v: m[k], p: priceOf(m) })).filter((d) => d.p > 0);
     if (state.collapse) {
       const best = new Map();
       rows.forEach((d) => { const b = best.get(d.base); if (!b || d.v > b.v || (d.v === b.v && d.p < b.p)) best.set(d.base, d); });
@@ -540,6 +554,7 @@
       ["입력 / 출력", money(d.input) + " / " + money(d.output)],
       ["제조사", d.creator],
     ];
+    if (d.release_date) rows.push(["출시일", d.release_date]);
     if (d.tps != null) rows.push(["출력 속도", num(d.tps) + " tok/s"]);
     rows.forEach(([lab, val]) => {
       const r = h("div", "tip-r"); r.append(h("span", null, lab), h("b", null, val)); tip.appendChild(r);
@@ -712,6 +727,7 @@
       const c = colorOf(d.creator);
       if (c) { const dot = h("span", "mk-dot"); dot.style.background = c; makerTd.appendChild(dot); }
       makerTd.append(d.creator); tr.appendChild(makerTd);
+      tr.appendChild(h("td", d.release_date ? "" : "na", d.release_date || "—"));
       [num(d.index, 1), num(d.coding, 1), num(d.math, 1), money(d.p), money(d.input), money(d.output), num(d.tps), num(d.ttft, 2), ...BENCH.map(([bk]) => num(d[bk], 1))].forEach((v) => {
         const td = h("td", v === "—" ? "na" : "", v); tr.appendChild(td);
       });
@@ -721,7 +737,7 @@
   }
   document.querySelectorAll("#tbl th").forEach((th) => th.addEventListener("click", () => {
     const k = th.dataset.k;
-    if (state.sortK === k) state.sortDir *= -1; else { state.sortK = k; state.sortDir = (k === "name" || k === "creator") ? 1 : -1; }
+    if (state.sortK === k) state.sortDir *= -1; else { state.sortK = k; state.sortDir = (k === "name" || k === "creator") ? 1 : -1; } // dates start newest-first
     render();
   }));
 
@@ -827,6 +843,7 @@
     $("mixIn").value = a; $("mixOut").value = b; applyMix();
   });
   $("minIdx").addEventListener("input", (e) => { state.minIdx = +e.target.value; $("minIdxVal").textContent = e.target.value; render(); });
+  $("recentSel").addEventListener("change", (e) => { state.recentMonths = +e.target.value; render(); });
   $("collapse").addEventListener("change", (e) => { state.collapse = e.target.checked; render(); });
   $("search").addEventListener("input", (e) => { state.q = e.target.value; render(); });
   $("frontierOnly").addEventListener("change", (e) => { state.frontierOnly = e.target.checked; render(); });

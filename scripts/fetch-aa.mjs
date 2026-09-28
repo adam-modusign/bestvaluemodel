@@ -44,6 +44,7 @@ function normalise(raw) {
     slug: raw.slug,
     creator: raw.model_creator?.name ?? "Unknown",
     creator_slug: raw.model_creator?.slug ?? null,
+    release_date: raw.release_date ?? null,
     index: round(ev.artificial_analysis_intelligence_index, 1),
     coding: round(ev.artificial_analysis_coding_index, 1),
     math: round(ev.artificial_analysis_math_index, 1),
