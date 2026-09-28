@@ -190,6 +190,23 @@
   .cap.legacy { color: var(--ink); }
   #tbl th:first-child, #tbl td:first-child { position: sticky; left: 0; background: var(--surface); z-index: 1; }
   #tbl tbody tr:hover td:first-child { background: #f7f6f1; }
+  /* compare */
+  .cmp-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table.cmp { min-width: 0; width: 100%; table-layout: fixed; }
+  table.cmp th, table.cmp td { white-space: normal; vertical-align: top; }
+  table.cmp th:first-child, table.cmp td:first-child { width: 190px; min-width: 150px; color: var(--ink-2); position: sticky; left: 0; background: var(--surface); z-index: 1; }
+  table.cmp thead th { text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--ink); cursor: default; text-align: right; min-width: 150px; }
+  table.cmp thead th a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  table.cmp thead th a:hover { color: var(--accent-ink); text-decoration: underline; }
+  table.cmp thead th .sub2 { display: block; font-weight: 400; font-size: 12.5px; color: var(--ink-3); }
+  table.cmp thead th button { font: inherit; font-size: 12.5px; color: var(--accent-ink); background: none; border: 0; padding: 0; cursor: pointer; margin-top: 4px; }
+  table.cmp td { color: var(--ink-2); }
+  table.cmp td.best { color: var(--ink); font-weight: 700; }
+  table.cmp tr.sec td { font-size: 11.5px; font-weight: 600; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; padding-top: 18px; }
+  table.cmp tbody tr:hover { background: transparent; }
+  .cmp-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .cmp-head button { font: inherit; font-size: 13px; color: var(--accent-ink); background: none; border: 0; cursor: pointer; }
+  #tbl td:first-child input { accent-color: var(--ink); margin: 0 8px 0 0; vertical-align: -2px; }
   svg.sw { display: inline-block; width: 12px; height: 12px; flex: none; overflow: visible; }
   table.budget td.ru { text-align: left; color: var(--ink-2); white-space: normal; }
   table.budget td.ru b { color: var(--ink); font-weight: 500; }
@@ -218,6 +235,7 @@
     .row { grid-template-columns: minmax(0, 120px) 1fr 48px; }
     .count { margin-left: 0; width: 100%; }
     .mk { position: static; }
+    table.cmp th:first-child, table.cmp td:first-child { width: 130px; min-width: 130px; }
     .mk-panel { top: auto; left: 12px; right: 12px; width: auto; margin-top: 6px; }
   }
 </style>
@@ -293,6 +311,12 @@
   <div class="legend" id="legend"></div>
 </div>
 
+<div class="card" id="compare">
+  <div class="cmp-head"><h2>모델 비교</h2><button type="button" id="cmpClear" hidden>모두 빼기</button></div>
+  <p class="cap" id="cmpCap"></p>
+  <div class="cmp-wrap"><table class="cmp" id="cmpTbl"></table></div>
+</div>
+
 <div class="card">
   <h2>예산별 최적 모델</h2>
   <p class="cap" id="budgetCap">가성비 경계선을 표로 옮긴 것입니다. 예산이 속한 행을 찾으면, 그 가격대에서 가장 점수가 높은 모델이 추천 모델이고 같은 예산 안에서 그다음으로 좋은 모델이 차선입니다. 제조사를 선택하면 선택한 제조사 모델만으로 계산합니다.</p>
@@ -319,7 +343,7 @@
 
 <div class="card">
   <h2>전체 수치</h2>
-  <p class="cap">열 제목을 누르면 정렬됩니다. 모델 이름을 누르면 Artificial Analysis의 해당 모델 페이지로 이동합니다. 오른쪽으로 스크롤하면 세부 벤치마크 점수(%)가 있습니다.</p>
+  <p class="cap">열 제목을 누르면 정렬됩니다. 모델 이름을 누르면 Artificial Analysis의 해당 모델 페이지로 이동합니다. 오른쪽으로 스크롤하면 세부 벤치마크 점수(%)가 있습니다. 이름 앞 체크박스로 최대 4개까지 <a href="#compare">모델 비교</a>에 넣을 수 있습니다. <span id="cmpJump"></span></p>
   <div class="tbl-wrap">
     <table id="tbl">
       <thead><tr>
@@ -349,6 +373,7 @@
       <li><b>"모델별 대표만"</b>을 켜면 같은 이름의 모델 중 effort·reasoning 변형에서 점수가 가장 높은 것만 남깁니다(점수가 같으면 싼 쪽). 끄면 AA가 따로 측정한 low, medium, high, xhigh, max effort 같은 변형이 모두 보입니다.</li>
       <li><b>사용 패턴</b>은 내 사용량의 입력:출력 토큰 비율입니다. 비율을 바꾸면 <code>(입력 단가×입력 비율 + 출력 단가×출력 비율) ÷ 비율 합</code>으로 단가를 다시 계산하고, 가성비 경계선과 예산표도 그 단가로 다시 그립니다. 기본값 3:1은 AA 혼합 단가와 같습니다. 문서를 많이 넣고 짧게 답받는 RAG·요약은 입력 비중이, 코드·글 생성은 출력 비중이 큽니다.</li>
       <li><b>월 사용량</b>을 넣으면(입력·출력 토큰, 100만 단위) 비율은 그 양에서 자동으로 계산되고, 차트 가로축·예산표·표가 <code>입력 단가×입력량 + 출력 단가×출력량</code>으로 계산한 월 예상 비용으로 바뀝니다. 월 비용은 단가에 총량을 곱한 값이라 경계선 위 모델은 같은 비율일 때와 같고, 단위만 "월 얼마"로 바뀝니다. 지우면 원래 비율 설정으로 돌아갑니다.</li>
+      <li><b>모델 비교</b>는 차트의 점을 클릭(또는 Tab으로 이동 후 Enter)하거나 표의 체크박스로 최대 4개까지 넣을 수 있습니다. 항목마다 가장 좋은 값이 굵게 표시됩니다(점수·속도는 높을수록, 가격·TTFT는 낮을수록). 필터로 차트에서 빠진 모델도 비교 목록에는 남습니다.</li>
       <li><b>세부 벤치마크</b>는 AA가 측정한 개별 벤치마크의 정답률(%)입니다. 지표로 고르면 차트·예산표·순위가 그 점수로 바뀝니다. 모든 모델이 모든 벤치마크를 측정한 것은 아니어서, 점수가 없는 모델은 해당 지표에서 빠집니다. 특히 MMLU-Pro, LiveCodeBench, AIME 2025 등은 AA가 최신 모델에서 더 이상 측정하지 않아 <b>"이전 측정"</b>으로 분류되고, 고르면 경고가 표시됩니다(Math Index도 마찬가지). 분류는 데이터에서 상위 30개 모델의 점수 보유 여부로 자동 판단합니다.</li>
       <li><b>"출시 시기"</b>를 고르면 데이터 기준일로부터 그 기간 안에 출시된 모델만 차트와 경계선 계산에 넣습니다. 오래된 모델이 경계선을 차지하지 않게 하고, 지금 쓸 만한 모델끼리 비교할 때 씁니다.</li>
       <li><b>"최소 점수"</b>보다 낮은 모델은 차트와 경계선 계산에서 모두 빠집니다. 아주 싸고 오래된 소형 모델이 경계선의 시작점을 차지하지 않게 하기 위해서입니다.</li>
@@ -533,6 +558,18 @@
   $("mk").addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("mkPanel").hidden) { panelOpen(false); $("mkBtn").focus(); } });
   syncMakers();
 
+  /* ---------- compare ---------- */
+  const COMPARE_MAX = 4;
+  const compare = []; // model ids in the order they were added
+  const byId = new Map(ALL.map((m) => [m.id, m]));
+  function toggleCompare(id) {
+    const i = compare.indexOf(id);
+    if (i >= 0) compare.splice(i, 1);
+    else if (compare.length < COMPARE_MAX) compare.push(id);
+    else return;
+    render();
+  }
+
   /* ---------- derive ---------- */
   function compute() {
     const k = state.metric;
@@ -579,6 +616,9 @@
     });
     const s = h("div", "tip-r"); const st = h("span", null, d.front ? "가성비 경계선 위" : "열위 (더 싸면서 점수가 같거나 높은 모델 있음)");
     st.style.color = d.front ? "var(--accent)" : "var(--ink-3)"; st.style.fontWeight = "600"; s.appendChild(st); tip.appendChild(s);
+    const inCmp = compare.includes(d.id);
+    const hint = h("div", null, inCmp ? "클릭하면 비교에서 빼기" : compare.length >= COMPARE_MAX ? `비교는 최대 ${COMPARE_MAX}개까지` : "클릭하면 비교에 추가");
+    hint.style.cssText = "color:rgba(255,255,255,.55);font-size:11px;margin-top:6px"; tip.appendChild(hint);
   }
   function place(px, py) {
     tip.classList.add("show");
@@ -623,6 +663,7 @@
       item(swatch(0, false, "var(--ink-3)"), "빈 도형: 열위");
     }
     item(dot("var(--accent)", "key line"), "가성비 경계선(전체 모델 기준)");
+    if (compare.length) { const r = h("i", "key"); r.style.cssText = "background:transparent;border:1.6px solid var(--ink);width:13px;height:13px"; item(r, "비교 중인 모델"); }
   }
 
   /* ---------- scatter ---------- */
@@ -677,8 +718,11 @@
         svg.appendChild(el("circle", { cx, cy, r: 7.5, fill: "var(--surface)" })); // 2px surface ring
         svg.appendChild(el("circle", { cx, cy, r: 5.5, fill: c }));
       }
-      const hit = el("circle", { cx, cy, r: 14, fill: "transparent", class: "hit", tabindex: "0", role: "img", "aria-label": `${d.short} (${d.creator}): ${METRIC_LABEL[state.metric]} ${fmtV(d.v)}, ${usage.on ? "월" : "100만 토큰당"} ${money(d.p)}` });
+      if (compare.includes(d.id)) svg.appendChild(el("circle", { cx, cy, r: 10.5, fill: "none", stroke: "var(--ink)", "stroke-width": 1.6 }));
+      const hit = el("circle", { cx, cy, r: 14, fill: "transparent", class: "hit", tabindex: "0", role: "button", "aria-pressed": compare.includes(d.id) ? "true" : "false", "aria-label": `${d.short} (${d.creator}): ${METRIC_LABEL[state.metric]} ${fmtV(d.v)}, ${usage.on ? "월" : "100만 토큰당"} ${money(d.p)}. 선택하면 비교에 추가하거나 뺍니다` });
       hit.style.cursor = "pointer";
+      hit.addEventListener("click", () => toggleCompare(d.id));
+      hit.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCompare(d.id); } });
       const ring = el("circle", { cx, cy, r: 10, class: "focus-ring" });
       bindHover(hit, d, () => { const b = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal; return [b.left + cx / vb.width * b.width, b.top + cy / vb.height * b.height]; });
       svg.append(hit, ring);
@@ -739,6 +783,11 @@
       const tr = h("tr", d.front ? "on" : "");
       const nameTd = h("td");
       nameTd.title = d.name;
+      const cb = h("input"); cb.type = "checkbox"; cb.checked = compare.includes(d.id);
+      cb.disabled = !cb.checked && compare.length >= COMPARE_MAX;
+      cb.setAttribute("aria-label", `${d.short} 비교에 ${cb.checked ? "넣음" : "추가"}`);
+      cb.addEventListener("change", () => toggleCompare(d.id));
+      nameTd.appendChild(cb);
       if (d.url) { const a = h("a", null, d.short); a.href = d.url; a.target = "_blank"; a.rel = "noopener"; nameTd.appendChild(a); } else nameTd.textContent = d.short;
       tr.appendChild(nameTd);
       const makerTd = h("td");
@@ -815,6 +864,68 @@
   }
 
   /* ---------- render ---------- */
+  function compareCard(rows) {
+    const card = $("compare"), tbl = $("cmpTbl"); tbl.replaceChildren();
+    $("cmpClear").hidden = !compare.length;
+    $("cmpJump").textContent = "";
+    if (compare.length) { const a = h("a", null, `비교 중 ${compare.length}개 보기 ↑`); a.href = "#compare"; $("cmpJump").appendChild(a); }
+    if (!compare.length) {
+      $("cmpCap").textContent = `차트의 점을 클릭하거나 아래 전체 수치 표의 체크박스로 모델을 최대 ${COMPARE_MAX}개까지 넣으면 여기에 나란히 비교합니다.`;
+      return;
+    }
+    $("cmpCap").textContent = "항목마다 가장 좋은 값을 굵게 표시합니다. 점수·속도는 높을수록, 가격·TTFT는 낮을수록 좋습니다.";
+    const inRows = new Map(rows.map((d) => [d.id, d]));
+    const ms = compare.map((id) => byId.get(id)).filter(Boolean);
+    const st = (m) => { const d = inRows.get(m.id); return !d ? "현재 조건 밖" : d.front ? "경계선 위" : "경계선 아래"; };
+    const pctF = (v) => v == null ? "—" : num(v, 1) + "%";
+    const idxF = (v) => num(v, 1);
+    const spec = [
+      ["기본 정보"],
+      ["출시일", (m) => m.release_date || "—"],
+      [`가성비 경계선 (${METRIC_LABEL[state.metric]})`, st],
+      ["점수"],
+      ["Intelligence Index", (m) => m.index, "high", idxF],
+      ["Coding Index", (m) => m.coding, "high", idxF],
+      ["Math Index", (m) => m.math, "high", idxF],
+      ...BENCH.map(([k, label]) => [label + (isLegacy(k) ? " (이전 측정)" : ""), (m) => m[k], "high", pctF]),
+      ["가격"],
+      ["혼합 단가 $/1M (AA 3:1)", (m) => m.blended, "low", money],
+      ["입력 $/1M", (m) => m.input, "low", money],
+      ["출력 $/1M", (m) => m.output, "low", money],
+      ...(isDefaultMix() ? [] : [[`가중 단가 $/1M (${mix.a}:${mix.b})`, (m) => priceOf(m), "low", money]]),
+      ...(usage.on ? [[`월 예상 비용 (${usageText()})`, (m) => costOf(m), "low", money]] : []),
+      ["속도"],
+      ["출력 속도 tok/s", (m) => m.tps, "high", (v) => num(v)],
+      ["TTFT(초)", (m) => m.ttft, "low", (v) => num(v, 2)],
+    ];
+    tbl.style.minWidth = `${150 + ms.length * 140}px`; // narrow screens scroll sideways instead of squeezing columns
+    const thead = h("thead"), hr = h("tr"); hr.appendChild(h("th", null, ""));
+    ms.forEach((m) => {
+      const th = h("th");
+      if (m.url) { const a = h("a", null, shortName(m.name)); a.href = m.url; a.target = "_blank"; a.rel = "noopener"; th.appendChild(a); } else th.append(shortName(m.name));
+      const sub = h("span", "sub2"); const c = colorOf(m.creator);
+      if (c) { const dot = h("span", "mk-dot"); dot.style.background = c; sub.appendChild(dot); }
+      sub.append(m.creator); th.appendChild(sub);
+      const x = h("button", null, "빼기"); x.type = "button"; x.setAttribute("aria-label", `${shortName(m.name)} 비교에서 빼기`);
+      x.addEventListener("click", () => toggleCompare(m.id)); th.appendChild(x);
+      th.title = m.name; hr.appendChild(th);
+    });
+    thead.appendChild(hr); tbl.appendChild(thead);
+    const tb = h("tbody");
+    spec.forEach(([label, get, better, fmt]) => {
+      if (!get) { const tr = h("tr", "sec"); const td = h("td", null, label); td.colSpan = ms.length + 1; tr.appendChild(td); tb.appendChild(tr); return; }
+      const vals = ms.map(get);
+      if (better && vals.every((v) => v == null)) return; // nobody has it: skip the row
+      const nums = vals.filter((v) => typeof v === "number");
+      const best = better && nums.length >= 2 ? (better === "high" ? Math.max(...nums) : Math.min(...nums)) : null;
+      const tr = h("tr"); tr.appendChild(h("td", null, label));
+      vals.forEach((v) => tr.appendChild(h("td", best != null && v === best ? "best" : "", fmt ? fmt(v) : v)));
+      tb.appendChild(tr);
+    });
+    tbl.appendChild(tb);
+  }
+  $("cmpClear").addEventListener("click", () => { compare.length = 0; render(); });
+
   function render() {
     tipHide();
     const { rows, vis, frontier } = compute();
@@ -832,6 +943,7 @@
     budgetTable(vis);
     bars("barIndex", "moreIndex", [...vis].sort((a, b) => b.v - a.v || a.p - b.p), "v", (v) => fmtV(v), state.showAllIndex, () => { state.showAllIndex = !state.showAllIndex; render(); });
     table(vis);
+    compareCard(rows);
   }
 
   document.querySelectorAll("#metricSeg button").forEach((b) => b.addEventListener("click", () => {
