@@ -27,6 +27,39 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 
 8080 대신 다른 포트를 쓰려면 `PORT` 환경변수를 지정합니다(예: `PORT=3000 npm start`).
 
+## 데이터
+
+### 갱신 방식
+
+원본 저장소는 GitHub Actions가 매일 데이터를 받아 커밋했지만, 이 저장소는 로컬에서 직접 갱신합니다.
+
+- `npm start`를 실행할 때마다 서버를 띄우기 전에 최신 데이터를 받아옵니다. 페이지를 볼 때 이 명령으로 띄우면 항상 최신 상태입니다.
+- 페이지를 열지 않아도 매일 갱신하려면 cron에 `npm run fetch`를 걸어 둡니다(`crontab -e`, 예: 매일 오전 9시).
+
+  ```
+  0 9 * * * cd /path/to/bestvaluemodel && /path/to/node scripts/fetch-aa.mjs
+  ```
+
+  cron은 셸 환경을 불러오지 않으므로 node는 절대 경로(`which node`로 확인)로 적습니다. API 키는 `.env`에서 읽습니다.
+
+### 기준
+
+- **출처**: Artificial Analysis API `https://artificialanalysis.ai/api/v2/data/llms/models`
+- **포함 모델**: Intelligence Index 점수가 있고 혼합 단가가 0보다 큰 모델만 넣습니다. 받아온 모델이 10개 미만이면 API 이상으로 보고 기존 스냅샷을 덮어쓰지 않습니다.
+- **점수**: AA Intelligence / Coding / Math Index(소수점 첫째 자리)
+- **가격**: 100만 토큰당 USD. 혼합 단가는 입력:출력을 3:1로 섞은 AA 값입니다. 캐시 입력, 배치, 고속 모드 가격은 반영하지 않습니다.
+- **속도**: 출력 속도(tok/s)와 첫 토큰까지 걸린 시간(초)의 중앙값. AA 측정 조건은 `models.json`의 `prompt_options`에 기록됩니다(예: 1,000토큰 프롬프트, 동시 요청 1개). 측정되지 않은 값은 비워 둡니다.
+- **측정 시점**: `models.json`의 `fetched_at`(UTC)이며, 페이지 상단에도 표시됩니다.
+
+### 저장 위치
+
+DB나 외부 저장소 없이 `data/` 폴더의 JSON 파일 두 개가 전부이고, 페이지는 실행 시 브라우저에서 이 파일을 읽습니다.
+
+- `data/models.json`: 최신 스냅샷. 점수·가격·속도 중 하나라도 바뀌면 덮어쓰고, 모두 같으면 쓰지 않습니다.
+- `data/changelog.json`: 갱신 사이의 변경 내역. **모델 추가·삭제와 점수·가격 변경만** 기록하고, 속도만 바뀐 경우에는 기록하지 않습니다. 최신순으로 최대 90건까지 보관합니다.
+
+두 파일은 git으로 추적되므로 갱신할 때마다 변경 사항으로 잡힙니다.
+
 ## 구성
 
 | 경로 | 설명 |
@@ -40,5 +73,4 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 ## 참고
 
 - 경계선은 선택한 지표(Intelligence, Coding, Math)마다 브라우저에서 전체 모델을 대상으로 계산합니다. 그래서 제조사로 필터링해도 그 제조사 모델이 전체 중 어디쯤 있는지 볼 수 있습니다.
-- 혼합 단가는 AA가 입력:출력을 3:1로 섞어 낸 가격입니다. 캐시 입력, 배치, 고속 모드 가격은 반영하지 않습니다.
 - 데이터 출처: Artificial Analysis(https://artificialanalysis.ai/). API 약관상 출처 표기가 필요합니다.
