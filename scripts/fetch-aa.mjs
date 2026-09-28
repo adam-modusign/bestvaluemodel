@@ -19,6 +19,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_DIR = path.join(ROOT, "data");
 const MODELS_PATH = path.join(DATA_DIR, "models.json");
 const CHANGELOG_PATH = path.join(DATA_DIR, "changelog.json");
+const LAST_FETCH_PATH = path.join(ROOT, ".last-fetch"); // local-only (gitignored): when the API was last checked, changed or not
 const ENDPOINT = "https://artificialanalysis.ai/api/v2/data/llms/models";
 const CHANGELOG_MAX = 90;
 
@@ -135,4 +136,6 @@ async function main() {
   }
 }
 
-main().catch((err) => { console.error(err.message ?? err); process.exit(1); });
+main()
+  .then(() => writeFile(LAST_FETCH_PATH, new Date().toISOString() + "\n"))
+  .catch((err) => { console.error(err.message ?? err); process.exit(1); });

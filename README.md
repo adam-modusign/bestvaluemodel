@@ -12,7 +12,7 @@ Node 20.12 이상이 필요합니다. `npm install`은 필요 없습니다.
 
 ```sh
 cp .env.example .env   # .env에 API 키 입력
-npm start              # 데이터 갱신 후 http://127.0.0.1:8080 에서 서빙
+npm start              # 필요하면 데이터 갱신 후 http://127.0.0.1:8080 에서 서빙
 ```
 
 API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(Insights Platform → API keys). 하루 1,000회까지 호출할 수 있고, 데이터를 쓸 때는 출처 표기가 필요합니다.
@@ -21,9 +21,9 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 
 | 명령 | 동작 |
 |---|---|
-| `npm start` | `AA_API_KEY`가 있으면 최신 데이터를 받은 뒤 서빙 |
+| `npm start` | 마지막 확인 후 6시간이 지났고 `AA_API_KEY`가 있으면 최신 데이터를 받은 뒤 서빙 |
 | `npm run serve` | 데이터 갱신 없이 서빙만 |
-| `npm run fetch` | 데이터 갱신만 |
+| `npm run fetch` | 데이터 갱신만(6시간 제한 없이 항상 API 호출) |
 
 8080 대신 다른 포트를 쓰려면 `PORT` 환경변수를 지정합니다(예: `PORT=3000 npm start`).
 
@@ -33,7 +33,9 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 
 원본 저장소는 GitHub Actions가 매일 데이터를 받아 커밋했지만, 이 저장소는 로컬에서 직접 갱신합니다.
 
-- `npm start`를 실행할 때마다 서버를 띄우기 전에 최신 데이터를 받아옵니다. 페이지를 볼 때 이 명령으로 띄우면 항상 최신 상태입니다.
+- `npm start`는 서버를 띄우기 전에 최신 데이터를 받아옵니다. 단, **마지막으로 API를 확인한 지 6시간이 안 됐으면 호출을 건너뛰고** 바로 서버를 띄웁니다. 바로 갱신하고 싶으면 `npm run fetch`를 실행합니다.
+- 마지막 확인 시각은 git에 올라가지 않는 `.last-fetch` 파일에 기록합니다. 데이터가 그대로여서 `models.json`을 다시 쓰지 않은 경우에도 확인 시각은 남습니다. 이 파일이 없으면 `models.json`의 `fetched_at`을 기준으로 삼고, API 호출에 실패하면 기록하지 않아 다음 실행 때 다시 시도합니다.
+- API 호출은 `npm start`(6시간이 지난 경우)와 `npm run fetch`에서 한 번씩만 일어납니다. 요청 한 번에 전체 모델 목록을 받고, 무료 한도는 하루 1,000회입니다.
 - 페이지를 열지 않아도 매일 갱신하려면 cron에 `npm run fetch`를 걸어 둡니다(`crontab -e`, 예: 매일 오전 9시).
 
   ```
