@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Best value LLM</title>
-<meta name="description" content="Which LLM is worth it: Artificial Analysis Intelligence Index against blended API price, with the value frontier highlighted.">
+<title>가성비 LLM</title>
+<meta name="description" content="어떤 LLM이 제값을 할까: Artificial Analysis Intelligence Index와 API 혼합 단가를 비교하고 가성비 경계선을 강조해 보여줍니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
 <style>
   :root {
     --page:        #f4f3ee;   /* warm ivory */
@@ -25,8 +25,8 @@
     --good:        #2e7d32;
     --bad:         #c0392b;
     --wash:        rgba(25,25,25,0.04);
-    --serif: "Lora", Georgia, "Times New Roman", serif;
-    --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --serif: "Lora", "Noto Serif KR", Georgia, "Times New Roman", serif;
+    --sans: "Inter", "Noto Sans KR", system-ui, -apple-system, "Segoe UI", sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -56,7 +56,7 @@
 
   /* filters: one row above everything */
   .filters {
-    display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center;
+    position: relative; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center;
     margin: 0 0 22px; padding: 14px 18px; font-size: 14px; color: var(--ink-2);
     background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
   }
@@ -145,7 +145,38 @@
   table.budget td { padding: 13px 12px; font-size: 14.5px; }
   table.budget td:first-child { color: var(--ink-2); white-space: nowrap; }
   table.budget td.pick { font-weight: 600; text-align: left; font-size: 15px; }
-  table.budget td.pick::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-right: 9px; vertical-align: 1px; }
+  table.budget td.pick::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--dot, var(--accent)); margin-right: 9px; vertical-align: 1px; }
+  td .mk-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; vertical-align: 1px; }
+
+  /* maker multi-select */
+  .mk { position: relative; }
+  .mk-btn {
+    font: inherit; font-size: 14px; color: var(--ink); cursor: pointer;
+    background: var(--page); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px;
+  }
+  .mk-btn:hover { background: var(--wash); }
+  .mk-btn:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 1px; }
+  .mk-panel {
+    position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; width: 280px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(25,25,25,.12); padding: 12px;
+  }
+  .mk-head { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--ink-3); margin-bottom: 8px; }
+  .mk-head button { font: inherit; font-size: 12.5px; color: var(--accent-ink); background: none; border: 0; padding: 0; cursor: pointer; }
+  .mk-panel input[type=search] { width: 100%; min-width: 0; margin-bottom: 8px; }
+  .mk-list { list-style: none; margin: 0; padding: 0; max-height: 280px; overflow-y: auto; }
+  .mk-list label { display: flex; align-items: center; gap: 8px; padding: 5px 6px; border-radius: 8px; cursor: pointer; }
+  .mk-list label:hover { background: var(--wash); }
+  .mk-list .n { margin-left: auto; color: var(--ink-3); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+  .mk-list input:disabled + span { color: var(--ink-3); }
+  .chips { display: contents; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink);
+    background: var(--page); border: 1px solid var(--line); border-radius: 999px; padding: 3px 4px 3px 10px;
+  }
+  .chip button { font: inherit; font-size: 14px; line-height: 1; color: var(--ink-3); background: none; border: 0; border-radius: 999px; width: 20px; height: 20px; cursor: pointer; }
+  .chip button:hover { background: var(--wash); color: var(--ink); }
+  svg.sw { display: inline-block; width: 12px; height: 12px; flex: none; overflow: visible; }
   table.budget td.ru { text-align: left; color: var(--ink-2); white-space: normal; }
   table.budget td.ru b { color: var(--ink); font-weight: 500; }
 
@@ -172,6 +203,8 @@
     .card { padding: 20px 18px 18px; border-radius: 16px; }
     .row { grid-template-columns: minmax(0, 120px) 1fr 48px; }
     .count { margin-left: 0; width: 100%; }
+    .mk { position: static; }
+    .mk-panel { top: auto; left: 12px; right: 12px; width: auto; margin-top: 6px; }
   }
 </style>
 </head>
@@ -180,9 +213,9 @@
 
 <header>
   <div>
-    <h1>Which LLM is worth it</h1>
-    <p class="sub">Every model on the <b>Artificial Analysis Intelligence Index</b> plotted against its blended API price. Models on the <b>value frontier</b> are the ones where nothing cheaper is also smarter; everything else is beaten on both counts by a point on the line. By default only the best variant of each model is shown and low scorers are hidden; use the filters to widen the field.</p>
-    <p class="meta" id="meta">Loading data…</p>
+    <h1>어떤 LLM이 제값을 할까</h1>
+    <p class="sub"><b>Artificial Analysis Intelligence Index</b>에 오른 모든 모델을 API 혼합 단가와 함께 한 차트에 그렸습니다. <b>가성비 경계선</b> 위의 모델은 이보다 싸면서 더 똑똑한 모델이 없는 모델이고, 나머지는 경계선 위의 어떤 모델에게 가격과 점수 모두에서 밀립니다. 기본값으로 모델마다 가장 점수가 높은 변형만 보여주고 점수가 낮은 모델은 숨깁니다. 더 넓게 보려면 필터를 조정하세요.</p>
+    <p class="meta" id="meta">데이터를 불러오는 중…</p>
   </div>
   <div class="hdr-actions">
     <a class="btn" href="https://github.com/terryds/bestvaluemodel" rel="noopener">GitHub</a>
@@ -190,71 +223,75 @@
 </header>
 
 <div class="filters" id="filters">
-  <div class="seg" role="group" aria-label="Capability metric" id="metricSeg">
-    <button type="button" data-metric="index" aria-pressed="true">Intelligence</button>
-    <button type="button" data-metric="coding" aria-pressed="false">Coding</button>
-    <button type="button" data-metric="math" aria-pressed="false">Math</button>
+  <div class="seg" role="group" aria-label="성능 지표" id="metricSeg">
+    <button type="button" data-metric="index" aria-pressed="true">종합 지능</button>
+    <button type="button" data-metric="coding" aria-pressed="false">코딩</button>
+    <button type="button" data-metric="math" aria-pressed="false">수학</button>
   </div>
-  <label>Min score <input type="range" id="minIdx" min="0" max="50" step="5" value="30" aria-label="Minimum index"> <span id="minIdxVal">30</span></label>
-  <label title="Keep only the best-scoring effort or reasoning variant of each model"><input type="checkbox" id="collapse" checked> One row per model</label>
-  <label>Maker <select id="makerSel"><option value="">All</option></select></label>
-  <label><input type="search" id="search" placeholder="Search model…" aria-label="Search model"></label>
-  <label><input type="checkbox" id="frontierOnly"> Frontier only</label>
-  <label><input type="checkbox" id="labelsAll"> Label every point</label>
+  <label>최소 점수 <input type="range" id="minIdx" min="0" max="50" step="5" value="30" aria-label="최소 점수"> <span id="minIdxVal">30</span></label>
+  <label title="모델마다 effort·reasoning 변형 중 점수가 가장 높은 것만 남깁니다"><input type="checkbox" id="collapse" checked> 모델별 대표만</label>
+  <div class="mk" id="mk">
+    <button type="button" class="mk-btn" id="mkBtn" aria-haspopup="true" aria-expanded="false" aria-controls="mkPanel">제조사: 전체 ▾</button>
+    <div class="mk-panel" id="mkPanel" hidden>
+      <div class="mk-head"><span id="mkHint"></span><button type="button" id="mkClear">선택 해제</button></div>
+      <input type="search" id="mkSearch" placeholder="제조사 검색" aria-label="제조사 검색">
+      <ul class="mk-list" id="mkList"></ul>
+    </div>
+  </div>
+  <span class="chips" id="mkChips"></span>
+  <label><input type="search" id="search" placeholder="모델 검색…" aria-label="모델 검색"></label>
+  <label><input type="checkbox" id="frontierOnly"> 경계선 위 모델만</label>
+  <label><input type="checkbox" id="labelsAll"> 모든 점에 이름 표시</label>
   <span class="count" id="count"></span>
 </div>
 
 <div class="card">
-  <h2 id="scatterTitle">Performance vs price</h2>
-  <p class="cap" id="scatterCap">Blended cost per 1M tokens (3:1 input:output, log scale) against the Intelligence Index. Hover or tab to a point for details.</p>
-  <svg id="scatter" viewBox="0 0 960 540" role="img" aria-label="Scatter plot of capability index versus blended price per million tokens"></svg>
-  <div class="legend">
-    <span><i class="key" style="background:var(--accent)"></i>On the value frontier</span>
-    <span><i class="key" style="background:var(--demote)"></i>Dominated: a cheaper model matches or beats it</span>
-    <span><i class="key line" style="background:var(--accent)"></i>Value frontier</span>
-  </div>
+  <h2 id="scatterTitle">가격 대비 성능</h2>
+  <p class="cap" id="scatterCap">가로축은 100만 토큰당 혼합 단가(입력:출력 3:1, 로그 스케일), 세로축은 선택한 지표 점수입니다. 점에 마우스를 올리거나 Tab 키로 이동하면 자세한 내용이 보입니다.</p>
+  <svg id="scatter" viewBox="0 0 960 540" role="img" aria-label="성능 지표와 100만 토큰당 혼합 단가의 산점도"></svg>
+  <div class="legend" id="legend"></div>
 </div>
 
 <div class="card">
-  <h2>Best model for your budget</h2>
-  <p class="cap" id="budgetCap">The frontier as a lookup table. Find the row your budget falls in; the pick is the highest-scoring model you can get at that price, and the runner-up is the next best that also fits.</p>
+  <h2>예산별 최적 모델</h2>
+  <p class="cap" id="budgetCap">가성비 경계선을 표로 옮긴 것입니다. 예산이 속한 행을 찾으면, 그 가격대에서 가장 점수가 높은 모델이 추천 모델이고 같은 예산 안에서 그다음으로 좋은 모델이 차선입니다. 제조사를 선택하면 선택한 제조사 모델만으로 계산합니다.</p>
   <div class="tbl-wrap">
     <table id="budget" class="budget">
-      <thead><tr><th>Budget per 1M tokens</th><th>Pick</th><th>Score</th><th>Price</th><th>Runner-up</th></tr></thead>
+      <thead><tr><th>100만 토큰당 예산</th><th>추천 모델</th><th>점수</th><th>가격</th><th>차선</th></tr></thead>
       <tbody></tbody>
     </table>
   </div>
 </div>
 
 <div class="card">
-  <h2 id="barIndexTitle">Raw capability</h2>
-  <p class="cap">Ignoring cost entirely.</p>
+  <h2 id="barIndexTitle">순수 성능</h2>
+  <p class="cap">가격은 고려하지 않은 순위입니다.</p>
   <div class="rows" id="barIndex"></div>
   <button class="btn more" id="moreIndex" type="button" hidden></button>
 </div>
 
 <div class="card">
-  <h2>What changed</h2>
-  <p class="cap">Diff between consecutive fetches: new models, removed models, and re-scored or re-priced ones.</p>
+  <h2>변경 내역</h2>
+  <p class="cap">데이터를 갱신할 때마다 이전과 비교한 결과입니다. 새로 추가되거나 제외된 모델, 점수나 가격이 바뀐 모델을 보여줍니다.</p>
   <ul class="log" id="log"></ul>
 </div>
 
 <div class="card">
-  <h2>All figures</h2>
-  <p class="cap">Click a column header to sort. Names link to the model's Artificial Analysis page.</p>
+  <h2>전체 수치</h2>
+  <p class="cap">열 제목을 누르면 정렬됩니다. 모델 이름을 누르면 Artificial Analysis의 해당 모델 페이지로 이동합니다.</p>
   <div class="tbl-wrap">
     <table id="tbl">
       <thead><tr>
-        <th data-k="name" aria-sort="none">Model</th>
-        <th data-k="creator" aria-sort="none">Maker</th>
-        <th data-k="index" aria-sort="descending">Intelligence</th>
-        <th data-k="coding" aria-sort="none">Coding</th>
-        <th data-k="math" aria-sort="none">Math</th>
-        <th data-k="blended" aria-sort="none">Blended $/1M</th>
-        <th data-k="input" aria-sort="none">Input $/1M</th>
-        <th data-k="output" aria-sort="none">Output $/1M</th>
-        <th data-k="tps" aria-sort="none">Tokens/s</th>
-        <th data-k="ttft" aria-sort="none">TTFT s</th>
+        <th data-k="name" aria-sort="none">모델</th>
+        <th data-k="creator" aria-sort="none">제조사</th>
+        <th data-k="index" aria-sort="descending">종합 지능</th>
+        <th data-k="coding" aria-sort="none">코딩</th>
+        <th data-k="math" aria-sort="none">수학</th>
+        <th data-k="blended" aria-sort="none">혼합 단가 $/1M</th>
+        <th data-k="input" aria-sort="none">입력 $/1M</th>
+        <th data-k="output" aria-sort="none">출력 $/1M</th>
+        <th data-k="tps" aria-sort="none">출력 속도 tok/s</th>
+        <th data-k="ttft" aria-sort="none">TTFT(초)</th>
       </tr></thead>
       <tbody></tbody>
     </table>
@@ -262,16 +299,17 @@
 </div>
 
 <div class="card">
-  <h2>How to read this</h2>
+  <h2>읽는 법</h2>
   <div class="note">
     <ul>
-      <li><b>Value frontier.</b> Sort by price ascending and keep every model that scores higher than everything cheaper. Ties on price go to the higher score; ties on score go to the cheaper model.</li>
-      <li><b>Blended price</b> is Artificial Analysis's 3:1 input:output blend per 1M tokens. Cached-input discounts, batch pricing and fast modes are not included.</li>
-      <li><b>"One row per model"</b> keeps the highest-scoring effort or reasoning variant of each model name (ties go to the cheaper one). Untick it to see every variant AA benchmarks separately, such as low, medium, high, xhigh and max effort.</li>
-      <li><b>"Min score"</b> hides models below that index from both the chart and the frontier calculation, so an old, tiny model at a rock-bottom price does not anchor the line.</li>
-      <li><b>Scores move.</b> AA re-bases the Index between versions, so compare against this page only, not against an older snapshot.</li>
+      <li><b>가성비 경계선.</b> 가격이 낮은 순으로 정렬한 뒤, 자기보다 싼 모든 모델보다 점수가 높은 모델만 남긴 선입니다. 가격이 같으면 점수가 높은 쪽을, 점수가 같으면 싼 쪽을 남깁니다.</li>
+      <li><b>혼합 단가</b>는 Artificial Analysis가 입력:출력을 3:1로 섞어 계산한 100만 토큰당 가격입니다. 캐시 입력 할인, 배치 가격, 고속 모드는 반영하지 않습니다.</li>
+      <li><b>"모델별 대표만"</b>을 켜면 같은 이름의 모델 중 effort·reasoning 변형에서 점수가 가장 높은 것만 남깁니다(점수가 같으면 싼 쪽). 끄면 AA가 따로 측정한 low, medium, high, xhigh, max effort 같은 변형이 모두 보입니다.</li>
+      <li><b>"최소 점수"</b>보다 낮은 모델은 차트와 경계선 계산에서 모두 빠집니다. 아주 싸고 오래된 소형 모델이 경계선의 시작점을 차지하지 않게 하기 위해서입니다.</li>
+      <li><b>제조사</b>는 최대 6곳까지 함께 선택할 수 있고, 제조사마다 색과 점 모양이 다릅니다. 채운 도형은 경계선 위, 빈 도형은 경계선 아래 모델입니다. 가성비 경계선은 항상 전체 모델 기준으로 그려서, 선택한 제조사가 전체 중 어디쯤 있는지 볼 수 있습니다.</li>
+      <li><b>점수는 바뀝니다.</b> AA는 버전이 바뀔 때 Index 기준을 다시 잡으므로, 예전 스냅샷과 비교하지 말고 이 페이지 안에서만 비교하세요.</li>
     </ul>
-    <p style="margin-top:14px">Source: <a href="https://artificialanalysis.ai/" rel="noopener">Artificial Analysis</a> free data API, refreshed each time the local server starts. Based on <a href="https://github.com/terryds/bestvaluemodel" rel="noopener">github.com/terryds/bestvaluemodel</a>. <span id="src"></span></p>
+    <p style="margin-top:14px">출처: <a href="https://artificialanalysis.ai/" rel="noopener">Artificial Analysis</a> 무료 데이터 API. 로컬 서버를 시작할 때마다 갱신합니다. 원본 프로젝트: <a href="https://github.com/terryds/bestvaluemodel" rel="noopener">github.com/terryds/bestvaluemodel</a>.</p>
   </div>
 </div>
 
@@ -287,6 +325,34 @@
   const money = (v) => v == null ? "—" : "$" + (v >= 10 ? v.toFixed(2) : v >= 1 ? v.toFixed(2) : v.toFixed(v < 0.1 ? 3 : 2));
   const num = (v, dp = 0) => v == null ? "—" : (+v).toFixed(dp);
   const METRIC_LABEL = { index: "Intelligence Index", coding: "Coding Index", math: "Math Index" };
+  const FIELD_LABEL = { index: "Intelligence Index", blended: "혼합 단가", input: "입력 가격", output: "출력 가격" };
+
+  // Maker colors: validated for all-pairs use on the scatter (dataviz validate_palette, --pairs all).
+  // Orange/red are left out because they collide with the frontier accent. Shape is the secondary encoding.
+  const MAKER_COLORS = ["#2a78d6", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7"];
+  const SHAPES = ["circle", "square", "diamond", "triUp", "triDown", "star"];
+  const MAKER_MAX = MAKER_COLORS.length;
+  const makerSlot = new Map(); // creator -> slot, in selection order; a slot sticks to its maker until deselected
+  const colorOf = (creator) => makerSlot.has(creator) ? MAKER_COLORS[makerSlot.get(creator)] : null;
+
+  function symPath(shape, r) {
+    const poly = (pts) => "M" + pts.map((p) => p.map((v) => v.toFixed(2)).join(",")).join("L") + "Z";
+    const ring = (n, rr, rot) => Array.from({ length: n }, (_, i) => { const a = rot + i * 2 * Math.PI / n; return [rr * Math.cos(a), rr * Math.sin(a)]; });
+    switch (shape) {
+      case "square": { const s = r * 0.88; return poly([[-s, -s], [s, -s], [s, s], [-s, s]]); }
+      case "diamond": return poly(ring(4, r * 1.25, -Math.PI / 2));
+      case "triUp": return poly(ring(3, r * 1.3, -Math.PI / 2));
+      case "triDown": return poly(ring(3, r * 1.3, Math.PI / 2));
+      case "star": return poly(ring(10, 1, -Math.PI / 2).map(([x, y], i) => { const k = i % 2 ? r * 0.62 : r * 1.4; return [x * k, y * k]; }));
+      default: return `M${-r},0a${r},${r} 0 1,0 ${2 * r},0a${r},${r} 0 1,0 ${-2 * r},0Z`;
+    }
+  }
+  const sym = (slot, cx, cy, r, attrs = {}) => el("path", { d: symPath(SHAPES[slot], r), transform: `translate(${cx} ${cy})`, ...attrs });
+  function swatch(slot, filled = true, c = MAKER_COLORS[slot]) {
+    const s = el("svg", { class: "sw", viewBox: "-7 -7 14 14", "aria-hidden": "true" });
+    s.appendChild(sym(slot, 0, 0, 5, filled ? { fill: c } : { fill: "var(--surface)", stroke: c, "stroke-width": 1.8 }));
+    return s;
+  }
 
   /* ---------- load ---------- */
   let snapshot, changelog = [];
@@ -296,19 +362,18 @@
     snapshot = await r.json();
     try { const c = await fetch("data/changelog.json", { cache: "no-store" }); if (c.ok) changelog = await c.json(); } catch {}
   } catch (e) {
-    $("meta").textContent = "Could not load data/models.json (" + e.message + "). Serve this folder over HTTP, e.g. `npm run serve`, then open http://localhost:8080.";
+    $("meta").textContent = "data/models.json을 불러오지 못했습니다(" + e.message + "). `npm start`로 서버를 띄운 뒤 http://127.0.0.1:8080 으로 접속하세요.";
     $("meta").parentElement.parentElement.classList.add("warn");
     return;
   }
 
   const ALL = snapshot.models.filter((m) => m.blended > 0);
   const dt = new Date(snapshot.fetched_at);
-  const when = isNaN(dt) ? snapshot.fetched_at : dt.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
-  $("meta").textContent = `${ALL.length} models · data as of ${when}` + (snapshot.source === "seed" ? " · seed snapshot (waiting for the first API fetch)" : " · source: artificialanalysis.ai");
-  $("src").textContent = snapshot.attribution || "";
+  const when = isNaN(dt) ? snapshot.fetched_at : dt.toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" });
+  $("meta").textContent = `모델 ${ALL.length}개 · ${when} 기준` + (snapshot.source === "seed" ? " · 초기 샘플 데이터(첫 API 갱신 전)" : " · 출처: artificialanalysis.ai");
 
   /* ---------- state ---------- */
-  const state = { metric: "index", minIdx: 30, collapse: true, maker: "", q: "", frontierOnly: false, labelsAll: false, showAllIndex: false, sortK: "index", sortDir: -1 };
+  const state = { metric: "index", minIdx: 30, collapse: true, q: "", frontierOnly: false, labelsAll: false, showAllIndex: false, sortK: "index", sortDir: -1 };
 
   // "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)" -> "Claude Opus 5.5 (max)"
   const baseName = (name) => name.replace(/\s*\([^)]*\)/g, "").trim();
@@ -326,11 +391,55 @@
   }
   ALL.forEach((m) => { m.short = shortName(m.name); m.base = baseName(m.name); });
 
-  const makers = [...new Set(ALL.map((m) => m.creator))].sort((a, b) => a.localeCompare(b));
-  makers.forEach((mk) => { const o = h("option", null, mk); o.value = mk; $("makerSel").appendChild(o); });
-
   const hasMetric = (k) => ALL.some((m) => m[k] != null);
-  document.querySelectorAll("#metricSeg button").forEach((b) => { if (!hasMetric(b.dataset.metric)) { b.disabled = true; b.title = "Not in this snapshot yet"; b.style.opacity = .45; } });
+  document.querySelectorAll("#metricSeg button").forEach((b) => { if (!hasMetric(b.dataset.metric)) { b.disabled = true; b.title = "이 스냅샷에는 아직 없는 지표입니다"; b.style.opacity = .45; } });
+
+  /* ---------- maker multi-select ---------- */
+  const makerCount = new Map();
+  ALL.forEach((m) => makerCount.set(m.creator, (makerCount.get(m.creator) || 0) + 1));
+  const makers = [...makerCount.keys()].sort((a, b) => makerCount.get(b) - makerCount.get(a) || a.localeCompare(b));
+  const mkBoxes = new Map();
+  makers.forEach((mk) => {
+    const li = h("li"); li.dataset.name = mk.toLowerCase();
+    const lab = h("label");
+    const cb = h("input"); cb.type = "checkbox"; cb.value = mk;
+    cb.addEventListener("change", () => setMaker(mk, cb.checked));
+    lab.append(cb, h("span", null, mk), h("span", "n", makerCount.get(mk)));
+    li.appendChild(lab); $("mkList").appendChild(li); mkBoxes.set(mk, cb);
+  });
+
+  function setMaker(mk, on) {
+    if (on && !makerSlot.has(mk)) {
+      if (makerSlot.size >= MAKER_MAX) return syncMakers();
+      const used = new Set(makerSlot.values()); let s = 0; while (used.has(s)) s++;
+      makerSlot.set(mk, s);
+    } else if (!on) makerSlot.delete(mk);
+    syncMakers(); render();
+  }
+  function syncMakers() {
+    const full = makerSlot.size >= MAKER_MAX;
+    mkBoxes.forEach((cb, mk) => { cb.checked = makerSlot.has(mk); cb.disabled = full && !cb.checked; });
+    $("mkBtn").textContent = makerSlot.size ? `제조사 ${makerSlot.size}곳 선택 ▾` : "제조사: 전체 ▾";
+    $("mkHint").textContent = full ? `최대 ${MAKER_MAX}곳까지 선택했습니다` : `최대 ${MAKER_MAX}곳까지 함께 비교`;
+    $("mkClear").hidden = !makerSlot.size;
+    const chips = $("mkChips"); chips.replaceChildren();
+    makerSlot.forEach((slot, mk) => {
+      const c = h("span", "chip");
+      const x = h("button", null, "×"); x.type = "button"; x.setAttribute("aria-label", `${mk} 선택 해제`);
+      x.addEventListener("click", () => setMaker(mk, false));
+      c.append(swatch(slot), h("span", null, mk), x); chips.appendChild(c);
+    });
+  }
+  const panelOpen = (open) => { $("mkPanel").hidden = !open; $("mkBtn").setAttribute("aria-expanded", open); if (open) $("mkSearch").focus(); };
+  $("mkBtn").addEventListener("click", () => panelOpen($("mkPanel").hidden));
+  $("mkClear").addEventListener("click", () => { makerSlot.clear(); syncMakers(); render(); });
+  $("mkSearch").addEventListener("input", (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    $("mkList").querySelectorAll("li").forEach((li) => { li.hidden = !!q && !li.dataset.name.includes(q); });
+  });
+  document.addEventListener("click", (e) => { if (!$("mk").contains(e.target)) panelOpen(false); });
+  $("mk").addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("mkPanel").hidden) { panelOpen(false); $("mkBtn").focus(); } });
+  syncMakers();
 
   /* ---------- derive ---------- */
   function compute() {
@@ -350,7 +459,7 @@
     const onF = new Set(frontier.map((d) => d.id));
     rows.forEach((d) => (d.front = onF.has(d.id)));
     const q = state.q.trim().toLowerCase();
-    const vis = rows.filter((d) => (!state.maker || d.creator === state.maker) && (!q || d.name.toLowerCase().includes(q) || d.creator.toLowerCase().includes(q)) && (!state.frontierOnly || d.front));
+    const vis = rows.filter((d) => (!makerSlot.size || makerSlot.has(d.creator)) && (!q || d.name.toLowerCase().includes(q) || d.creator.toLowerCase().includes(q)) && (!state.frontierOnly || d.front));
     return { rows, vis, frontier };
   }
 
@@ -359,21 +468,21 @@
   function tipHTML(d) {
     tip.replaceChildren();
     const head = h("div", "tip-h");
-    const k = h("i", "key"); k.style.background = d.front ? "var(--accent)" : "var(--demote)";
+    const k = h("i", "key"); k.style.background = colorOf(d.creator) || (d.front ? "var(--accent)" : "var(--demote)");
     head.append(k, document.createTextNode(d.short));
     tip.appendChild(head);
     if (d.short !== d.name) { const full = h("div", null, d.name); full.style.cssText = "color:var(--ink-3);font-size:11px;margin:-4px 0 7px"; tip.appendChild(full); }
     const rows = [
       [METRIC_LABEL[state.metric], num(d.v, 1)],
-      ["Blended price", money(d.blended) + " /1M"],
-      ["Input / output", money(d.input) + " / " + money(d.output)],
-      ["Maker", d.creator],
+      ["혼합 단가", money(d.blended) + " /1M 토큰"],
+      ["입력 / 출력", money(d.input) + " / " + money(d.output)],
+      ["제조사", d.creator],
     ];
-    if (d.tps != null) rows.push(["Output speed", num(d.tps) + " tok/s"]);
+    if (d.tps != null) rows.push(["출력 속도", num(d.tps) + " tok/s"]);
     rows.forEach(([lab, val]) => {
       const r = h("div", "tip-r"); r.append(h("span", null, lab), h("b", null, val)); tip.appendChild(r);
     });
-    const s = h("div", "tip-r"); const st = h("span", null, d.front ? "On value frontier" : "Dominated");
+    const s = h("div", "tip-r"); const st = h("span", null, d.front ? "가성비 경계선 위" : "열위 (더 싸면서 점수가 같거나 높은 모델 있음)");
     st.style.color = d.front ? "var(--accent)" : "var(--ink-3)"; st.style.fontWeight = "600"; s.appendChild(st); tip.appendChild(s);
   }
   function place(px, py) {
@@ -405,12 +514,28 @@
   }
   const fmtTick = (v) => "$" + (v >= 1 ? String(v) : v.toFixed(v < 0.1 ? 2 : 1).replace(/0+$/, "").replace(/\.$/, ""));
 
+  /* ---------- legend ---------- */
+  function legend() {
+    const lg = $("legend"); lg.replaceChildren();
+    const item = (mark, text) => { const s = h("span"); s.append(mark, document.createTextNode(text)); lg.appendChild(s); };
+    const dot = (bg, cls = "key") => { const i = h("i", cls); i.style.background = bg; return i; };
+    if (!makerSlot.size) {
+      item(dot("var(--accent)"), "가성비 경계선 위");
+      item(dot("var(--demote)"), "열위: 더 싸면서 점수가 같거나 높은 모델이 있음");
+    } else {
+      makerSlot.forEach((slot, mk) => item(swatch(slot), mk));
+      item(swatch(0, true, "var(--ink-3)"), "채운 도형: 경계선 위");
+      item(swatch(0, false, "var(--ink-3)"), "빈 도형: 열위");
+    }
+    item(dot("var(--accent)", "key line"), "가성비 경계선(전체 모델 기준)");
+  }
+
   /* ---------- scatter ---------- */
   function drawScatter(rows, vis, frontier) {
     const svg = $("scatter"); svg.replaceChildren();
     const W = 960, H = 540, M = { t: 26, r: 40, b: 56, l: 62 };
     const pw = W - M.l - M.r, ph = H - M.t - M.b;
-    if (!vis.length) { const t = el("text", { x: W / 2, y: H / 2, "text-anchor": "middle", class: "tick" }); t.textContent = "No models match these filters."; svg.appendChild(t); return; }
+    if (!vis.length) { const t = el("text", { x: W / 2, y: H / 2, "text-anchor": "middle", class: "tick" }); t.textContent = "필터 조건에 맞는 모델이 없습니다."; svg.appendChild(t); return; }
 
     const xs = rows.map((d) => d.blended), ys = rows.map((d) => d.v);
     const xmin = Math.min(...xs) / 1.5, xmax = Math.max(...xs) * 1.5;
@@ -429,7 +554,7 @@
       const t = el("text", { x: X(v), y: M.t + ph + 22, "text-anchor": "middle", class: "tick" }); t.textContent = fmtTick(v); svg.appendChild(t);
     });
     svg.appendChild(el("line", { x1: M.l, x2: M.l + pw, y1: M.t + ph, y2: M.t + ph, stroke: "var(--axis)", "stroke-width": 1 }));
-    const xt = el("text", { x: M.l + pw / 2, y: M.t + ph + 46, "text-anchor": "middle", class: "axis-title" }); xt.textContent = "Blended price per 1M tokens (log scale)"; svg.appendChild(xt);
+    const xt = el("text", { x: M.l + pw / 2, y: M.t + ph + 46, "text-anchor": "middle", class: "axis-title" }); xt.textContent = "100만 토큰당 혼합 단가 (로그 스케일)"; svg.appendChild(xt);
     const yt = el("text", { x: 16, y: M.t + ph / 2, "text-anchor": "middle", class: "axis-title", transform: `rotate(-90 16 ${M.t + ph / 2})` }); yt.textContent = "Artificial Analysis " + METRIC_LABEL[state.metric]; svg.appendChild(yt);
 
     // frontier line (always the full-set frontier, so filtering shows context)
@@ -446,10 +571,18 @@
     const byPriority = [...vis].sort((a, b) => (b.front ? 1 : 0) - (a.front ? 1 : 0) || b.v - a.v);
 
     ordered.forEach((d) => {
-      const cx = X(d.blended), cy = Y(d.v), c = d.front ? "var(--accent)" : "var(--demote)";
-      svg.appendChild(el("circle", { cx, cy, r: 7.5, fill: "var(--surface)" })); // 2px surface ring
-      svg.appendChild(el("circle", { cx, cy, r: 5.5, fill: c }));
-      const hit = el("circle", { cx, cy, r: 14, fill: "transparent", class: "hit", tabindex: "0", role: "img", "aria-label": `${d.short}: ${METRIC_LABEL[state.metric]} ${num(d.v, 1)}, ${money(d.blended)} per 1M tokens` });
+      const cx = X(d.blended), cy = Y(d.v);
+      if (makerSlot.has(d.creator)) {
+        // maker mode: color + shape per maker; filled = frontier, hollow = dominated
+        const slot = makerSlot.get(d.creator), c = MAKER_COLORS[slot];
+        svg.appendChild(sym(slot, cx, cy, 7.5, { fill: "var(--surface)" })); // 2px surface ring
+        svg.appendChild(sym(slot, cx, cy, d.front ? 5.5 : 4.8, d.front ? { fill: c } : { fill: "var(--surface)", stroke: c, "stroke-width": 2 }));
+      } else {
+        const c = d.front ? "var(--accent)" : "var(--demote)";
+        svg.appendChild(el("circle", { cx, cy, r: 7.5, fill: "var(--surface)" })); // 2px surface ring
+        svg.appendChild(el("circle", { cx, cy, r: 5.5, fill: c }));
+      }
+      const hit = el("circle", { cx, cy, r: 14, fill: "transparent", class: "hit", tabindex: "0", role: "img", "aria-label": `${d.short} (${d.creator}): ${METRIC_LABEL[state.metric]} ${num(d.v, 1)}, 100만 토큰당 ${money(d.blended)}` });
       hit.style.cursor = "pointer";
       const ring = el("circle", { cx, cy, r: 10, class: "focus-ring" });
       bindHover(hit, d, () => { const b = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal; return [b.left + cx / vb.width * b.width, b.top + cy / vb.height * b.height]; });
@@ -483,16 +616,18 @@
     const max = Math.max(...allRows.map((r) => r[key]), 0);
     rows.forEach((d) => {
       const row = h("div", "row" + (d.front ? " on" : ""));
-      const n = h("div", "row-name", d.label); n.title = d.name;
+      const n = h("div", "row-name", d.label); n.title = `${d.name} (${d.creator})`;
       const track = h("div", "track"); track.tabIndex = 0;
       const bar = h("div", "bar"); bar.style.width = Math.max(1.5, d[key] / max * 100) + "%";
+      const c = colorOf(d.creator);
+      if (c) { bar.style.background = c; if (!d.front) bar.style.opacity = .4; }
       track.appendChild(bar);
       bindHover(track, d, () => { const b = track.getBoundingClientRect(); return [b.right, b.top + b.height / 2]; });
       row.append(n, track, h("div", "row-val", fmt(d[key])));
       host.appendChild(row);
     });
     const btn = $(moreBtn);
-    if (allRows.length > 15) { btn.hidden = false; btn.textContent = showAll ? "Show top 15" : `Show all ${allRows.length}`; btn.onclick = onToggle; }
+    if (allRows.length > 15) { btn.hidden = false; btn.textContent = showAll ? "상위 15개만 보기" : `전체 ${allRows.length}개 보기`; btn.onclick = onToggle; }
     else btn.hidden = true;
   }
 
@@ -511,8 +646,12 @@
       nameTd.title = d.name;
       if (d.url) { const a = h("a", null, d.short); a.href = d.url; a.target = "_blank"; a.rel = "noopener"; nameTd.appendChild(a); } else nameTd.textContent = d.short;
       tr.appendChild(nameTd);
-      [d.creator, num(d.index, 1), num(d.coding, 1), num(d.math, 1), money(d.blended), money(d.input), money(d.output), num(d.tps), num(d.ttft, 2)].forEach((c) => {
-        const td = h("td", c === "—" ? "na" : "", c); tr.appendChild(td);
+      const makerTd = h("td");
+      const c = colorOf(d.creator);
+      if (c) { const dot = h("span", "mk-dot"); dot.style.background = c; makerTd.appendChild(dot); }
+      makerTd.append(d.creator); tr.appendChild(makerTd);
+      [num(d.index, 1), num(d.coding, 1), num(d.math, 1), money(d.blended), money(d.input), money(d.output), num(d.tps), num(d.ttft, 2)].forEach((v) => {
+        const td = h("td", v === "—" ? "na" : "", v); tr.appendChild(td);
       });
       tb.appendChild(tr);
     });
@@ -530,21 +669,22 @@
     // frontier over the visible set, so a maker filter answers "best <maker> model per budget"
     const fr = [];
     [...vis].sort((a, b) => a.blended - b.blended || b.v - a.v).forEach((d) => { if (!fr.length || d.v > fr[fr.length - 1].v) fr.push(d); });
-    if (!fr.length) { const tr = h("tr"); tr.appendChild(h("td", "empty", "No models match these filters.")); tb.appendChild(tr); return; }
+    if (!fr.length) { const tr = h("tr"); tr.appendChild(h("td", "empty", "필터 조건에 맞는 모델이 없습니다.")); tb.appendChild(tr); return; }
     fr.slice().reverse().forEach((d) => {
       const i = fr.indexOf(d), next = fr[i + 1];
-      const range = i === 0 && !next ? "any" : i === 0 ? `under ${money(next.blended)}` : next ? `${money(d.blended)} to under ${money(next.blended)}` : `${money(d.blended)} and up`;
+      const range = i === 0 && !next ? "제한 없음" : i === 0 ? `${money(next.blended)} 미만` : next ? `${money(d.blended)} 이상 ${money(next.blended)} 미만` : `${money(d.blended)} 이상`;
       const pool = vis.filter((o) => o.id !== d.id && (!next || o.blended < next.blended));
       const ru = pool.sort((a, b) => b.v - a.v || a.blended - b.blended)[0];
       const tr = h("tr");
       tr.appendChild(h("td", null, range));
-      const pick = h("td", "pick"); pick.title = d.name;
+      const pick = h("td", "pick"); pick.title = `${d.name} (${d.creator})`;
+      const c = colorOf(d.creator); if (c) pick.style.setProperty("--dot", c);
       if (d.url) { const a = h("a", null, d.label); a.href = d.url; a.target = "_blank"; a.rel = "noopener"; pick.appendChild(a); } else pick.textContent = d.label;
       tr.appendChild(pick);
       tr.appendChild(h("td", null, num(d.v, 1)));
       tr.appendChild(h("td", null, money(d.blended)));
       const rtd = h("td", "ru");
-      if (ru) { rtd.append(h("b", null, ru.label), document.createTextNode(` · ${num(ru.v, 1)} at ${money(ru.blended)}`)); rtd.title = ru.name; } else { rtd.textContent = "—"; rtd.classList.add("na"); }
+      if (ru) { rtd.append(h("b", null, ru.label), document.createTextNode(` · ${money(ru.blended)}에 ${num(ru.v, 1)}점`)); rtd.title = `${ru.name} (${ru.creator})`; } else { rtd.textContent = "—"; rtd.classList.add("na"); }
       tr.appendChild(rtd);
       tb.appendChild(tr);
     });
@@ -556,7 +696,7 @@
       const isPrice = f.field !== "index";
       const up = f.to > f.from;
       const cls = f.field === "index" ? (up ? "up" : "down") : (up ? "down" : "up"); // price up is bad
-      const s = h("span"); s.append(document.createTextNode(f.field + " "));
+      const s = h("span"); s.append(document.createTextNode((FIELD_LABEL[f.field] || f.field) + " "));
       const b = h("b", cls, (isPrice ? money(f.from) : num(f.from, 1)) + " → " + (isPrice ? money(f.to) : num(f.to, 1)));
       s.appendChild(b); return s;
     });
@@ -565,12 +705,12 @@
   function log() {
     const ul = $("log"); ul.replaceChildren();
     const entries = changelog.filter((e) => e.added?.length || e.removed?.length || e.changed?.length).slice(0, 12);
-    if (!entries.length) { ul.appendChild(h("li", "empty", snapshot.source === "seed" ? "No fetches yet. Run `npm start` with AA_API_KEY set and changes between fetches appear here." : "No changes recorded yet.")); return; }
+    if (!entries.length) { ul.appendChild(h("li", "empty", snapshot.source === "seed" ? "아직 갱신한 적이 없습니다. AA_API_KEY를 설정하고 `npm start`를 실행하면 갱신 사이의 변경 내역이 여기에 표시됩니다." : "아직 기록된 변경 내역이 없습니다.")); return; }
     entries.forEach((e) => {
       const li = h("li"); li.appendChild(h("span", "d", e.date));
       const bits = [];
-      (e.added || []).forEach((m) => { const s = h("span"); s.append(h("span", "pill", "new"), document.createTextNode(`${m.name} (${num(m.index, 1)} at ${money(m.blended)})`)); bits.push(s); });
-      (e.removed || []).forEach((m) => { const s = h("span"); s.append(h("span", "pill", "removed"), document.createTextNode(m.name)); bits.push(s); });
+      (e.added || []).forEach((m) => { const s = h("span"); s.append(h("span", "pill", "신규"), document.createTextNode(`${m.name} (${money(m.blended)}에 ${num(m.index, 1)}점)`)); bits.push(s); });
+      (e.removed || []).forEach((m) => { const s = h("span"); s.append(h("span", "pill", "제외"), document.createTextNode(m.name)); bits.push(s); });
       (e.changed || []).forEach((c) => { const s = h("span"); s.append(document.createTextNode(c.name + ": ")); fmtChange(c).forEach((p, i) => { if (i) s.append(", "); s.appendChild(p); }); bits.push(s); });
       bits.forEach((b, i) => { if (i) li.append(" · "); li.appendChild(b); });
       ul.appendChild(li);
@@ -581,9 +721,10 @@
   function render() {
     tipHide();
     const { rows, vis, frontier } = compute();
-    $("count").textContent = `${vis.length} of ${rows.length} models · ${frontier.length} on frontier`;
-    $("scatterTitle").textContent = `Performance vs price: ${METRIC_LABEL[state.metric]}`;
-    $("barIndexTitle").textContent = `Raw capability: ${METRIC_LABEL[state.metric]}`;
+    $("count").textContent = `모델 ${rows.length}개 중 ${vis.length}개 표시 · 경계선 위 ${frontier.length}개`;
+    $("scatterTitle").textContent = `가격 대비 성능: ${METRIC_LABEL[state.metric]}`;
+    $("barIndexTitle").textContent = `순수 성능: ${METRIC_LABEL[state.metric]}`;
+    legend();
     drawScatter(rows, vis, frontier);
     budgetTable(vis);
     bars("barIndex", "moreIndex", [...vis].sort((a, b) => b.v - a.v || a.blended - b.blended), "v", (v) => num(v, 1), state.showAllIndex, () => { state.showAllIndex = !state.showAllIndex; render(); });
@@ -597,7 +738,6 @@
   }));
   $("minIdx").addEventListener("input", (e) => { state.minIdx = +e.target.value; $("minIdxVal").textContent = e.target.value; render(); });
   $("collapse").addEventListener("change", (e) => { state.collapse = e.target.checked; render(); });
-  $("makerSel").addEventListener("change", (e) => { state.maker = e.target.value; render(); });
   $("search").addEventListener("input", (e) => { state.q = e.target.value; render(); });
   $("frontierOnly").addEventListener("change", (e) => { state.frontierOnly = e.target.checked; render(); });
   $("labelsAll").addEventListener("change", (e) => { state.labelsAll = e.target.checked; render(); });
