@@ -34,7 +34,7 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 
 - 같은 와이파이나 사내망에 있는 **누구나** 접속할 수 있으니, 다 보면 서버를 끕니다(Ctrl+C).
 - 처음 실행하면 macOS 방화벽이 Node의 연결 허용 여부를 묻습니다.
-- 서버는 페이지와 데이터 파일 두 개만 읽기 전용으로 내보내고, `.env` 같은 다른 파일은 404를 반환합니다. 페이지는 API를 호출하지 않으므로 접속자가 늘어도 API 한도에는 영향이 없습니다.
+- 서버는 페이지와 데이터 파일 세 개(`models.json`, `changelog.json`, `languages.json`)만 읽기 전용으로 내보내고, `.env` 같은 다른 파일은 404를 반환합니다. 페이지는 API를 호출하지 않으므로 접속자가 늘어도 API 한도에는 영향이 없습니다.
 - 인터넷 전체 공개(포트 포워딩, 공개 터널)는 접속 제한이 없어 권하지 않습니다.
 
 ## 데이터
@@ -54,9 +54,22 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 
   cron은 셸 환경을 불러오지 않으므로 node는 절대 경로(`which node`로 확인)로 적습니다. API 키는 `.env`에서 읽습니다.
 
+### 자동 갱신과 수동 관리
+
+| 항목 | 갱신 | 손이 가는 경우 |
+|---|---|---|
+| 점수·가격·속도·출시일 | 자동(AA API) | 없음 |
+| 컨텍스트 크기·최대 출력 | 자동(OpenRouter, 갱신할 때마다 다시 짝지음) | 이름이 달라 짝을 못 찾은 모델만 `data/context-map.json`에 추가 |
+| 지원 언어 | 수동(`data/languages.json`) | 새 제조사가 생기거나, 같은 제조사가 언어 정책이 다른 모델을 냈을 때 |
+
+- 갱신할 때(`npm start`, `npm run fetch`) 점검할 목록 두 개가 출력됩니다. 필요한 모델만 채우면 됩니다.
+  - `Top unmatched (add to data/context-map.json): ...`: 컨텍스트 크기를 못 찾은 점수 상위 모델
+  - `No language info (add to data/languages.json): ...`: 언어 정보가 없는 점수 상위 모델(대개 처음 보는 제조사)
+- 이미 등록된 제조사의 새 모델은 제조사 기본값을 자동으로 따릅니다. 반대로 기본값과 다른 모델(예: 한·중·일을 공식 지원 목록에서 뺀 새 Llama)은 알아챌 방법이 없으므로, 주요 신모델이 나오면 공식 문서를 확인해 `models`에 예외를 적습니다.
+
 ### 기준
 
-- **출처**: Artificial Analysis API `https://artificialanalysis.ai/api/v2/data/llms/models`
+- **출처**: Artificial Analysis API `https://artificialanalysis.ai/api/v2/data/llms/models`. 컨텍스트 크기만 OpenRouter `https://openrouter.ai/api/v1/models`, 지원 언어는 제조사 공식 문서(수동 정리)
 - **포함 모델**: Intelligence Index 점수가 있고 혼합 단가가 0보다 큰 모델만 넣습니다. 받아온 모델이 10개 미만이면 API 이상으로 보고 기존 스냅샷을 덮어쓰지 않습니다.
 - **점수**: AA Intelligence / Coding / Math Index(소수점 첫째 자리)
 - **세부 벤치마크**: 정답률(%)로 저장합니다(AA는 0~1 비율로 제공).
@@ -94,7 +107,7 @@ DB나 외부 저장소 없이 `data/` 폴더의 JSON 파일이 전부이고, 페
 - `data/models.json`: 최신 스냅샷. 점수·가격·속도·컨텍스트 크기 중 하나라도 바뀌면 덮어쓰고, 모두 같으면 쓰지 않습니다.
 - `data/languages.json`: 모델별 지원 언어(직접 관리). 페이지가 직접 읽습니다.
 - `data/context-map.json`: 컨텍스트 크기를 짝지을 때 쓰는 수동 매핑(직접 관리). 페이지에서는 읽지 않습니다.
-- `data/changelog.json`: 갱신 사이의 변경 내역. **모델 추가·삭제와 점수·가격 변경만** 기록하고, 속도만 바뀐 경우에는 기록하지 않습니다. 최신순으로 최대 90건까지 보관합니다.
+- `data/changelog.json`: 갱신 사이의 변경 내역. **모델 추가·삭제와 점수·가격 변경만** 기록하고, 속도나 컨텍스트 크기만 바뀐 경우에는 기록하지 않습니다. 최신순으로 최대 90건까지 보관합니다.
 
 `models.json`과 `changelog.json`은 git으로 추적되므로 갱신할 때마다 변경 사항으로 잡힙니다.
 
@@ -102,11 +115,13 @@ DB나 외부 저장소 없이 `data/` 폴더의 JSON 파일이 전부이고, 페
 
 | 경로 | 설명 |
 |---|---|
-| `index.html` | 페이지 본체. 빌드 없는 HTML/SVG/JS이고, 실행 시 `data/models.json`을 불러옵니다. |
-| `data/models.json` | AA `/data/llms/models` 응답을 필요한 필드만 남겨 저장한 스냅샷 |
+| `index.html` | 페이지 본체. 빌드 없는 HTML/SVG/JS이고, 실행 시 `data/models.json`, `data/changelog.json`, `data/languages.json`을 불러옵니다. |
+| `data/models.json` | AA `/data/llms/models` 응답을 필요한 필드만 남기고 OpenRouter 컨텍스트 크기를 붙여 저장한 스냅샷 |
 | `data/changelog.json` | 갱신할 때마다 기록되는 변경 내역(추가·삭제·점수 변경·가격 변경). 최신순이며 최대 90건까지 보관합니다. |
-| `scripts/fetch-aa.mjs` | API에서 데이터를 받아 정리하고, 이전 스냅샷과 비교해 두 파일을 씁니다. 데이터가 같으면 아무것도 쓰지 않습니다. |
-| `scripts/serve.mjs` | 데이터를 갱신한 뒤 페이지와 데이터 파일을 서빙합니다(기본 127.0.0.1, `--lan`이면 같은 네트워크까지). 이 세 파일 외의 경로는 모두 404를 반환합니다. |
+| `data/languages.json` | 지원 언어(직접 관리). 제조사 기본값과 모델별 예외, 근거 URL |
+| `data/context-map.json` | 컨텍스트 크기 수동 매핑(직접 관리). `fetch-aa.mjs`만 읽습니다. |
+| `scripts/fetch-aa.mjs` | AA와 OpenRouter에서 데이터를 받아 정리하고, 이전 스냅샷과 비교해 `models.json`·`changelog.json`을 씁니다. 데이터가 같으면 아무것도 쓰지 않습니다. 점검할 미매칭 모델 목록도 출력합니다. |
+| `scripts/serve.mjs` | 데이터를 갱신한 뒤 페이지와 데이터 파일을 서빙합니다(기본 127.0.0.1, `--lan`이면 같은 네트워크까지). 페이지와 데이터 파일 세 개 외의 경로는 모두 404를 반환합니다. |
 
 ## 참고
 
