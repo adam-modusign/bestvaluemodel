@@ -8,6 +8,10 @@
  * Also maintains data/changelog.json: per-run diff of models added, removed,
  * or re-scored / re-priced.
  *
+ * AA has no context-window data, so it is joined in from OpenRouter's public
+ * model list (no key needed) by slug. data/context-map.json overrides the join
+ * for models whose names differ between the two.
+ *
  * Attribution required by AA terms: https://artificialanalysis.ai/
  */
 import { readFile, writeFile, mkdir } from "node:fs/promises";
@@ -20,7 +24,10 @@ const DATA_DIR = path.join(ROOT, "data");
 const MODELS_PATH = path.join(DATA_DIR, "models.json");
 const CHANGELOG_PATH = path.join(DATA_DIR, "changelog.json");
 const LAST_FETCH_PATH = path.join(ROOT, ".last-fetch"); // local-only (gitignored): when the API was last checked, changed or not
+const CONTEXT_MAP_PATH = path.join(DATA_DIR, "context-map.json");
+const LANGUAGES_PATH = path.join(DATA_DIR, "languages.json"); // hand-maintained; the page reads it directly
 const ENDPOINT = "https://artificialanalysis.ai/api/v2/data/llms/models";
+const OPENROUTER_ENDPOINT = "https://openrouter.ai/api/v1/models";
 const CHANGELOG_MAX = 90;
 
 try { process.loadEnvFile(path.join(ROOT, ".env")); } catch {} // .env is optional
@@ -70,6 +77,75 @@ function normalise(raw) {
   };
 }
 
+/* ---------- context window (OpenRouter) ---------- */
+// "anthropic/claude-sonnet-5.5" and AA's "claude-sonnet-5-5" both become "claude-sonnet-5-5"
+const slugKey = (s) => s.toLowerCase().replace(/^~/, "").replace(/^[^/]+\//, "").replace(/:.*$/, "").replace(/[._\s]+/g, "-").replace(/-+/g, "-");
+// AA lists effort / reasoning / dated variants separately; OpenRouter usually has one entry for all of them
+const VARIANT_SUFFIX = /-(xhigh|high|medium|low|minimal|none|reasoning|non-reasoning|thinking|instruct|preview|adaptive|\d{4}(-\d{2}(-\d{2})?)?|\d{6,8})$/;
+
+async function fetchOpenRouter() {
+  const res = await fetch(OPENROUTER_ENDPOINT, { headers: { accept: "application/json" } });
+  if (!res.ok) throw new Error(`OpenRouter API ${res.status} ${res.statusText}`);
+  const json = await res.json();
+  if (!Array.isArray(json.data)) throw new Error("OpenRouter: unexpected response shape");
+  const spec = (o) => ({ context: positive(o.context_length ?? o.top_provider?.context_length), max_output: positive(o.top_provider?.max_completion_tokens) });
+  const byId = new Map(), byKey = new Map();
+  // plain ids first so "x:free" (often a smaller context) never shadows "x"
+  const ordered = [...json.data].sort((a, b) => a.id.includes(":") - b.id.includes(":"));
+  for (const o of ordered) {
+    byId.set(o.id, spec(o));
+    for (const k of [slugKey(o.id), o.canonical_slug && slugKey(o.canonical_slug)]) if (k && !byKey.has(k)) byKey.set(k, spec(o));
+  }
+  return { byId, byKey };
+}
+
+function lookupContext(slug, or) {
+  let k = slugKey(slug);
+  for (;;) {
+    if (or.byKey.has(k)) return or.byKey.get(k);
+    const next = k.replace(VARIANT_SUFFIX, "");
+    if (next === k) return null;
+    k = next;
+  }
+}
+
+// Mutates models: adds context / max_output. On OpenRouter failure keeps the previous snapshot's values.
+async function attachContext(models, prevModels) {
+  const manual = await readJson(CONTEXT_MAP_PATH, {});
+  let or = null;
+  try { or = await fetchOpenRouter(); } catch (e) { console.warn(`${e.message}; keeping context sizes from the previous snapshot.`); }
+  const prevById = new Map(prevModels.map((m) => [m.id, m]));
+  const unmatched = [];
+  for (const m of models) {
+    let s = null;
+    const o = manual[m.slug];
+    if (o === null) s = null; // explicitly "unknown"
+    else if (typeof o === "object") s = { context: o.context ?? null, max_output: o.max_output ?? null };
+    else if (!or) { const p = prevById.get(m.id); s = p ? { context: p.context ?? null, max_output: p.max_output ?? null } : null; }
+    else if (typeof o === "string") { s = or.byId.get(o) ?? null; if (!s) console.warn(`context-map: ${m.slug} -> ${o} not found on OpenRouter`); }
+    else s = lookupContext(m.slug, or);
+    m.context = s?.context ?? null;
+    m.max_output = s?.max_output ?? null;
+    if (or && m.context == null && !(m.slug in manual)) unmatched.push(m);
+  }
+  if (or) {
+    const top = unmatched.sort((a, b) => b.index - a.index).slice(0, 10).map((m) => m.slug);
+    console.log(`Context size: ${models.length - unmatched.length}/${models.length} models.` + (top.length ? ` Top unmatched (add to data/context-map.json): ${top.join(", ")}` : ""));
+  }
+}
+
+// Language support is hand-maintained, so only point out high-scoring models it does not cover yet.
+async function reportLanguageGaps(models) {
+  const lang = await readJson(LANGUAGES_PATH, null);
+  if (!lang) return;
+  const covered = (m) => {
+    if (lang.creators?.[m.creator_slug]) return true;
+    for (let k = m.slug; ; ) { if (lang.models?.[k]) return true; const n = k.replace(VARIANT_SUFFIX, ""); if (n === k) return false; k = n; }
+  };
+  const gaps = models.filter((m) => !covered(m)).sort((a, b) => b.index - a.index).slice(0, 10);
+  if (gaps.length) console.log(`No language info (add to data/languages.json): ${gaps.map((m) => `${m.slug} [${m.creator_slug}]`).join(", ")}`);
+}
+
 async function readJson(p, fallback) {
   if (!existsSync(p)) return fallback;
   try { return JSON.parse(await readFile(p, "utf8")); } catch { return fallback; }
@@ -117,6 +193,8 @@ async function main() {
   const prev = await readJson(MODELS_PATH, null);
   const prevModels = prev?.models ?? [];
   const isSeed = prev?.source === "seed";
+  await attachContext(models, prevModels);
+  await reportLanguageGaps(models);
 
   if (prev && !isSeed && stableKey(prevModels) === stableKey(models)) {
     console.log(`No change: ${models.length} models identical to snapshot from ${prev.fetched_at}.`);
@@ -130,6 +208,7 @@ async function main() {
     endpoint: ENDPOINT,
     prompt_options: json.prompt_options ?? null,
     attribution: "Data from Artificial Analysis (https://artificialanalysis.ai/). Attribution required.",
+    context_source: OPENROUTER_ENDPOINT,
     count: models.length,
     models,
   };

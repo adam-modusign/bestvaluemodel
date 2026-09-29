@@ -1,0 +1,596 @@
+{
+  "_readme": "지원 언어(수동 관리). 값: official=공식 지원, unstated=공식 언급 없음, no=미지원(공식 목록에 없음). creators=제조사(creator_slug) 기본값, models=AA slug별 예외(effort·reasoning·날짜 접미사를 떼고 찾음). 기준일 2026-09-29. 자세한 규칙은 README 참고.",
+  "languages": [
+    "ko",
+    "en",
+    "ja",
+    "zh",
+    "multi"
+  ],
+  "creators": {
+    "ai2": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/allenai/Olmo-3-7B-Instruct",
+      "note": "모델 카드: 'Language(s) (NLP): English'"
+    },
+    "ai21-labs": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/ai21labs/AI21-Jamba-1.5-Large",
+      "note": "Jamba 1.5 지원 언어 9개 명시, 한·중·일 제외"
+    },
+    "alibaba": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://qwenlm.github.io/blog/qwen3/",
+      "note": "Qwen3: 119개 언어 목록에 한·영·일·중 명시. Qwen3.5 이후는 '201개 언어로 확대'라고만 밝혀 같은 기준을 적용함"
+    },
+    "anthropic": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://platform.claude.com/docs/en/build-with-claude/multilingual-support",
+      "note": "공식 다국어 지원 문서에 한국어·일본어·중국어 성능표와 '대부분의 세계 언어 처리' 명시"
+    },
+    "apodex": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "official",
+      "multi": "unstated",
+      "source": "https://huggingface.co/apodex/Apodex-1.1-mini",
+      "note": "같은 계열 Apodex-1.1-mini의 HF 카드 언어 태그 en, zh. Apodex 1.1 공식 글에는 언어 언급 없음"
+    },
+    "arcee": {
+      "ko": "official",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://huggingface.co/arcee-ai/Trinity-Large-Thinking",
+      "note": "HF 카드 언어 11개(en, es, fr, de, it, pt, ru, ar, hi, ko, zh). 기술 보고서는 일본어도 학습했다고 밝혀 일본어는 언급 없음으로 둠"
+    },
+    "aws": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://docs.aws.amazon.com/ai/responsible-ai/nova-2-lite/overview.html",
+      "note": "200개 이상 언어 지원, 최적화 15개 언어에 한·일·중 명시"
+    },
+    "azure": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/microsoft/phi-4",
+      "note": "Phi-4: 주로 영어로 학습, 다국어 사용은 지원하지 않는다고 명시"
+    },
+    "baidu": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "official",
+      "multi": "unstated",
+      "source": "https://huggingface.co/baidu/ERNIE-4.5-300B-A47B-PT",
+      "note": "HF 태그는 영어·중국어. 다국어 선언 없음"
+    },
+    "bytedance_seed": {
+      "ko": "unstated",
+      "ja": "unstated",
+      "multi": "official",
+      "source": "https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct",
+      "note": "'주로 국제(i18n) 사용 사례에 최적화'라고 밝힘. 개별 언어 목록 없음"
+    },
+    "celeris": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://docs.celeris.ai/models.md",
+      "note": "공식 문서에 지원 언어 언급 없음"
+    },
+    "cohere": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://huggingface.co/CohereLabs/c4ai-command-a-03-2025",
+      "note": "Command A 모델 카드에 23개 언어 명시(한·일·중 포함)"
+    },
+    "deepseek": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "official",
+      "multi": "unstated",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro",
+      "note": "V3·V4 카드는 영어·중국어 벤치마크만 구분. 지원 언어 목록이나 다국어 지원 선언 없음"
+    },
+    "google": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/google-models",
+      "note": "'모든 Gemini 모델이 이해·응답하는 언어' 목록(100개 이상)에 한·일·중 명시"
+    },
+    "ibm": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://huggingface.co/ibm-granite/granite-4.2-8b",
+      "note": "Granite 3.3/4.0/4.2 모델 카드에 지원 언어 12개 명시(한·일·중 포함)"
+    },
+    "inception": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://www.inceptionlabs.ai/models",
+      "note": "Mercury 공식 페이지에 지원 언어 언급 없음"
+    },
+    "inclusionai": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://huggingface.co/inclusionAI/Ling-3.0-flash",
+      "note": "모델 카드에 자연어 지원 명시 없음"
+    },
+    "kimi": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://huggingface.co/moonshotai/Kimi-K2.6",
+      "note": "모델 카드·README·플랫폼 문서 어디에도 자연어 지원 명시 없음"
+    },
+    "kwaikat": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://huggingface.co/Kwaipilot/KAT-Coder-V2.5-Dev",
+      "note": "비공개 API 모델로 공식 언어 명시를 찾지 못함"
+    },
+    "longcat": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://huggingface.co/meituan-longcat/LongCat-2.0",
+      "note": "카드·README에 지원 언어 명시 없음"
+    },
+    "meta": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "note": "Muse Spark 공식 발표에 지원 언어 언급 없음. Llama 계열은 모델별로 따로 정리"
+    },
+    "minimax": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "note": "'10개 이상 언어'는 프로그래밍 언어를 가리킴. 자연어 지원 명시 없음"
+    },
+    "mistral": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512",
+      "note": "최신 모델 카드: 'dozens of languages, including ... Chinese, Japanese, Korean'"
+    },
+    "multiversecomputing": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://multiversecomputing.com/resources/introducing-quasar-438b-europe-s-leading-ai-model",
+      "note": "Quasar 438B 공식 발표: 영어·스페인어만 명시"
+    },
+    "nous-research": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "unstated",
+      "source": "https://huggingface.co/NousResearch/Hermes-4-405B",
+      "note": "Hermes HF 카드 언어 태그가 en 하나뿐"
+    },
+    "nvidia": {
+      "ko": "no",
+      "en": "official",
+      "ja": "official",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "note": "Nemotron Nano 계열 지원 언어 6개(영·독·서·불·이·일)만 명시"
+    },
+    "openai": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://help.openai.com/en/articles/8357869-how-to-change-your-language-setting-in-chatgpt",
+      "note": "ChatGPT 공식 지원 언어 목록(59개)에 한·일·중 포함. API 모델별 언어 목록은 없음"
+    },
+    "reka-ai": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/RekaAI/reka-flash-3",
+      "note": "Reka Flash 3 카드: 영어 전용 모델로 보라고 명시"
+    },
+    "sarvam": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "official",
+      "source": "https://huggingface.co/sarvamai/sarvam-105b",
+      "note": "HF 카드 언어 23개: 영어와 인도 공용어 22개"
+    },
+    "stepfun": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://huggingface.co/stepfun-ai/Step-3.7-Flash",
+      "note": "카드: 'good at Chinese, English, and many other languages'. 개별 언어 목록 없음"
+    },
+    "swiss-ai-initiative": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://huggingface.co/swiss-ai/Apertus-70B-Instruct-2509",
+      "note": "카드: 1811개 언어 지원. 기술 보고서 언어 목록에 한·일·중 포함"
+    },
+    "tencent": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "official",
+      "multi": "unstated",
+      "source": "https://huggingface.co/tencent/Hy3-preview",
+      "note": "영어·중국어 벤치마크 구분만 있고 지원 언어 선언 없음"
+    },
+    "thinking-machines": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "official",
+      "source": "https://thinkingmachines.ai/model-card/inkling/",
+      "note": "모델 카드: 'English, general multilingual support'. 개별 언어는 명시하지 않음"
+    },
+    "upstage": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://www.upstage.ai/blog/en/solar-pro-4",
+      "note": "Solar Pro 4 블로그: 영어·한국어·일본어 입출력 지원 명시. 중국어 언급 없음"
+    },
+    "xai": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://docs.x.ai/developers/models",
+      "note": "텍스트 모델 지원 언어 공식 언급 없음(음성 API만 25개 언어 명시)"
+    },
+    "xiaomi": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "official",
+      "multi": "unstated",
+      "source": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro",
+      "note": "HF 태그는 영어·중국어. 다국어 벤치마크 점수는 있으나 다국어 지원 선언은 없음"
+    },
+    "zai": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "official",
+      "multi": "unstated",
+      "source": "https://huggingface.co/zai-org/GLM-5",
+      "note": "GLM HF 카드 언어 태그는 영어·중국어뿐. 공식 문서에 언어 지원 명시 없음"
+    }
+  },
+  "models": {
+    "gemma-4-12b": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "official",
+      "source": "https://huggingface.co/google/gemma-4-12b-it",
+      "note": "140개 이상 언어 지원 명시, 개별 언어 목록 없음"
+    },
+    "gemma-4-26b-a4b": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "official",
+      "source": "https://huggingface.co/google/gemma-4-26B-A4B-it",
+      "note": "140개 이상 언어 지원 명시, 개별 언어 목록 없음"
+    },
+    "gemma-4-31b": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "official",
+      "source": "https://huggingface.co/google/gemma-4-31B-it",
+      "note": "140개 이상 언어 지원 명시, 개별 언어 목록 없음"
+    },
+    "gemma-4-e4b": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "official",
+      "source": "https://huggingface.co/google/gemma-4-E4B-it",
+      "note": "140개 이상 언어 지원 명시, 개별 언어 목록 없음"
+    },
+    "glm-4-6": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "source": "https://docs.z.ai/guides/llm/glm-4.6",
+      "note": "공식 문서: 일본어·한국어 등 번역 품질 최적화 명시"
+    },
+    "gpt-oss-120b": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://openai.com/index/introducing-gpt-oss/",
+      "note": "'주로 영어 텍스트로 학습' 언급만 있고 지원 언어 목록 없음"
+    },
+    "gpt-oss-20b": {
+      "ko": "unstated",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://openai.com/index/introducing-gpt-oss/",
+      "note": "'주로 영어 텍스트로 학습' 언급만 있고 지원 언어 목록 없음"
+    },
+    "llama-2-chat-7b": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/meta-llama/Llama-2-7b-chat-hf",
+      "note": "영어 전용, 다른 언어는 사용 범위 밖이라고 명시"
+    },
+    "llama-3-1-instruct-70b": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "official",
+      "source": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+      "note": "Llama 3.1 공통 지원 언어 8개, 한·중·일 제외"
+    },
+    "llama-3-1-instruct-8b": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "official",
+      "source": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+      "note": "다국어 모델로 소개하나 지원 언어 8개로 한정, 한·중·일 제외"
+    },
+    "llama-3-2-instruct-11b-vision": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "official",
+      "source": "https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct",
+      "note": "텍스트 8개 언어, 이미지+텍스트는 영어만 지원"
+    },
+    "llama-3-3-instruct-70b": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "official",
+      "source": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
+      "note": "지원 언어 8개 명시, 한·중·일 제외"
+    },
+    "llama-3-instruct-70b": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct",
+      "note": "Llama 3 공통 모델 카드: 영어 전용"
+    },
+    "llama-3-instruct-8b": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct",
+      "note": "영어 전용, 다른 언어는 사용 범위 밖이라고 명시"
+    },
+    "llama-4-maverick": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "official",
+      "source": "https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+      "note": "지원 언어 12개 명시, 한·중·일 제외"
+    },
+    "llama-4-scout": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "official",
+      "source": "https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+      "note": "Llama 4 공통 지원 언어 12개, 한·중·일 제외"
+    },
+    "mistral-7b": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1",
+      "note": "모델 카드에 지원 언어 언급 없음"
+    },
+    "mistral-large": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://mistral.ai/news/mistral-large",
+      "note": "Mistral Large(2024년 2월): 영·불·서·독·이 5개 언어만 명시"
+    },
+    "mistral-large-2407": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://huggingface.co/mistralai/Mistral-Large-Instruct-2407",
+      "note": "Large 2 모델 카드에 한·일·중 포함 수십 개 언어 명시"
+    },
+    "mixtral-8x7b": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://mistral.ai/news/mixtral-of-experts",
+      "note": "영·불·이·독·서 5개 언어만 명시"
+    },
+    "muse-glimmer": {
+      "ko": "unstated",
+      "en": "unstated",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "official",
+      "source": "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+      "note": "100개 이상 언어로 학습했다고 명시, 개별 언어 목록 없음"
+    },
+    "nemotron-3-nano-omni-30b-a3b": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
+      "note": "'Language support: English only' 명시"
+    },
+    "nvidia-nemotron-3-super-120b-a12b": {
+      "ko": "no",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "no",
+      "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+      "note": "지원 언어 7개(영·불·독·이·일·서·중) 명시, 한국어 제외"
+    },
+    "nvidia-nemotron-3-ultra-550b-a55b": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+      "note": "지원 언어 10개에 한·일·중 포함"
+    },
+    "nvidia-nemotron-nano-12b-v2-vl": {
+      "ko": "no",
+      "en": "official",
+      "ja": "no",
+      "zh": "no",
+      "multi": "no",
+      "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
+      "note": "'English only' 명시"
+    },
+    "qwen2-5-72b": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "official",
+      "multi": "official",
+      "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct",
+      "note": "29개 이상 언어 지원, 한·영·일·중 명시"
+    },
+    "reka-flash": {
+      "ko": "official",
+      "en": "official",
+      "ja": "official",
+      "zh": "unstated",
+      "multi": "official",
+      "source": "https://reka.ai/news/reka-flash-updates",
+      "note": "Reka Flash: 중점 지원 12개 언어에 한국어·일본어 포함, 중국어는 없음"
+    },
+    "solar-pro-3": {
+      "ko": "official",
+      "en": "official",
+      "ja": "unstated",
+      "zh": "unstated",
+      "multi": "unstated",
+      "source": "https://www.upstage.ai/blog/en/solar-pro-3-0127",
+      "note": "Solar Pro 3 블로그: 한국어·영어만 명시"
+    }
+  }
+}

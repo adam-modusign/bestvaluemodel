@@ -137,6 +137,10 @@
   tr.on td:first-child { font-weight: 600; }
   tr.on td:first-child::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-right: 8px; vertical-align: 1px; }
   .na { color: var(--ink-3); }
+  .lang span { margin-left: 5px; }
+  .lang .official { color: var(--ink); font-weight: 600; }
+  .lang .unstated { color: var(--ink-3); }
+  .lang .no { color: var(--ink-3); text-decoration: line-through; }
   td a { color: var(--ink); text-decoration: none; }
   td a:hover { color: var(--accent-ink); text-decoration: underline; }
   table.budget { min-width: 640px; }
@@ -269,6 +273,20 @@
     <option value="12">최근 1년</option>
     <option value="24">최근 2년</option>
   </select></label>
+  <label title="컨텍스트 크기(최대 입력 토큰)가 이 값 이상인 모델만 차트와 경계선 계산에 넣습니다. 컨텍스트 정보가 없는 모델은 빠집니다">컨텍스트 <select id="ctxSel">
+    <option value="0">전체</option>
+    <option value="32000">32K 이상</option>
+    <option value="128000">128K 이상</option>
+    <option value="200000">200K 이상</option>
+    <option value="1000000">1M 이상</option>
+  </select></label>
+  <label title="제조사 공식 문서 기준 지원 언어로 거릅니다. 언어 정보가 없는 모델은 빠집니다">언어 <select id="langSel">
+    <option value="">전체</option>
+    <option value="ko">한국어 공식 지원</option>
+    <option value="ko-any">한국어 미지원 제외</option>
+    <option value="core">한·영·일·중 모두 공식 지원</option>
+    <option value="multi">다국어 공식 지원</option>
+  </select></label>
   <label title="모델마다 effort·reasoning 변형 중 점수가 가장 높은 것만 남깁니다"><input type="checkbox" id="collapse" checked> 모델별 대표만</label>
   <div class="mix" title="내 사용량의 입력 토큰과 출력 토큰 비율. 기본값 3:1은 AA 혼합 단가와 같습니다">
     <span>사용 패턴 입력:출력</span>
@@ -358,6 +376,9 @@
         <th data-k="output" aria-sort="none">출력 $/1M</th>
         <th data-k="tps" aria-sort="none">출력 속도 tok/s</th>
         <th data-k="ttft" aria-sort="none">TTFT(초)</th>
+        <th data-k="context" aria-sort="none">컨텍스트</th>
+        <th data-k="max_output" aria-sort="none">최대 출력</th>
+        <th data-k="lang_n" aria-sort="none" title="굵게: 공식 지원 · 흐리게: 공식 언급 없음 · 취소선: 미지원(공식 목록에 없음)">지원 언어</th>
       </tr></thead>
       <tbody></tbody>
     </table>
@@ -376,11 +397,13 @@
       <li><b>모델 비교</b>는 차트의 점을 클릭(또는 Tab으로 이동 후 Enter)하거나 표의 체크박스로 최대 4개까지 넣을 수 있습니다. 항목마다 가장 좋은 값이 굵게 표시됩니다(점수·속도는 높을수록, 가격·TTFT는 낮을수록). 필터로 차트에서 빠진 모델도 비교 목록에는 남습니다.</li>
       <li><b>세부 벤치마크</b>는 AA가 측정한 개별 벤치마크의 정답률(%)입니다. 지표로 고르면 차트·예산표·순위가 그 점수로 바뀝니다. 모든 모델이 모든 벤치마크를 측정한 것은 아니어서, 점수가 없는 모델은 해당 지표에서 빠집니다. 특히 MMLU-Pro, LiveCodeBench, AIME 2025 등은 AA가 최신 모델에서 더 이상 측정하지 않아 <b>"이전 측정"</b>으로 분류되고, 고르면 경고가 표시됩니다(Math Index도 마찬가지). 분류는 데이터에서 상위 30개 모델의 점수 보유 여부로 자동 판단합니다.</li>
       <li><b>"출시 시기"</b>를 고르면 데이터 기준일로부터 그 기간 안에 출시된 모델만 차트와 경계선 계산에 넣습니다. 오래된 모델이 경계선을 차지하지 않게 하고, 지금 쓸 만한 모델끼리 비교할 때 씁니다.</li>
+      <li><b>컨텍스트</b>는 한 번에 넣을 수 있는 최대 토큰 수, <b>최대 출력</b>은 한 번에 받을 수 있는 최대 토큰 수입니다. AA가 제공하지 않아 <a href="https://openrouter.ai/models" rel="noopener">OpenRouter</a> 모델 목록에서 이름으로 짝지어 가져오며, 짝을 못 찾은 모델은 "—"로 표시합니다. OpenRouter가 모델에 표시한 값이라, 실제로 쓰는 API 제공사에 따라 더 작을 수 있습니다. "컨텍스트" 필터를 고르면 그 크기 이상인 모델만 차트와 경계선 계산에 넣고, 정보가 없는 모델은 뺍니다.</li>
+      <li><b>지원 언어</b>는 한국어·영어·일본어·중국어와 다국어(여러 언어를 폭넓게 지원한다고 밝혔는지)를 제조사 공식 문서·모델 카드 기준으로 직접 정리한 값입니다. <b>굵게</b>는 공식 지원(문서에 그 언어를 명시), 흐리게는 공식 언급 없음(대체로 동작하지만 문서에 명시 없음), 취소선은 미지원(공식 지원 언어 목록에 없음)입니다. 실제 품질 평가는 아니며, 표의 칸이나 비교 카드에서 근거 문서를 볼 수 있습니다. 정보가 없는 모델은 "—"이고, "언어" 필터를 고르면 빠집니다.</li>
       <li><b>"최소 점수"</b>보다 낮은 모델은 차트와 경계선 계산에서 모두 빠집니다. 아주 싸고 오래된 소형 모델이 경계선의 시작점을 차지하지 않게 하기 위해서입니다.</li>
       <li><b>제조사</b>는 최대 6곳까지 함께 선택할 수 있고, 제조사마다 색과 점 모양이 다릅니다. 채운 도형은 경계선 위, 빈 도형은 경계선 아래 모델입니다. 가성비 경계선은 항상 전체 모델 기준으로 그려서, 선택한 제조사가 전체 중 어디쯤 있는지 볼 수 있습니다.</li>
       <li><b>점수는 바뀝니다.</b> AA는 버전이 바뀔 때 Index 기준을 다시 잡으므로, 예전 스냅샷과 비교하지 말고 이 페이지 안에서만 비교하세요.</li>
     </ul>
-    <p style="margin-top:14px">출처: <a href="https://artificialanalysis.ai/" rel="noopener">Artificial Analysis</a> 무료 데이터 API. 로컬 서버를 시작할 때마다 갱신합니다. 원본 프로젝트: <a href="https://github.com/terryds/bestvaluemodel" rel="noopener">github.com/terryds/bestvaluemodel</a>.</p>
+    <p style="margin-top:14px">출처: <a href="https://artificialanalysis.ai/" rel="noopener">Artificial Analysis</a> 무료 데이터 API, 컨텍스트 크기는 <a href="https://openrouter.ai/" rel="noopener">OpenRouter</a> 공개 모델 목록. 로컬 서버를 시작할 때마다 갱신합니다. 원본 프로젝트: <a href="https://github.com/terryds/bestvaluemodel" rel="noopener">github.com/terryds/bestvaluemodel</a>.</p>
   </div>
 </div>
 
@@ -397,6 +420,12 @@
   // two prices that round to the same text get more decimals so a budget range never reads "$0.18 to $0.18"
   const moneyPair = (a, b) => { let x = money(a), y = money(b); for (let dp = 3; x === y && dp <= 5; dp++) { x = "$" + a.toFixed(dp); y = "$" + b.toFixed(dp); } return [x, y]; };
   const num = (v, dp = 0) => v == null ? "—" : (+v).toFixed(dp);
+  // token counts: 128000 / 131072 -> "128K", 1048576 -> "1M", 1050000 -> "1.05M"
+  const tok = (v) => {
+    if (v == null) return "—";
+    const base = v % 1000 !== 0 && v % 1024 === 0 ? 1024 : 1000;
+    return v >= base * base ? String(+(v / base / base).toFixed(2)) + "M" : Math.round(v / base) + "K";
+  };
   const METRIC_LABEL = { index: "Intelligence Index", coding: "Coding Index", math: "Math Index" };
   // individual benchmarks (percent correct), stored by scripts/fetch-aa.mjs
   const BENCH = [
@@ -452,12 +481,13 @@
   }
 
   /* ---------- load ---------- */
-  let snapshot, changelog = [];
+  let snapshot, changelog = [], languages = { creators: {}, models: {} };
   try {
     const r = await fetch("data/models.json", { cache: "no-store" });
     if (!r.ok) throw new Error(r.status + " " + r.statusText);
     snapshot = await r.json();
     try { const c = await fetch("data/changelog.json", { cache: "no-store" }); if (c.ok) changelog = await c.json(); } catch {}
+    try { const l = await fetch("data/languages.json", { cache: "no-store" }); if (l.ok) languages = await l.json(); } catch {}
   } catch (e) {
     $("meta").textContent = "data/models.json을 불러오지 못했습니다(" + e.message + "). `npm start`로 서버를 띄운 뒤 http://127.0.0.1:8080 으로 접속하세요.";
     $("meta").parentElement.parentElement.classList.add("warn");
@@ -465,6 +495,33 @@
   }
 
   const ALL = snapshot.models.filter((m) => m.blended > 0);
+
+  /* ---------- language support (data/languages.json, hand-maintained) ---------- */
+  const LANGS = [["ko", "한국어", "한"], ["en", "영어", "영"], ["ja", "일본어", "일"], ["zh", "중국어", "중"], ["multi", "다국어", "다국어"]];
+  const LANG_LEVEL = { official: "공식 지원", unstated: "공식 언급 없음", no: "미지원" };
+  // same variant stripping as scripts/fetch-aa.mjs, so "llama-4-maverick" also covers its effort / dated variants
+  const VARIANT_SUFFIX = /-(xhigh|high|medium|low|minimal|none|reasoning|non-reasoning|thinking|instruct|preview|adaptive|\d{4}(-\d{2}(-\d{2})?)?|\d{6,8})$/;
+  function langOf(m) {
+    let k = m.slug || "", o = null;
+    for (;;) { if (languages.models?.[k]) { o = languages.models[k]; break; } const n = k.replace(VARIANT_SUFFIX, ""); if (n === k) break; k = n; }
+    const c = languages.creators?.[m.creator_slug];
+    if (!c && !o) return null;
+    return { ...c, ...o };
+  }
+  ALL.forEach((m) => { m.lang = langOf(m); m.lang_n = m.lang ? LANGS.filter(([k]) => m.lang[k] === "official").length : null; });
+  const langOk = (m, f) => {
+    if (!f) return true;
+    const l = m.lang; if (!l) return false;
+    if (f === "ko-any") return l.ko === "official" || l.ko === "unstated";
+    if (f === "core") return ["ko", "en", "ja", "zh"].every((k) => l[k] === "official");
+    return l[f] === "official";
+  };
+  const langSummary = (l) => Object.entries(LANG_LEVEL).map(([lv, lab]) => { const ls = LANGS.filter(([k]) => l[k] === lv).map(([, n]) => n); return ls.length ? `${lab}: ${ls.join(", ")}` : null; }).filter(Boolean).join(" · ");
+  function langCell(l) {
+    const td = h("td", l ? "lang" : "na", l ? null : "—");
+    if (l) { LANGS.forEach(([k, , ab]) => { if (l[k]) td.appendChild(h("span", l[k], ab)); }); td.title = langSummary(l) + (l.note ? `\n${l.note}` : ""); }
+    return td;
+  }
   const dt = new Date(snapshot.fetched_at);
   const when = isNaN(dt) ? snapshot.fetched_at : dt.toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" });
   $("meta").textContent = `모델 ${ALL.length}개 · ${when} 기준` + (snapshot.source === "seed" ? " · 초기 샘플 데이터(첫 API 갱신 전)" : " · 출처: artificialanalysis.ai");
@@ -474,7 +531,7 @@
   const releaseCutoff = (months) => { const c = new Date(asOf); c.setMonth(c.getMonth() - months); return c.toISOString().slice(0, 10); };
 
   /* ---------- state ---------- */
-  const state = { metric: "index", minIdx: 30, recentMonths: 0, collapse: true, q: "", frontierOnly: false, labelsAll: false, showAllIndex: false, sortK: "index", sortDir: -1 };
+  const state = { metric: "index", minIdx: 30, recentMonths: 0, minCtx: 0, lang: "", collapse: true, q: "", frontierOnly: false, labelsAll: false, showAllIndex: false, sortK: "index", sortDir: -1 };
 
   // "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)" -> "Claude Opus 5.5 (max)"
   const baseName = (name) => name.replace(/\s*\([^)]*\)/g, "").trim();
@@ -574,7 +631,7 @@
   function compute() {
     const k = state.metric;
     const cutoff = state.recentMonths ? releaseCutoff(state.recentMonths) : null;
-    let rows = ALL.filter((m) => m[k] != null && m[k] >= state.minIdx && (!cutoff || (m.release_date && m.release_date >= cutoff))).map((m) => ({ ...m, v: m[k], unit: priceOf(m), p: costOf(m) })).filter((d) => d.p > 0);
+    let rows = ALL.filter((m) => m[k] != null && m[k] >= state.minIdx && (!cutoff || (m.release_date && m.release_date >= cutoff)) && (!state.minCtx || (m.context != null && m.context >= state.minCtx)) && langOk(m, state.lang)).map((m) => ({ ...m, v: m[k], unit: priceOf(m), p: costOf(m) })).filter((d) => d.p > 0);
     if (state.collapse) {
       const best = new Map();
       rows.forEach((d) => { const b = best.get(d.base); if (!b || d.v > b.v || (d.v === b.v && d.p < b.p)) best.set(d.base, d); });
@@ -611,6 +668,8 @@
     ];
     if (d.release_date) rows.push(["출시일", d.release_date]);
     if (d.tps != null) rows.push(["출력 속도", num(d.tps) + " tok/s"]);
+    if (d.lang) rows.push(["언어", langSummary(d.lang)]);
+    if (d.context != null) rows.push(["컨텍스트", tok(d.context) + (d.max_output != null ? ` · 최대 출력 ${tok(d.max_output)}` : "")]);
     rows.forEach(([lab, val]) => {
       const r = h("div", "tip-r"); r.append(h("span", null, lab), h("b", null, val)); tip.appendChild(r);
     });
@@ -795,8 +854,8 @@
       if (c) { const dot = h("span", "mk-dot"); dot.style.background = c; makerTd.appendChild(dot); }
       makerTd.append(d.creator); tr.appendChild(makerTd);
       tr.appendChild(h("td", d.release_date ? "" : "na", d.release_date || "—"));
-      [num(d.index, 1), num(d.coding, 1), num(d.math, 1), money(d.p), money(d.input), money(d.output), num(d.tps), num(d.ttft, 2), ...BENCH.map(([bk]) => num(d[bk], 1))].forEach((v) => {
-        const td = h("td", v === "—" ? "na" : "", v); tr.appendChild(td);
+      [num(d.index, 1), num(d.coding, 1), num(d.math, 1), money(d.p), money(d.input), money(d.output), num(d.tps), num(d.ttft, 2), tok(d.context), tok(d.max_output), d.lang, ...BENCH.map(([bk]) => num(d[bk], 1))].forEach((v) => {
+        tr.appendChild(typeof v === "string" ? h("td", v === "—" ? "na" : "", v) : langCell(v));
       });
       tb.appendChild(tr);
     });
@@ -897,6 +956,15 @@
       ["속도"],
       ["출력 속도 tok/s", (m) => m.tps, "high", (v) => num(v)],
       ["TTFT(초)", (m) => m.ttft, "low", (v) => num(v, 2)],
+      ["스펙"],
+      ["컨텍스트", (m) => m.context, "high", tok],
+      ["최대 출력", (m) => m.max_output, "high", tok],
+      ["언어 지원"],
+      ...LANGS.map(([k, label]) => [label, (m) => m.lang?.[k] ?? null, null, (v) => LANG_LEVEL[v] ?? "—"]),
+      ["근거", (m) => m.lang, null, (l) => {
+        if (!l?.source) return l?.note || "—";
+        const a = h("a", null, l.note || "공식 문서"); a.href = l.source; a.target = "_blank"; a.rel = "noopener"; return a;
+      }],
     ];
     tbl.style.minWidth = `${150 + ms.length * 140}px`; // narrow screens scroll sideways instead of squeezing columns
     const thead = h("thead"), hr = h("tr"); hr.appendChild(h("th", null, ""));
@@ -919,7 +987,7 @@
       const nums = vals.filter((v) => typeof v === "number");
       const best = better && nums.length >= 2 ? (better === "high" ? Math.max(...nums) : Math.min(...nums)) : null;
       const tr = h("tr"); tr.appendChild(h("td", null, label));
-      vals.forEach((v) => tr.appendChild(h("td", best != null && v === best ? "best" : "", fmt ? fmt(v) : v)));
+      vals.forEach((v) => { const td = h("td", best != null && v === best ? "best" : ""); td.append(fmt ? fmt(v) : v); tr.appendChild(td); });
       tb.appendChild(tr);
     });
     tbl.appendChild(tb);
@@ -1003,6 +1071,8 @@
   $("useClear").addEventListener("click", () => { $("useIn").value = ""; $("useOut").value = ""; applyUsage(); $("useIn").focus(); });
   $("minIdx").addEventListener("input", (e) => { state.minIdx = +e.target.value; $("minIdxVal").textContent = e.target.value; render(); });
   $("recentSel").addEventListener("change", (e) => { state.recentMonths = +e.target.value; render(); });
+  $("ctxSel").addEventListener("change", (e) => { state.minCtx = +e.target.value; render(); });
+  $("langSel").addEventListener("change", (e) => { state.lang = e.target.value; render(); });
   $("collapse").addEventListener("change", (e) => { state.collapse = e.target.checked; render(); });
   $("search").addEventListener("input", (e) => { state.q = e.target.value; render(); });
   $("frontierOnly").addEventListener("change", (e) => { state.frontierOnly = e.target.checked; render(); });

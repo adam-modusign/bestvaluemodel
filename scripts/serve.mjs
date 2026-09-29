@@ -47,8 +47,8 @@ if (!process.argv.includes("--no-fetch")) {
   }
 }
 
-// Only the page and the two data files are served; everything else is 404.
-const ALLOWED = new Set(["/index.html", "/data/models.json", "/data/changelog.json"]);
+// Only the page and its data files are served; everything else is 404.
+const ALLOWED = new Set(["/index.html", "/data/models.json", "/data/changelog.json", "/data/languages.json"]);
 
 createServer(async (req, res) => {
   let p = new URL(req.url, "http://x").pathname;

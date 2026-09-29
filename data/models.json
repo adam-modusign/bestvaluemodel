@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-28T01:34:27.851Z",
+  "fetched_at": "2026-09-29T03:28:25.765Z",
   "source": "artificialanalysis.ai",
   "endpoint": "https://artificialanalysis.ai/api/v2/data/llms/models",
   "prompt_options": {
@@ -7,7 +7,8 @@
     "prompt_length": 1000
   },
   "attribution": "Data from Artificial Analysis (https://artificialanalysis.ai/). Attribution required.",
-  "count": 423,
+  "context_source": "https://openrouter.ai/api/v1/models",
+  "count": 427,
   "models": [
     {
       "id": "49e70a38-4ac1-4659-b490-09b2c7ff21d6",
@@ -36,7 +37,9 @@
       "output": 2.92,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/apertus-70b-instruct"
+      "url": "https://artificialanalysis.ai/models/apertus-70b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "891bcdf2-8dd2-4dc3-829b-d963fde25876",
@@ -65,7 +68,9 @@
       "output": 0.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/apertus-8b-instruct"
+      "url": "https://artificialanalysis.ai/models/apertus-8b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "08242385-ee91-4de6-be7f-271a6d9780ce",
@@ -94,7 +99,9 @@
       "output": 3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/apodex-1-1"
+      "url": "https://artificialanalysis.ai/models/apodex-1-1",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "8014c311-fa23-4a4b-8485-8a864db8a113",
@@ -121,9 +128,11 @@
       "blended": 0.325,
       "input": 0.2,
       "output": 0.7,
-      "tps": 2149,
-      "ttft": 0.48,
-      "url": "https://artificialanalysis.ai/models/celeris-1"
+      "tps": 2186,
+      "ttft": 0.47,
+      "url": "https://artificialanalysis.ai/models/celeris-1",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "1fc54cef-d179-48b1-a27d-046874e9b208",
@@ -152,7 +161,9 @@
       "output": 1.25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-3-haiku"
+      "url": "https://artificialanalysis.ai/models/claude-3-haiku",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "7829427f-f0e3-4f6d-a228-5fbf70dacc02",
@@ -181,7 +192,9 @@
       "output": 75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-3-opus"
+      "url": "https://artificialanalysis.ai/models/claude-3-opus",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "aca9c1ad-fc86-49f3-a312-b1e517ea100c",
@@ -210,7 +223,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-35-sonnet-june-24"
+      "url": "https://artificialanalysis.ai/models/claude-35-sonnet-june-24",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "0a603978-03b9-4f47-a273-2f7fd969be85",
@@ -239,7 +254,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-35-sonnet"
+      "url": "https://artificialanalysis.ai/models/claude-35-sonnet",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "d925845d-39ad-4de3-8495-f176b79828c0",
@@ -268,7 +285,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-3-7-sonnet"
+      "url": "https://artificialanalysis.ai/models/claude-3-7-sonnet",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "504412c2-2ada-499b-aebf-7e0a35c9d286",
@@ -297,7 +316,9 @@
       "output": 75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-4-opus"
+      "url": "https://artificialanalysis.ai/models/claude-4-opus",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "8a4a5ead-7789-4389-8400-30e9d20370b7",
@@ -326,7 +347,9 @@
       "output": 75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-4-opus-thinking"
+      "url": "https://artificialanalysis.ai/models/claude-4-opus-thinking",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "f2f60e3a-e5f5-4471-acd2-9f2f29c76007",
@@ -355,7 +378,9 @@
       "output": 75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-4-1-opus"
+      "url": "https://artificialanalysis.ai/models/claude-4-1-opus",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "ccbfa8c3-a762-480b-aade-34fb9697f98c",
@@ -384,7 +409,9 @@
       "output": 75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-4-1-opus-thinking"
+      "url": "https://artificialanalysis.ai/models/claude-4-1-opus-thinking",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "c2b1e769-7aee-4669-8076-73918bdebf6c",
@@ -411,9 +438,11 @@
       "blended": 2,
       "input": 1,
       "output": 5,
-      "tps": 96,
-      "ttft": 0.48,
-      "url": "https://artificialanalysis.ai/models/claude-4-5-haiku"
+      "tps": 93,
+      "ttft": 0.5,
+      "url": "https://artificialanalysis.ai/models/claude-4-5-haiku",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "a6340098-d7ae-462d-b372-0a0a67fc44b4",
@@ -441,8 +470,10 @@
       "input": 1,
       "output": 5,
       "tps": 108,
-      "ttft": 11.63,
-      "url": "https://artificialanalysis.ai/models/claude-4-5-haiku-reasoning"
+      "ttft": 14.71,
+      "url": "https://artificialanalysis.ai/models/claude-4-5-haiku-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "91cb6144-4937-4e4e-aeda-b4341d355c10",
@@ -471,7 +502,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-4-5-sonnet"
+      "url": "https://artificialanalysis.ai/models/claude-4-5-sonnet",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "90e078f2-051b-4c63-8919-76618971cb3f",
@@ -500,7 +533,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-4-5-sonnet-thinking"
+      "url": "https://artificialanalysis.ai/models/claude-4-5-sonnet-thinking",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "cd55210d-358e-4df1-ba9c-9acb5f186cc9",
@@ -529,7 +564,9 @@
       "output": 50,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-fable-5"
+      "url": "https://artificialanalysis.ai/models/claude-fable-5",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "9d7d72cd-d95d-45a0-b109-4ad292c9aabd",
@@ -556,9 +593,11 @@
       "blended": 20,
       "input": 10,
       "output": 50,
-      "tps": 55,
-      "ttft": 7.03,
-      "url": "https://artificialanalysis.ai/models/claude-fable-5-1-high"
+      "tps": 53,
+      "ttft": 6.62,
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1-high",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "05776db7-f5c0-40f7-b824-079160f8cfa8",
@@ -585,9 +624,11 @@
       "blended": 20,
       "input": 10,
       "output": 50,
-      "tps": 52,
-      "ttft": 4.08,
-      "url": "https://artificialanalysis.ai/models/claude-fable-5-1-low"
+      "tps": 51,
+      "ttft": 3.74,
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1-low",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "3e87c73e-a257-495e-9730-367a66229811",
@@ -615,8 +656,10 @@
       "input": 10,
       "output": 50,
       "tps": 69,
-      "ttft": 123.97,
-      "url": "https://artificialanalysis.ai/models/claude-fable-5-1"
+      "ttft": 114.39,
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "3b7de71c-e034-4591-8ca6-6b6be2fa471f",
@@ -643,9 +686,11 @@
       "blended": 20,
       "input": 10,
       "output": 50,
-      "tps": 57,
-      "ttft": 5.3,
-      "url": "https://artificialanalysis.ai/models/claude-fable-5-1-medium"
+      "tps": 52,
+      "ttft": 5.17,
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1-medium",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "9b166bf3-42db-4f63-8338-1c4a1244ffe8",
@@ -672,9 +717,11 @@
       "blended": 20,
       "input": 10,
       "output": 50,
-      "tps": 64,
-      "ttft": 34.1,
-      "url": "https://artificialanalysis.ai/models/claude-fable-5-1-xhigh"
+      "tps": 63,
+      "ttft": 35.98,
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-1-xhigh",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "4077490a-bbfb-404e-979a-a97a20e3b5de",
@@ -703,7 +750,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-4-5"
+      "url": "https://artificialanalysis.ai/models/claude-opus-4-5",
+      "context": 200000,
+      "max_output": 64000
     },
     {
       "id": "2660d74f-ce79-48a8-8b53-6e668e2071a2",
@@ -732,7 +781,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-4-5-thinking"
+      "url": "https://artificialanalysis.ai/models/claude-opus-4-5-thinking",
+      "context": 200000,
+      "max_output": 64000
     },
     {
       "id": "53c98840-47af-49aa-94e6-469fb17e9a1b",
@@ -761,7 +812,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-4-6-adaptive"
+      "url": "https://artificialanalysis.ai/models/claude-opus-4-6-adaptive",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "4386585e-71b4-4a0c-8a63-afb333419cd6",
@@ -790,7 +843,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-4-6"
+      "url": "https://artificialanalysis.ai/models/claude-opus-4-6",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "e9a09db3-8fd6-41dd-ba2f-20e0a2bff7f2",
@@ -819,7 +874,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-4-7"
+      "url": "https://artificialanalysis.ai/models/claude-opus-4-7",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "2fa8e143-77a8-4d05-bfa8-d3b54634c00f",
@@ -848,7 +905,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-4-7-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/claude-opus-4-7-non-reasoning",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "992b7b84-5069-4c6a-9295-834252553d50",
@@ -877,7 +936,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-4-8"
+      "url": "https://artificialanalysis.ai/models/claude-opus-4-8",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "712be54a-77ae-41b2-9a58-21181479d6ee",
@@ -906,7 +967,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-high"
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-high",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "20928ba9-3a3f-415f-9519-b84ff64ecf34",
@@ -935,7 +998,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-low"
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-low",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "b8fc61f7-5e9a-49e6-8547-6ac56db24627",
@@ -964,7 +1029,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5"
+      "url": "https://artificialanalysis.ai/models/claude-opus-5",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "ff51be8f-e362-4a7e-9043-687ba15de207",
@@ -993,7 +1060,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-medium"
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-medium",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "1305c921-7aaa-4d6d-99b5-99b3acf15e19",
@@ -1022,7 +1091,9 @@
       "output": 25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-xhigh"
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-xhigh",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "f314eade-2232-44bf-a3ab-9b326bc67de6",
@@ -1049,9 +1120,11 @@
       "blended": 8,
       "input": 4,
       "output": 20,
-      "tps": 82,
-      "ttft": 19.89,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-5-high"
+      "tps": 78,
+      "ttft": 18.53,
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5-high",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "4416ca93-fde6-4b7b-abbc-3a6be109cc3d",
@@ -1078,9 +1151,11 @@
       "blended": 8,
       "input": 4,
       "output": 20,
-      "tps": 80,
-      "ttft": 5.31,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-5-low"
+      "tps": 76,
+      "ttft": 4.85,
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5-low",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "2f3c4dc9-a450-4303-8697-0237257cf08f",
@@ -1107,9 +1182,11 @@
       "blended": 8,
       "input": 4,
       "output": 20,
-      "tps": 96,
-      "ttft": 469.79,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-5"
+      "tps": 95,
+      "ttft": 420.19,
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "ea9e0da6-169f-43c6-92f5-730a10d6ff8d",
@@ -1136,9 +1213,11 @@
       "blended": 8,
       "input": 4,
       "output": 20,
-      "tps": 83,
-      "ttft": 12.55,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-5-medium"
+      "tps": 75,
+      "ttft": 12.57,
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5-medium",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "df5bf99d-d228-4715-b41b-19ca86118777",
@@ -1165,9 +1244,11 @@
       "blended": 8,
       "input": 4,
       "output": 20,
-      "tps": 86,
-      "ttft": 67.81,
-      "url": "https://artificialanalysis.ai/models/claude-opus-5-5-xhigh"
+      "tps": 82,
+      "ttft": 56.3,
+      "url": "https://artificialanalysis.ai/models/claude-opus-5-5-xhigh",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "df8d14e0-3997-4e4d-b4ad-9c047acc9c69",
@@ -1196,7 +1277,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-sonnet-4-6-adaptive"
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-4-6-adaptive",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "2e40e695-3cec-43da-83f9-615af30b8e91",
@@ -1225,7 +1308,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-sonnet-4-6"
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-4-6",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "f2e21112-192e-4aed-ae82-68ca3b38e667",
@@ -1254,7 +1339,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/claude-sonnet-4-6-non-reasoning-low-effort"
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-4-6-non-reasoning-low-effort",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "ba0224cf-0351-4f56-8508-b3f1a740ae4a",
@@ -1281,9 +1368,11 @@
       "blended": 4,
       "input": 2,
       "output": 10,
-      "tps": 70,
-      "ttft": 1.88,
-      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-high"
+      "tps": 64,
+      "ttft": 1.96,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-high",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "142b93bf-09c4-42dc-9c3a-50b1a222cbd4",
@@ -1310,9 +1399,11 @@
       "blended": 4,
       "input": 2,
       "output": 10,
-      "tps": 65,
-      "ttft": 0.93,
-      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-low"
+      "tps": 62,
+      "ttft": 1.03,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-low",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "23c86e4a-c769-43c0-a056-79e3cd15834f",
@@ -1339,9 +1430,11 @@
       "blended": 4,
       "input": 2,
       "output": 10,
-      "tps": 85,
-      "ttft": 127.3,
-      "url": "https://artificialanalysis.ai/models/claude-sonnet-5"
+      "tps": 82,
+      "ttft": 121.41,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "effcd151-7c31-4437-af3d-e88daeae9385",
@@ -1368,9 +1461,11 @@
       "blended": 4,
       "input": 2,
       "output": 10,
-      "tps": 70,
-      "ttft": 1.21,
-      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-medium"
+      "tps": 64,
+      "ttft": 1.24,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-medium",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "99f376bf-cbcb-4124-bf3e-6b0a4e6e9bea",
@@ -1397,9 +1492,11 @@
       "blended": 4,
       "input": 2,
       "output": 10,
-      "tps": 77,
-      "ttft": 8.61,
-      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-xhigh"
+      "tps": 79,
+      "ttft": 13.77,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-xhigh",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "d58b9ada-fd9d-4fff-a086-242034657963",
@@ -1426,9 +1523,166 @@
       "blended": 4,
       "input": 2,
       "output": 10,
-      "tps": 67,
+      "tps": 62,
+      "ttft": 0.87,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-non-reasoning",
+      "context": 1000000,
+      "max_output": 128000
+    },
+    {
+      "id": "268525e2-f873-4178-bc07-e6a0ee1f002d",
+      "name": "Claude Sonnet 5.5 (Adaptive Reasoning, High Effort, Default Fallback)",
+      "slug": "claude-sonnet-5-5-high",
+      "creator": "Anthropic",
+      "creator_slug": "anthropic",
+      "release_date": "2026-09-28",
+      "index": 46.7,
+      "coding": null,
+      "math": null,
+      "mmlu_pro": null,
+      "gpqa": null,
+      "hle": 45.8,
+      "livecodebench": null,
+      "scicode": 53.7,
+      "aime25": null,
+      "ifbench": null,
+      "lcr": 78,
+      "terminalbench_hard": null,
+      "terminalbench_v2_1": null,
+      "tau2": null,
+      "tau_banking": null,
+      "blended": 4,
+      "input": 2,
+      "output": 10,
+      "tps": 102,
+      "ttft": 6.95,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-high",
+      "context": 1000000,
+      "max_output": 128000
+    },
+    {
+      "id": "bbc2ffea-cf6b-43be-8c41-1769347e234d",
+      "name": "Claude Sonnet 5.5 (Adaptive Reasoning, Low Effort, Default Fallback)",
+      "slug": "claude-sonnet-5-5-low",
+      "creator": "Anthropic",
+      "creator_slug": "anthropic",
+      "release_date": "2026-09-28",
+      "index": 35.8,
+      "coding": null,
+      "math": null,
+      "mmlu_pro": null,
+      "gpqa": null,
+      "hle": 36.2,
+      "livecodebench": null,
+      "scicode": 49.1,
+      "aime25": null,
+      "ifbench": null,
+      "lcr": 76,
+      "terminalbench_hard": null,
+      "terminalbench_v2_1": null,
+      "tau2": null,
+      "tau_banking": null,
+      "blended": 4,
+      "input": 2,
+      "output": 10,
+      "tps": 89,
       "ttft": 0.86,
-      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-low",
+      "context": 1000000,
+      "max_output": 128000
+    },
+    {
+      "id": "b171d979-5ec1-45de-b8b9-db1ee65e77ec",
+      "name": "Claude Sonnet 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+      "slug": "claude-sonnet-5-5",
+      "creator": "Anthropic",
+      "creator_slug": "anthropic",
+      "release_date": "2026-09-28",
+      "index": 56,
+      "coding": null,
+      "math": null,
+      "mmlu_pro": null,
+      "gpqa": null,
+      "hle": 55,
+      "livecodebench": null,
+      "scicode": 61,
+      "aime25": null,
+      "ifbench": null,
+      "lcr": 82.7,
+      "terminalbench_hard": null,
+      "terminalbench_v2_1": null,
+      "tau2": null,
+      "tau_banking": null,
+      "blended": 4,
+      "input": 2,
+      "output": 10,
+      "tps": 145,
+      "ttft": 304.76,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+      "context": 1000000,
+      "max_output": 128000
+    },
+    {
+      "id": "042e8a37-fcd0-40f4-8f41-99215fb68eda",
+      "name": "Claude Sonnet 5.5 (Adaptive Reasoning, Medium Effort, Default Fallback)",
+      "slug": "claude-sonnet-5-5-medium",
+      "creator": "Anthropic",
+      "creator_slug": "anthropic",
+      "release_date": "2026-09-28",
+      "index": 40.7,
+      "coding": null,
+      "math": null,
+      "mmlu_pro": null,
+      "gpqa": null,
+      "hle": 39.8,
+      "livecodebench": null,
+      "scicode": 52.9,
+      "aime25": null,
+      "ifbench": null,
+      "lcr": 76.3,
+      "terminalbench_hard": null,
+      "terminalbench_v2_1": null,
+      "tau2": null,
+      "tau_banking": null,
+      "blended": 4,
+      "input": 2,
+      "output": 10,
+      "tps": 88,
+      "ttft": 0.68,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-medium",
+      "context": 1000000,
+      "max_output": 128000
+    },
+    {
+      "id": "975aeaef-50bd-4a65-9c73-f1015adcd4d4",
+      "name": "Claude Sonnet 5.5 (Adaptive Reasoning, Xhigh Effort, Default Fallback)",
+      "slug": "claude-sonnet-5-5-xhigh",
+      "creator": "Anthropic",
+      "creator_slug": "anthropic",
+      "release_date": "2026-09-28",
+      "index": 51.9,
+      "coding": null,
+      "math": null,
+      "mmlu_pro": null,
+      "gpqa": null,
+      "hle": 50,
+      "livecodebench": null,
+      "scicode": 57.3,
+      "aime25": null,
+      "ifbench": null,
+      "lcr": 79.7,
+      "terminalbench_hard": null,
+      "terminalbench_v2_1": null,
+      "tau2": null,
+      "tau_banking": null,
+      "blended": 4,
+      "input": 2,
+      "output": 10,
+      "tps": 110,
+      "ttft": 11.7,
+      "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-xhigh",
+      "context": 1000000,
+      "max_output": 128000
     },
     {
       "id": "3bc32f13-5afa-4e28-bce1-10e57376686b",
@@ -1455,9 +1709,11 @@
       "blended": 4.375,
       "input": 2.5,
       "output": 10,
-      "tps": 61,
-      "ttft": 0.37,
-      "url": "https://artificialanalysis.ai/models/command-a"
+      "tps": 60,
+      "ttft": 0.35,
+      "url": "https://artificialanalysis.ai/models/command-a",
+      "context": 256000,
+      "max_output": 8192
     },
     {
       "id": "0e34f05c-387e-4968-be15-ccec4a55d8c1",
@@ -1486,7 +1742,9 @@
       "output": 4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-r1-0120"
+      "url": "https://artificialanalysis.ai/models/deepseek-r1-0120",
+      "context": 64000,
+      "max_output": 16000
     },
     {
       "id": "a83f84b3-473a-4276-9ae1-8909da723159",
@@ -1515,7 +1773,9 @@
       "output": 3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-r1"
+      "url": "https://artificialanalysis.ai/models/deepseek-r1",
+      "context": 64000,
+      "max_output": 16000
     },
     {
       "id": "4a845d7b-a52d-43bb-80b7-b58c7a0c155e",
@@ -1544,7 +1804,9 @@
       "output": 1.1,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-r1-distill-llama-70b"
+      "url": "https://artificialanalysis.ai/models/deepseek-r1-distill-llama-70b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "43fc5506-c5ed-4dee-9b85-962bf7ae3986",
@@ -1573,7 +1835,9 @@
       "output": 0.89,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "75e1c197-f239-4361-a9d6-66dccfead236",
@@ -1602,7 +1866,9 @@
       "output": 1.175,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3-0324"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-0324",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "fb65266f-5a7d-403c-85d5-ccdf0d1ca838",
@@ -1631,7 +1897,9 @@
       "output": 1.68,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3-1"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-1",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "198b717f-42c8-4ab7-a699-ae9373d669d3",
@@ -1660,7 +1928,9 @@
       "output": 1.69,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3-1-reasoning"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-1-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "dfb9292d-bc7c-4425-a260-4256217e709f",
@@ -1689,7 +1959,9 @@
       "output": 1,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3-1-terminus"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-1-terminus",
+      "context": 163840,
+      "max_output": 65536
     },
     {
       "id": "0a7dda4d-cc9c-4a90-abc1-abb5772c901b",
@@ -1718,7 +1990,9 @@
       "output": 2.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3-1-terminus-reasoning"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-1-terminus-reasoning",
+      "context": 163840,
+      "max_output": 65536
     },
     {
       "id": "6d9a176d-feb8-4dac-8872-afe32b31897f",
@@ -1747,7 +2021,9 @@
       "output": 0.42,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3-2"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-2",
+      "context": 163840,
+      "max_output": 65536
     },
     {
       "id": "d621247c-d47e-458c-82cb-a166bc3b37e5",
@@ -1776,7 +2052,9 @@
       "output": 0.42,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3-2-reasoning"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-2-reasoning",
+      "context": 163840,
+      "max_output": 65536
     },
     {
       "id": "07c35e00-2b12-44c8-91cc-408629cd569e",
@@ -1805,7 +2083,9 @@
       "output": 0.42,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3-2-0925"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-2-0925",
+      "context": 163840,
+      "max_output": 65536
     },
     {
       "id": "af134350-8ba3-4629-b56b-00bd6dcf60c4",
@@ -1834,7 +2114,9 @@
       "output": 0.42,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v3-2-reasoning-0925"
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-2-reasoning-0925",
+      "context": 163840,
+      "max_output": 65536
     },
     {
       "id": "ad173c8d-f14f-4230-90e9-60979b7720e7",
@@ -1858,12 +2140,14 @@
       "terminalbench_v2_1": null,
       "tau2": 94.4,
       "tau_banking": null,
-      "blended": 0.119,
-      "input": 0.094,
-      "output": 0.195,
+      "blended": 0.117,
+      "input": 0.092,
+      "output": 0.191,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash-0420-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash-0420-non-reasoning",
+      "context": 1048576,
+      "max_output": 131072
     },
     {
       "id": "89a2c945-1fab-4ee4-9f45-83a9f46cb221",
@@ -1887,12 +2171,14 @@
       "terminalbench_v2_1": 56.9,
       "tau2": 95.6,
       "tau_banking": 26.2,
-      "blended": 0.168,
-      "input": 0.13,
-      "output": 0.28,
+      "blended": 0.143,
+      "input": 0.112,
+      "output": 0.238,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash-0420-high"
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash-0420-high",
+      "context": 1048576,
+      "max_output": 131072
     },
     {
       "id": "d8ddb241-b3e4-4c25-a6a3-72eb1b30c541",
@@ -1921,7 +2207,9 @@
       "output": 0.28,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash-0420"
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash-0420",
+      "context": 1048576,
+      "max_output": 131072
     },
     {
       "id": "fe4c0848-e284-4e52-a79d-cdc28392f1a9",
@@ -1950,7 +2238,9 @@
       "output": 1.32,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash"
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash",
+      "context": 1048576,
+      "max_output": 131072
     },
     {
       "id": "7707a46f-895f-4247-b7a8-ddab87c9a11d",
@@ -1977,9 +2267,11 @@
       "blended": 0.66,
       "input": 0.44,
       "output": 1.32,
-      "tps": 234,
-      "ttft": 0.83,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash-vision"
+      "tps": 232,
+      "ttft": 0.79,
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash-vision",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "6e2a2572-ed8d-4616-8d7d-68d125fc8ee7",
@@ -2008,7 +2300,9 @@
       "output": 0.87,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-pro-0424-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-pro-0424-non-reasoning",
+      "context": 1048576,
+      "max_output": 384000
     },
     {
       "id": "5da3c0e2-65d2-4bff-a410-cb2132ddafb6",
@@ -2037,7 +2331,9 @@
       "output": 0.87,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-pro-0424-high"
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-pro-0424-high",
+      "context": 1048576,
+      "max_output": 384000
     },
     {
       "id": "bf220674-68bd-43cc-a1b8-ce5ed4d2f18d",
@@ -2066,7 +2362,9 @@
       "output": 0.87,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-pro-0424"
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-pro-0424",
+      "context": 1048576,
+      "max_output": 384000
     },
     {
       "id": "83173329-c09a-41f1-a028-a282a5f908d7",
@@ -2093,9 +2391,11 @@
       "blended": 1.98,
       "input": 1.32,
       "output": 3.96,
-      "tps": 94,
-      "ttft": 1.13,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-pro"
+      "tps": 92,
+      "ttft": 1.15,
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-pro",
+      "context": 1048576,
+      "max_output": 384000
     },
     {
       "id": "73c96f99-0de3-4668-a4bd-b106a0fe18f2",
@@ -2122,9 +2422,11 @@
       "blended": 0.525,
       "input": 0.3,
       "output": 1.2,
-      "tps": 224,
-      "ttft": 0.89,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-non-reasoning"
+      "tps": 236,
+      "ttft": 0.86,
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-non-reasoning",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "dbe7c625-3100-4463-b479-a228c41f75dd",
@@ -2151,9 +2453,11 @@
       "blended": 0.525,
       "input": 0.3,
       "output": 1.2,
-      "tps": 223,
-      "ttft": 0.85,
-      "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash"
+      "tps": 219,
+      "ttft": 0.83,
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "ae4fe623-80ab-4ea3-8921-70a18ea0fc7e",
@@ -2182,7 +2486,9 @@
       "output": 1.1,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/ernie-4-5-300b-a47b"
+      "url": "https://artificialanalysis.ai/models/ernie-4-5-300b-a47b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "6afbfb62-27e4-435e-9c85-d9fe1b92519e",
@@ -2211,7 +2517,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash"
+      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash",
+      "context": 1048576,
+      "max_output": 65535
     },
     {
       "id": "219ed587-60c5-4a48-9517-8480e08d0ca1",
@@ -2240,7 +2548,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-reasoning"
+      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-reasoning",
+      "context": 1048576,
+      "max_output": 65535
     },
     {
       "id": "1d81aa1c-64c8-442a-9c41-81b37e407b91",
@@ -2269,7 +2579,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite"
+      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite",
+      "context": 1048576,
+      "max_output": 65535
     },
     {
       "id": "f4e8194a-d0e6-48eb-92be-4307de5aeeec",
@@ -2298,7 +2610,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-reasoning"
+      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-reasoning",
+      "context": 1048576,
+      "max_output": 65535
     },
     {
       "id": "71f51ea9-94fe-4635-a80d-4cfffbb685f4",
@@ -2327,7 +2641,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025"
+      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "84922739-425f-46e1-87ac-bb4268dcacbb",
@@ -2356,7 +2672,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025-reasoning"
+      "url": "https://artificialanalysis.ai/models/gemini-2-5-flash-lite-preview-09-2025-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "27202e5f-c82d-4710-92e9-4317877d4883",
@@ -2385,7 +2703,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-2-5-pro"
+      "url": "https://artificialanalysis.ai/models/gemini-2-5-pro",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "073b5329-c4b3-4f1f-8f97-4753aadf4398",
@@ -2414,7 +2734,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-2-5-pro-05-06"
+      "url": "https://artificialanalysis.ai/models/gemini-2-5-pro-05-06",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "783a0ea2-1eef-422a-8c3d-f6d40d943f54",
@@ -2443,7 +2765,9 @@
       "output": 3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-flash"
+      "url": "https://artificialanalysis.ai/models/gemini-3-flash",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "7c73c3be-7f51-4d14-bec8-d5789488df25",
@@ -2472,7 +2796,9 @@
       "output": 3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-flash-reasoning"
+      "url": "https://artificialanalysis.ai/models/gemini-3-flash-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "d1122eff-ee85-4fdc-8a9f-23bee6590667",
@@ -2501,7 +2827,9 @@
       "output": 12,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-pro"
+      "url": "https://artificialanalysis.ai/models/gemini-3-pro",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "b2f3191f-77d6-4155-8be6-330f0baa1ae5",
@@ -2530,7 +2858,9 @@
       "output": 12,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-pro-low"
+      "url": "https://artificialanalysis.ai/models/gemini-3-pro-low",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "598190f8-dc9c-4fea-a7ea-4b81c402ab18",
@@ -2559,7 +2889,9 @@
       "output": 1.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-1-flash-lite-preview"
+      "url": "https://artificialanalysis.ai/models/gemini-3-1-flash-lite-preview",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "bbd93ebe-80da-4594-bb19-61e69d0331df",
@@ -2587,8 +2919,10 @@
       "input": 2,
       "output": 12,
       "tps": 132,
-      "ttft": 19.06,
-      "url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview"
+      "ttft": 21.08,
+      "url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "0097ebf5-124f-42f6-9463-33b00e711f03",
@@ -2617,7 +2951,9 @@
       "output": 9,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-5-flash"
+      "url": "https://artificialanalysis.ai/models/gemini-3-5-flash",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "5016ea75-7b0e-4737-a7e6-1062c6d90fd4",
@@ -2646,7 +2982,9 @@
       "output": 9,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-5-flash-medium"
+      "url": "https://artificialanalysis.ai/models/gemini-3-5-flash-medium",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "033ade17-d9ec-44e0-b792-b5f1fcd5ab4c",
@@ -2675,7 +3013,9 @@
       "output": 9,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-5-flash-minimal"
+      "url": "https://artificialanalysis.ai/models/gemini-3-5-flash-minimal",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "093b9df2-ebee-4309-943f-5a7e88360adf",
@@ -2702,9 +3042,11 @@
       "blended": 0.85,
       "input": 0.3,
       "output": 2.5,
-      "tps": 352,
-      "ttft": 6.3,
-      "url": "https://artificialanalysis.ai/models/gemini-3-5-flash-lite"
+      "tps": 342,
+      "ttft": 6.95,
+      "url": "https://artificialanalysis.ai/models/gemini-3-5-flash-lite",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "78332c88-fe60-42c8-af9d-3617e44cf1f5",
@@ -2733,7 +3075,9 @@
       "output": 3.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-6-flash"
+      "url": "https://artificialanalysis.ai/models/gemini-3-6-flash",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "b2331108-72ed-415a-82d1-188633875bbc",
@@ -2762,7 +3106,9 @@
       "output": 3.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-7-flash"
+      "url": "https://artificialanalysis.ai/models/gemini-3-7-flash",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "ddfdaf64-3f8e-40a6-a492-608ee83a1351",
@@ -2791,7 +3137,9 @@
       "output": 3.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-7-flash-low"
+      "url": "https://artificialanalysis.ai/models/gemini-3-7-flash-low",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "eb0d4272-7204-42b9-b875-8866fed58548",
@@ -2820,7 +3168,9 @@
       "output": 3.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-7-flash-medium"
+      "url": "https://artificialanalysis.ai/models/gemini-3-7-flash-medium",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "8a999846-4c1d-4ce7-a8b7-1310a7166fd7",
@@ -2847,9 +3197,11 @@
       "blended": 1.5,
       "input": 0.75,
       "output": 3.75,
-      "tps": 291,
-      "ttft": 10.18,
-      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash"
+      "tps": 253,
+      "ttft": 11.27,
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "f6db039b-0f3b-485c-9d7f-982988e44f26",
@@ -2878,7 +3230,9 @@
       "output": 3.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash-low"
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash-low",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "744fa3c1-42a7-4995-b138-fb6be11f463c",
@@ -2907,7 +3261,9 @@
       "output": 3.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash-medium"
+      "url": "https://artificialanalysis.ai/models/gemini-3-8-flash-medium",
+      "context": 1048576,
+      "max_output": 65536
     },
     {
       "id": "025ec6b6-df4a-449f-9a03-24e4388d6863",
@@ -2934,9 +3290,11 @@
       "blended": 0.15,
       "input": 0.1,
       "output": 0.3,
-      "tps": 156,
-      "ttft": 1.4,
-      "url": "https://artificialanalysis.ai/models/gemma-4-12b-non-reasoning"
+      "tps": 145,
+      "ttft": 1.44,
+      "url": "https://artificialanalysis.ai/models/gemma-4-12b-non-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "feb02d3b-ff8d-4ed4-b165-13f8d4a7192c",
@@ -2963,9 +3321,11 @@
       "blended": 0.15,
       "input": 0.1,
       "output": 0.3,
-      "tps": 149,
-      "ttft": 1.39,
-      "url": "https://artificialanalysis.ai/models/gemma-4-12b"
+      "tps": 152,
+      "ttft": 1.38,
+      "url": "https://artificialanalysis.ai/models/gemma-4-12b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "70882ec6-914c-41f0-9754-5e8f75005f77",
@@ -2992,9 +3352,11 @@
       "blended": 0.198,
       "input": 0.13,
       "output": 0.4,
-      "tps": 107,
-      "ttft": 0.58,
-      "url": "https://artificialanalysis.ai/models/gemma-4-26b-a4b-non-reasoning"
+      "tps": 98,
+      "ttft": 0.62,
+      "url": "https://artificialanalysis.ai/models/gemma-4-26b-a4b-non-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "6e1b44ff-c227-496b-aef4-19b70cd18c76",
@@ -3023,7 +3385,9 @@
       "output": 0.37,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gemma-4-26b-a4b"
+      "url": "https://artificialanalysis.ai/models/gemma-4-26b-a4b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "d0aa27aa-4705-4184-9a1d-483b78c9331c",
@@ -3050,9 +3414,11 @@
       "blended": 0.205,
       "input": 0.14,
       "output": 0.4,
-      "tps": 51,
-      "ttft": 1.13,
-      "url": "https://artificialanalysis.ai/models/gemma-4-31b-non-reasoning"
+      "tps": 41,
+      "ttft": 1.21,
+      "url": "https://artificialanalysis.ai/models/gemma-4-31b-non-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "5303601c-8133-4f52-bc4e-5241ee6b3c10",
@@ -3079,9 +3445,11 @@
       "blended": 0.04,
       "input": 0.02,
       "output": 0.1,
-      "tps": 64,
+      "tps": 73,
       "ttft": 0.31,
-      "url": "https://artificialanalysis.ai/models/gemma-4-e4b-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/gemma-4-e4b-non-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "d80eb0f1-f62e-4d31-99d2-7a925eb126b0",
@@ -3108,9 +3476,11 @@
       "blended": 0.04,
       "input": 0.02,
       "output": 0.1,
-      "tps": 67,
-      "ttft": 0.35,
-      "url": "https://artificialanalysis.ai/models/gemma-4-e4b"
+      "tps": 73,
+      "ttft": 0.33,
+      "url": "https://artificialanalysis.ai/models/gemma-4-e4b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "19496b81-9f41-4214-a77a-1df803b3c5ae",
@@ -3137,9 +3507,11 @@
       "blended": 0.237,
       "input": 0.15,
       "output": 0.5,
-      "tps": 56,
-      "ttft": 2.81,
-      "url": "https://artificialanalysis.ai/models/glm-5-3-flash"
+      "tps": 52,
+      "ttft": 2.83,
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "context": 1310720,
+      "max_output": 943717
     },
     {
       "id": "5d303dc9-c027-401f-9803-4e9aa3331007",
@@ -3168,7 +3540,9 @@
       "output": 0.98,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-5-air"
+      "url": "https://artificialanalysis.ai/models/glm-4-5-air",
+      "context": 131072,
+      "max_output": 98304
     },
     {
       "id": "0081ab31-d10a-44a0-a10d-eee5533fec65",
@@ -3197,7 +3571,9 @@
       "output": 1.8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-5v"
+      "url": "https://artificialanalysis.ai/models/glm-4-5v",
+      "context": 65536,
+      "max_output": 16384
     },
     {
       "id": "3068def4-7270-4c06-a320-6f6a5623d564",
@@ -3226,7 +3602,9 @@
       "output": 1.8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-5v-reasoning"
+      "url": "https://artificialanalysis.ai/models/glm-4-5v-reasoning",
+      "context": 65536,
+      "max_output": 16384
     },
     {
       "id": "946e7aab-db1c-4c3f-b0b3-7720d0cff187",
@@ -3255,7 +3633,9 @@
       "output": 2.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-6"
+      "url": "https://artificialanalysis.ai/models/glm-4-6",
+      "context": 204800,
+      "max_output": 16384
     },
     {
       "id": "6a5d56e1-bb68-4205-8d9b-26b97888bc84",
@@ -3284,7 +3664,9 @@
       "output": 2.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-6-reasoning"
+      "url": "https://artificialanalysis.ai/models/glm-4-6-reasoning",
+      "context": 204800,
+      "max_output": 16384
     },
     {
       "id": "43098bd0-77ca-408b-b698-9d60b1d1c3b8",
@@ -3313,7 +3695,9 @@
       "output": 0.9,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-6v"
+      "url": "https://artificialanalysis.ai/models/glm-4-6v",
+      "context": 131072,
+      "max_output": 32768
     },
     {
       "id": "d2d7dd95-770f-4cb0-9bbc-d275ac19c265",
@@ -3342,7 +3726,9 @@
       "output": 0.9,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-6v-reasoning"
+      "url": "https://artificialanalysis.ai/models/glm-4-6v-reasoning",
+      "context": 131072,
+      "max_output": 32768
     },
     {
       "id": "81b6ddfc-111e-4422-bd44-42ee6165b699",
@@ -3371,7 +3757,9 @@
       "output": 2.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-7-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/glm-4-7-non-reasoning",
+      "context": 204800,
+      "max_output": 131072
     },
     {
       "id": "6fc35842-0165-44cf-8570-c484a92b3d8c",
@@ -3400,7 +3788,9 @@
       "output": 2.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-7"
+      "url": "https://artificialanalysis.ai/models/glm-4-7",
+      "context": 204800,
+      "max_output": 131072
     },
     {
       "id": "c8673741-5e1a-46a1-9e4f-710a5c920982",
@@ -3429,7 +3819,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-7-flash-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/glm-4-7-flash-non-reasoning",
+      "context": 200000,
+      "max_output": 117964
     },
     {
       "id": "2c4394a2-b443-470a-908e-5c4a271b780c",
@@ -3458,7 +3850,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-4-7-flash"
+      "url": "https://artificialanalysis.ai/models/glm-4-7-flash",
+      "context": 200000,
+      "max_output": 117964
     },
     {
       "id": "f164b41f-44c5-4675-bca3-fea1db4bd9ae",
@@ -3487,7 +3881,9 @@
       "output": 3.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-5-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/glm-5-non-reasoning",
+      "context": 204800,
+      "max_output": 128000
     },
     {
       "id": "40663ad2-b218-471e-bdd4-a1e0c2360e2b",
@@ -3516,7 +3912,9 @@
       "output": 3.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-5"
+      "url": "https://artificialanalysis.ai/models/glm-5",
+      "context": 204800,
+      "max_output": 128000
     },
     {
       "id": "92f245a7-43b4-4ffd-8bfb-866746bf824d",
@@ -3545,7 +3943,9 @@
       "output": 4.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-5-1-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/glm-5-1-non-reasoning",
+      "context": 204800,
+      "max_output": 131072
     },
     {
       "id": "5aa1c578-af76-4b91-8699-cdd43582b3af",
@@ -3574,7 +3974,9 @@
       "output": 4.07,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-5-1"
+      "url": "https://artificialanalysis.ai/models/glm-5-1",
+      "context": 204800,
+      "max_output": 131072
     },
     {
       "id": "f7a4ea75-e548-4069-80d4-9be8bc7c009b",
@@ -3603,7 +4005,9 @@
       "output": 4.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-5-2"
+      "url": "https://artificialanalysis.ai/models/glm-5-2",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "e8aa417f-18fe-46b0-ba62-ef99785a9585",
@@ -3632,7 +4036,9 @@
       "output": 4.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/glm-5-2-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/glm-5-2-non-reasoning",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "cc1e488b-8ba4-464d-875d-690166b15ad3",
@@ -3659,9 +4065,11 @@
       "blended": 2.15,
       "input": 1.4,
       "output": 4.4,
-      "tps": 93,
-      "ttft": 3.22,
-      "url": "https://artificialanalysis.ai/models/glm-5-3-low"
+      "tps": 81,
+      "ttft": 2.87,
+      "url": "https://artificialanalysis.ai/models/glm-5-3-low",
+      "context": 1310720,
+      "max_output": 943717
     },
     {
       "id": "cd684ea4-b475-4269-b001-d469d06d8a7a",
@@ -3688,9 +4096,11 @@
       "blended": 2.15,
       "input": 1.4,
       "output": 4.4,
-      "tps": 84,
-      "ttft": 2.52,
-      "url": "https://artificialanalysis.ai/models/glm-5-3"
+      "tps": 80,
+      "ttft": 2.7,
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "context": 1310720,
+      "max_output": 943717
     },
     {
       "id": "037dec2f-51e8-4127-a1f1-85155dae7a1d",
@@ -3719,7 +4129,9 @@
       "output": 1.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-35-turbo"
+      "url": "https://artificialanalysis.ai/models/gpt-35-turbo",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "6a7c0e25-1dcb-4b15-8495-a8536a9da051",
@@ -3748,7 +4160,9 @@
       "output": 60,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-4"
+      "url": "https://artificialanalysis.ai/models/gpt-4",
+      "context": 8191,
+      "max_output": 4096
     },
     {
       "id": "76aa6af5-fdc6-4739-a300-983f14e74a67",
@@ -3777,7 +4191,9 @@
       "output": 30,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-4-turbo"
+      "url": "https://artificialanalysis.ai/models/gpt-4-turbo",
+      "context": 128000,
+      "max_output": 4096
     },
     {
       "id": "3b608b70-6434-4baa-99ad-45d499703c67",
@@ -3806,7 +4222,9 @@
       "output": 8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-4-1"
+      "url": "https://artificialanalysis.ai/models/gpt-4-1",
+      "context": 1047576,
+      "max_output": 32768
     },
     {
       "id": "9f7c7566-a704-49a2-a383-cb3181da33a4",
@@ -3835,7 +4253,9 @@
       "output": 1.6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-4-1-mini"
+      "url": "https://artificialanalysis.ai/models/gpt-4-1-mini",
+      "context": 1047576,
+      "max_output": 32768
     },
     {
       "id": "72c358fd-7d45-4d68-89aa-699743710924",
@@ -3864,7 +4284,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-4-1-nano"
+      "url": "https://artificialanalysis.ai/models/gpt-4-1-nano",
+      "context": 1047576,
+      "max_output": 32768
     },
     {
       "id": "8c1be908-67b6-4cf4-ba08-83ddbe44fde3",
@@ -3893,7 +4315,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-4o-2024-08-06"
+      "url": "https://artificialanalysis.ai/models/gpt-4o-2024-08-06",
+      "context": 128000,
+      "max_output": 16384
     },
     {
       "id": "e98e911e-9fb2-4a9a-826e-3d681d0cdca8",
@@ -3922,7 +4346,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-4o-2024-05-13"
+      "url": "https://artificialanalysis.ai/models/gpt-4o-2024-05-13",
+      "context": 128000,
+      "max_output": 4096
     },
     {
       "id": "c1045dc0-4fd3-4adb-9548-18763e0d051f",
@@ -3951,7 +4377,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-4o"
+      "url": "https://artificialanalysis.ai/models/gpt-4o",
+      "context": 128000,
+      "max_output": 16384
     },
     {
       "id": "b5c1c91a-7474-4409-9a9c-9c2ac45d9eb6",
@@ -3980,7 +4408,9 @@
       "output": 0.6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-4o-mini"
+      "url": "https://artificialanalysis.ai/models/gpt-4o-mini",
+      "context": 128000,
+      "max_output": 16384
     },
     {
       "id": "48e50f00-1fd1-4acc-b337-61078aa341e6",
@@ -4009,7 +4439,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5"
+      "url": "https://artificialanalysis.ai/models/gpt-5",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "7f3c9423-3ee3-4369-a6d9-3f2a40aff00e",
@@ -4038,7 +4470,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-low"
+      "url": "https://artificialanalysis.ai/models/gpt-5-low",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "5e965af0-ca5c-4f47-9ba9-06000508b84a",
@@ -4067,7 +4501,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-5-medium",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "c3738fb0-3408-4430-a699-760ae4b70c93",
@@ -4096,7 +4532,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-minimal"
+      "url": "https://artificialanalysis.ai/models/gpt-5-minimal",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "5d11e7a1-4f70-4e5a-9364-e193761d6757",
@@ -4125,7 +4563,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-codex"
+      "url": "https://artificialanalysis.ai/models/gpt-5-codex",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "29855680-7469-43eb-8b88-cd3fb1d99da3",
@@ -4154,7 +4594,9 @@
       "output": 2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-mini"
+      "url": "https://artificialanalysis.ai/models/gpt-5-mini",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "c3274a19-6d3c-4d01-ab9b-5055a0a40429",
@@ -4183,7 +4625,9 @@
       "output": 2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-mini-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-5-mini-medium",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "bc26bfdb-4923-4442-a6ca-e77392923581",
@@ -4212,7 +4656,9 @@
       "output": 2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-mini-minimal"
+      "url": "https://artificialanalysis.ai/models/gpt-5-mini-minimal",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "e18e5e6a-5a31-4c0b-b80b-ac401392f446",
@@ -4241,7 +4687,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-nano"
+      "url": "https://artificialanalysis.ai/models/gpt-5-nano",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "8eb02396-f231-4189-ae15-05f7facebd9b",
@@ -4270,7 +4718,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-nano-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-5-nano-medium",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "05e45a36-b5c6-47a1-8adb-9ddc19add5b3",
@@ -4299,7 +4749,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-nano-minimal"
+      "url": "https://artificialanalysis.ai/models/gpt-5-nano-minimal",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "4dc12a38-b18f-4c43-8e1b-678f8434b5b1",
@@ -4328,7 +4780,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-1"
+      "url": "https://artificialanalysis.ai/models/gpt-5-1",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "d0b3d47e-aec6-425e-9de7-168dcc6d1e28",
@@ -4357,7 +4811,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-1-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/gpt-5-1-non-reasoning",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "04d023f3-025c-4d78-9571-53edda3eaf2a",
@@ -4386,7 +4842,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-1-codex"
+      "url": "https://artificialanalysis.ai/models/gpt-5-1-codex",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "fd4454ff-e703-46c0-a7f5-fa69af09486d",
@@ -4415,7 +4873,9 @@
       "output": 2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-1-codex-mini"
+      "url": "https://artificialanalysis.ai/models/gpt-5-1-codex-mini",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "84e3f11e-d659-4941-8988-1dbfabbaf538",
@@ -4444,7 +4904,9 @@
       "output": 14,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-2-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-5-2-medium",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "6dd8ba55-5680-44a9-b309-82928165d5f0",
@@ -4473,7 +4935,9 @@
       "output": 14,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-2-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/gpt-5-2-non-reasoning",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "498862c3-f9ac-49d2-852f-16a02bb0c38f",
@@ -4502,7 +4966,9 @@
       "output": 14,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-2"
+      "url": "https://artificialanalysis.ai/models/gpt-5-2",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "019e86f6-e66b-42d8-8a50-235a06b53003",
@@ -4531,7 +4997,9 @@
       "output": 14,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-2-codex"
+      "url": "https://artificialanalysis.ai/models/gpt-5-2-codex",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "59b5b14b-5365-4ee7-824a-18a8e6309644",
@@ -4558,9 +5026,11 @@
       "blended": 4.813,
       "input": 1.75,
       "output": 14,
-      "tps": 115,
-      "ttft": 38.26,
-      "url": "https://artificialanalysis.ai/models/gpt-5-3-codex"
+      "tps": 117,
+      "ttft": 36.72,
+      "url": "https://artificialanalysis.ai/models/gpt-5-3-codex",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "538e945c-6c27-4fd3-995d-ded80a36cd10",
@@ -4589,7 +5059,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-4-low"
+      "url": "https://artificialanalysis.ai/models/gpt-5-4-low",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "493f6a1e-7717-4e98-9d6f-548b92c4702d",
@@ -4618,7 +5090,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-4-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/gpt-5-4-non-reasoning",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "a89c4b28-2d8c-456e-88ea-255fb51fd2b6",
@@ -4647,7 +5121,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-4"
+      "url": "https://artificialanalysis.ai/models/gpt-5-4",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "392063ba-c3b5-47e8-ba67-a7b0b34f6824",
@@ -4676,7 +5152,9 @@
       "output": 4.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-4-mini-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-5-4-mini-medium",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "ae447455-940d-4d30-9139-a664fa896eaf",
@@ -4705,7 +5183,9 @@
       "output": 4.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-4-mini-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/gpt-5-4-mini-non-reasoning",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "ba242e40-83b7-4cd3-a0e0-b56237984914",
@@ -4734,7 +5214,9 @@
       "output": 4.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-4-mini"
+      "url": "https://artificialanalysis.ai/models/gpt-5-4-mini",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "8869f28a-a6ff-487f-8d32-93fe335fdda5",
@@ -4763,7 +5245,9 @@
       "output": 1.25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-4-nano-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-5-4-nano-medium",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "c298d1a8-606c-4971-8613-ccdaaf941043",
@@ -4792,7 +5276,9 @@
       "output": 1.25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-4-nano-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/gpt-5-4-nano-non-reasoning",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "d4fc3f33-f2b0-4da1-88ee-f1f82bd4de31",
@@ -4821,7 +5307,9 @@
       "output": 1.25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-4-nano"
+      "url": "https://artificialanalysis.ai/models/gpt-5-4-nano",
+      "context": 400000,
+      "max_output": 128000
     },
     {
       "id": "b13c1257-d746-4027-8fc8-4892dc14701c",
@@ -4850,7 +5338,9 @@
       "output": 30,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-5-high"
+      "url": "https://artificialanalysis.ai/models/gpt-5-5-high",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "c77cfe51-f4a0-4692-9dee-5061ef667f23",
@@ -4879,7 +5369,9 @@
       "output": 30,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-5-low"
+      "url": "https://artificialanalysis.ai/models/gpt-5-5-low",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "6b79f899-e3c0-45f6-923c-243faccdb2fc",
@@ -4908,7 +5400,9 @@
       "output": 30,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-5-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-5-5-medium",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "6f1a7562-6e96-46ac-af4f-6ba5a7a3da96",
@@ -4937,7 +5431,9 @@
       "output": 30,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-5-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/gpt-5-5-non-reasoning",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "1f054429-397e-4fdb-9e71-67bc92c1735e",
@@ -4966,7 +5462,9 @@
       "output": 30,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-5"
+      "url": "https://artificialanalysis.ai/models/gpt-5-5",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "c4169d75-9d24-4794-a9c3-69e1fe364de5",
@@ -4993,9 +5491,11 @@
       "blended": 11.25,
       "input": 5,
       "output": 30,
-      "tps": 136,
-      "ttft": 0.79,
-      "url": "https://artificialanalysis.ai/models/gpt-5-5-instant-06-26"
+      "tps": 133,
+      "ttft": 0.82,
+      "url": "https://artificialanalysis.ai/models/gpt-5-5-instant-06-26",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "e34ffffb-d8e1-4f5c-a2c7-3ca19c235eeb",
@@ -5024,7 +5524,9 @@
       "output": 30,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-5-instant-05-26"
+      "url": "https://artificialanalysis.ai/models/gpt-5-5-instant-05-26",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "aa55297e-8fbf-4372-b4ab-9b068dc6396c",
@@ -5053,7 +5555,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-high"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-high",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "050c61cd-cddc-463a-a30a-a82aaa37be59",
@@ -5082,7 +5586,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-low"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-low",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "426d24c8-49ae-482a-b4a8-20f1c53f21c1",
@@ -5111,7 +5617,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "58b812bf-8498-46db-b834-f43ccc614b61",
@@ -5140,7 +5648,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-medium",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "dc64f856-3ded-497d-9527-d41d31267ed5",
@@ -5169,7 +5679,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-non-reasoning",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "87110ff0-1f79-41b4-9976-eda250597317",
@@ -5198,7 +5710,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-xhigh"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna-xhigh",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "8afc250d-b538-45a2-812a-4605f4ffd87e",
@@ -5227,7 +5741,9 @@
       "output": 20,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-high"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-high",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "0904b596-8932-43bd-9b21-324f128e1723",
@@ -5256,7 +5772,9 @@
       "output": 20,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-low"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-low",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "d93edfe8-bf35-49ad-b56e-b18116142a1c",
@@ -5285,7 +5803,9 @@
       "output": 20,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "6f174934-5b7d-4333-86cb-f5ebf4a862e3",
@@ -5314,7 +5834,9 @@
       "output": 20,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-medium",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "7c4d1e30-6ecb-46cf-880c-41446d7b51f1",
@@ -5343,7 +5865,9 @@
       "output": 20,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-non-reasoning",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "d998db47-9b67-4727-a2bb-2e1261020ac0",
@@ -5372,7 +5896,9 @@
       "output": 20,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-xhigh"
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol-xhigh",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "81972fba-1219-477e-bbfb-18c656a63ff7",
@@ -5399,9 +5925,11 @@
       "blended": 4.5,
       "input": 2,
       "output": 12,
-      "tps": 91,
-      "ttft": 1.89,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-high"
+      "tps": 95,
+      "ttft": 2.15,
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-high",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "cc4a20cd-09fe-4962-a430-119c815e85fa",
@@ -5428,9 +5956,11 @@
       "blended": 4.5,
       "input": 2,
       "output": 12,
-      "tps": 93,
-      "ttft": 1.65,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-low"
+      "tps": 95,
+      "ttft": 1.42,
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-low",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "bcf8db0a-3bb6-4d82-9516-0f57370c85a6",
@@ -5457,9 +5987,11 @@
       "blended": 4.5,
       "input": 2,
       "output": 12,
-      "tps": 98,
-      "ttft": 109.43,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra"
+      "tps": 109,
+      "ttft": 66.95,
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "26e0f83a-ca98-4f34-94ac-7c5e251ee410",
@@ -5486,9 +6018,11 @@
       "blended": 4.5,
       "input": 2,
       "output": 12,
-      "tps": 88,
-      "ttft": 1.68,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-medium"
+      "tps": 97,
+      "ttft": 1.79,
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-medium",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "9b97a35e-6ac7-44d9-91c6-422fa678963e",
@@ -5515,9 +6049,11 @@
       "blended": 4.5,
       "input": 2,
       "output": 12,
-      "tps": 86,
-      "ttft": 0.73,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-non-reasoning"
+      "tps": 92,
+      "ttft": 0.72,
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-non-reasoning",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "9e30696f-16fa-4b4f-ba53-161895a85fed",
@@ -5544,9 +6080,11 @@
       "blended": 4.5,
       "input": 2,
       "output": 12,
-      "tps": 97,
-      "ttft": 8.31,
-      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-xhigh"
+      "tps": 104,
+      "ttft": 7.57,
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra-xhigh",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "e05a4828-0536-4876-870d-a235023f992b",
@@ -5573,9 +6111,11 @@
       "blended": 20,
       "input": 10,
       "output": 50,
-      "tps": 58,
-      "ttft": 22.08,
-      "url": "https://artificialanalysis.ai/models/gpt-6-astra-high"
+      "tps": 57,
+      "ttft": 29.33,
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra-high",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "a3f8100d-e38f-408b-b0fa-0085dae18dc1",
@@ -5602,9 +6142,11 @@
       "blended": 20,
       "input": 10,
       "output": 50,
-      "tps": 53,
-      "ttft": 1.66,
-      "url": "https://artificialanalysis.ai/models/gpt-6-astra-low"
+      "tps": 52,
+      "ttft": 1.71,
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra-low",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "2f339a97-9a0d-499a-9cb5-e0db665bfa25",
@@ -5631,9 +6173,11 @@
       "blended": 20,
       "input": 10,
       "output": 50,
-      "tps": 62,
-      "ttft": 201.02,
-      "url": "https://artificialanalysis.ai/models/gpt-6-astra"
+      "tps": 63,
+      "ttft": 181.36,
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "e97a4ef5-e817-480e-9595-12f81dc4974f",
@@ -5661,8 +6205,10 @@
       "input": 10,
       "output": 50,
       "tps": 55,
-      "ttft": 3.73,
-      "url": "https://artificialanalysis.ai/models/gpt-6-astra-medium"
+      "ttft": 3.58,
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra-medium",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "1f541ef3-913f-4eb2-9d07-0e93c7a9a5e3",
@@ -5689,9 +6235,11 @@
       "blended": 20,
       "input": 10,
       "output": 50,
-      "tps": 55,
-      "ttft": 66.16,
-      "url": "https://artificialanalysis.ai/models/gpt-6-astra-xhigh"
+      "tps": 58,
+      "ttft": 69.88,
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra-xhigh",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "7d1229bc-deea-4717-ba5b-f59a35d991e3",
@@ -5718,9 +6266,11 @@
       "blended": 0.2,
       "input": 0.1,
       "output": 0.5,
-      "tps": 144,
-      "ttft": 7.39,
-      "url": "https://artificialanalysis.ai/models/gpt-6-luna-high"
+      "tps": 146,
+      "ttft": 6.89,
+      "url": "https://artificialanalysis.ai/models/gpt-6-luna-high",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "bf9708d8-933d-44f6-affa-b696a7a650c9",
@@ -5747,9 +6297,11 @@
       "blended": 0.2,
       "input": 0.1,
       "output": 0.5,
-      "tps": 146,
-      "ttft": 1.94,
-      "url": "https://artificialanalysis.ai/models/gpt-6-luna-low"
+      "tps": 143,
+      "ttft": 2.22,
+      "url": "https://artificialanalysis.ai/models/gpt-6-luna-low",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "6fb13851-40ce-4bda-ad3f-6b38e0c5daa7",
@@ -5777,8 +6329,10 @@
       "input": 0.1,
       "output": 0.5,
       "tps": 163,
-      "ttft": 77.47,
-      "url": "https://artificialanalysis.ai/models/gpt-6-luna"
+      "ttft": 74.94,
+      "url": "https://artificialanalysis.ai/models/gpt-6-luna",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "36667da0-9222-4967-adbb-f7efa15ad213",
@@ -5807,7 +6361,9 @@
       "output": 0.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-6-luna-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-6-luna-medium",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "63cb48ea-0b0c-4e07-8ded-6d28dec4fa28",
@@ -5834,9 +6390,11 @@
       "blended": 0.2,
       "input": 0.1,
       "output": 0.5,
-      "tps": 143,
-      "ttft": 0.7,
-      "url": "https://artificialanalysis.ai/models/gpt-6-luna-non-reasoning"
+      "tps": 141,
+      "ttft": 0.71,
+      "url": "https://artificialanalysis.ai/models/gpt-6-luna-non-reasoning",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "19813eb2-460a-475c-af65-810bb8660fec",
@@ -5863,9 +6421,11 @@
       "blended": 0.2,
       "input": 0.1,
       "output": 0.5,
-      "tps": 146,
-      "ttft": 14.88,
-      "url": "https://artificialanalysis.ai/models/gpt-6-luna-xhigh"
+      "tps": 150,
+      "ttft": 13.47,
+      "url": "https://artificialanalysis.ai/models/gpt-6-luna-xhigh",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "52eebe3e-6ede-4e46-92db-c5dea49fc410",
@@ -5893,8 +6453,10 @@
       "input": 2,
       "output": 10,
       "tps": 76,
-      "ttft": 13.26,
-      "url": "https://artificialanalysis.ai/models/gpt-6-sol-high"
+      "ttft": 13.47,
+      "url": "https://artificialanalysis.ai/models/gpt-6-sol-high",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "01459872-433a-4ab2-8e99-7083162172eb",
@@ -5922,8 +6484,10 @@
       "input": 2,
       "output": 10,
       "tps": 80,
-      "ttft": 1.78,
-      "url": "https://artificialanalysis.ai/models/gpt-6-sol-low"
+      "ttft": 1.7,
+      "url": "https://artificialanalysis.ai/models/gpt-6-sol-low",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "c50ea08c-88c0-4eb7-85b8-27f2bbf6d527",
@@ -5950,9 +6514,11 @@
       "blended": 4,
       "input": 2,
       "output": 10,
-      "tps": 86,
-      "ttft": 97.14,
-      "url": "https://artificialanalysis.ai/models/gpt-6-sol"
+      "tps": 87,
+      "ttft": 102.49,
+      "url": "https://artificialanalysis.ai/models/gpt-6-sol",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "780a4a85-17ff-4175-a8dd-ebca4823e61b",
@@ -5981,7 +6547,9 @@
       "output": 10,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/gpt-6-sol-medium"
+      "url": "https://artificialanalysis.ai/models/gpt-6-sol-medium",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "d3e20e76-9e1a-45b6-b809-ad6aa37430cf",
@@ -6008,9 +6576,11 @@
       "blended": 4,
       "input": 2,
       "output": 10,
-      "tps": 75,
-      "ttft": 0.97,
-      "url": "https://artificialanalysis.ai/models/gpt-6-sol-non-reasoning"
+      "tps": 81,
+      "ttft": 0.91,
+      "url": "https://artificialanalysis.ai/models/gpt-6-sol-non-reasoning",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "da2642fe-9f73-4788-b5af-24edcd55b37e",
@@ -6037,9 +6607,11 @@
       "blended": 4,
       "input": 2,
       "output": 10,
-      "tps": 76,
-      "ttft": 24.42,
-      "url": "https://artificialanalysis.ai/models/gpt-6-sol-xhigh"
+      "tps": 79,
+      "ttft": 33.8,
+      "url": "https://artificialanalysis.ai/models/gpt-6-sol-xhigh",
+      "context": 1050000,
+      "max_output": 128000
     },
     {
       "id": "f0083258-8646-45b8-8082-7aaf6c2ea82a",
@@ -6066,9 +6638,11 @@
       "blended": 0.261,
       "input": 0.15,
       "output": 0.595,
-      "tps": 222,
-      "ttft": 0.54,
-      "url": "https://artificialanalysis.ai/models/gpt-oss-120b"
+      "tps": 219,
+      "ttft": 0.56,
+      "url": "https://artificialanalysis.ai/models/gpt-oss-120b",
+      "context": 131072,
+      "max_output": 65536
     },
     {
       "id": "c99f3bde-7c08-4de8-bd5c-8ee9123ebffa",
@@ -6095,9 +6669,11 @@
       "blended": 0.249,
       "input": 0.15,
       "output": 0.545,
-      "tps": 222,
-      "ttft": 0.5,
-      "url": "https://artificialanalysis.ai/models/gpt-oss-120b-low"
+      "tps": 218,
+      "ttft": 0.54,
+      "url": "https://artificialanalysis.ai/models/gpt-oss-120b-low",
+      "context": 131072,
+      "max_output": 65536
     },
     {
       "id": "36f73aaf-d38a-4b56-a2b3-d04d17186910",
@@ -6124,9 +6700,11 @@
       "blended": 0.098,
       "input": 0.07,
       "output": 0.18,
-      "tps": 208,
+      "tps": 188,
       "ttft": 0.42,
-      "url": "https://artificialanalysis.ai/models/gpt-oss-20b"
+      "url": "https://artificialanalysis.ai/models/gpt-oss-20b",
+      "context": 131072,
+      "max_output": 32768
     },
     {
       "id": "16149b9c-a1e9-4669-a5cb-ff3c00d78f89",
@@ -6153,9 +6731,11 @@
       "blended": 0.106,
       "input": 0.07,
       "output": 0.215,
-      "tps": 267,
-      "ttft": 0.5,
-      "url": "https://artificialanalysis.ai/models/gpt-oss-20b-low"
+      "tps": 259,
+      "ttft": 0.55,
+      "url": "https://artificialanalysis.ai/models/gpt-oss-20b-low",
+      "context": 131072,
+      "max_output": 32768
     },
     {
       "id": "2cff73da-4855-403c-afc9-5540feadcc15",
@@ -6184,7 +6764,9 @@
       "output": 0.25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/granite-3-3-8b-instruct"
+      "url": "https://artificialanalysis.ai/models/granite-3-3-8b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "5dba8d07-9992-483c-81db-dac97cb15ba8",
@@ -6211,38 +6793,11 @@
       "blended": 0.107,
       "input": 0.06,
       "output": 0.25,
-      "tps": 17,
-      "ttft": 27.34,
-      "url": "https://artificialanalysis.ai/models/granite-4-0-h-small"
-    },
-    {
-      "id": "82ed9bd2-c97b-4c35-9312-94bb72001e36",
-      "name": "Granite 4.1 8B",
-      "slug": "granite-4-1-8b",
-      "creator": "IBM",
-      "creator_slug": "ibm",
-      "release_date": "2026-04-29",
-      "index": 6.6,
-      "coding": 9.5,
-      "math": null,
-      "mmlu_pro": null,
-      "gpqa": 43.3,
-      "hle": 3.8,
-      "livecodebench": null,
-      "scicode": null,
-      "aime25": null,
-      "ifbench": 38.6,
-      "lcr": 13.3,
-      "terminalbench_hard": 0,
-      "terminalbench_v2_1": 3.4,
-      "tau2": 27.8,
-      "tau_banking": null,
-      "blended": 0.063,
-      "input": 0.05,
-      "output": 0.1,
-      "tps": null,
-      "ttft": null,
-      "url": "https://artificialanalysis.ai/models/granite-4-1-8b"
+      "tps": 15,
+      "ttft": 35,
+      "url": "https://artificialanalysis.ai/models/granite-4-0-h-small",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "1071dea1-43e7-4fe9-b936-3034bb622b2e",
@@ -6271,7 +6826,9 @@
       "output": 0.65,
       "tps": 78,
       "ttft": 0.28,
-      "url": "https://artificialanalysis.ai/models/granite-4-2-30b"
+      "url": "https://artificialanalysis.ai/models/granite-4-2-30b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "0c64b008-20c3-408d-bd68-15136df8cd2c",
@@ -6298,9 +6855,11 @@
       "blended": 0.052,
       "input": 0.03,
       "output": 0.12,
-      "tps": 228,
-      "ttft": 0.26,
-      "url": "https://artificialanalysis.ai/models/granite-4-2-3b"
+      "tps": 232,
+      "ttft": 0.24,
+      "url": "https://artificialanalysis.ai/models/granite-4-2-3b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "adfae555-f489-4f3e-9064-c6b7fcdd0783",
@@ -6327,9 +6886,11 @@
       "blended": 0.107,
       "input": 0.06,
       "output": 0.25,
-      "tps": 75,
+      "tps": 71,
       "ttft": 0.38,
-      "url": "https://artificialanalysis.ai/models/granite-4-2-8b"
+      "url": "https://artificialanalysis.ai/models/granite-4-2-8b",
+      "context": 131072,
+      "max_output": 117964
     },
     {
       "id": "2443ac9e-a3db-423d-accb-8963f6fb0a53",
@@ -6358,7 +6919,9 @@
       "output": 20,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-3"
+      "url": "https://artificialanalysis.ai/models/grok-3",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "ff9bc5e5-a02f-4270-983e-4b3f834f3363",
@@ -6387,7 +6950,9 @@
       "output": 0.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-3-mini-reasoning"
+      "url": "https://artificialanalysis.ai/models/grok-3-mini-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "5ea94a4a-55ac-4ea1-8898-2b3971e94af6",
@@ -6416,7 +6981,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4"
+      "url": "https://artificialanalysis.ai/models/grok-4",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "2dbb6dc7-8c40-4b6d-af9c-cf805f83b79a",
@@ -6445,7 +7012,9 @@
       "output": 0.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-fast"
+      "url": "https://artificialanalysis.ai/models/grok-4-fast",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "573bbd93-114c-4b71-9ede-a73a7d4bdf84",
@@ -6474,7 +7043,9 @@
       "output": 0.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-fast-reasoning"
+      "url": "https://artificialanalysis.ai/models/grok-4-fast-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "523125f4-a1da-4990-9abd-dd08a069100e",
@@ -6503,7 +7074,9 @@
       "output": 6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-20-0309-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/grok-4-20-0309-non-reasoning",
+      "context": 2000000,
+      "max_output": 1800000
     },
     {
       "id": "04787c2b-0751-4269-8029-075b727d7aed",
@@ -6532,7 +7105,9 @@
       "output": 6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-20-0309"
+      "url": "https://artificialanalysis.ai/models/grok-4-20-0309",
+      "context": 2000000,
+      "max_output": 1800000
     },
     {
       "id": "64312f37-3701-4243-a4c9-7c07a58cd6b9",
@@ -6561,7 +7136,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-20-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/grok-4-20-non-reasoning",
+      "context": 2000000,
+      "max_output": 1800000
     },
     {
       "id": "c72cb85a-18a4-4235-b455-77dff2f16c50",
@@ -6590,7 +7167,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-20"
+      "url": "https://artificialanalysis.ai/models/grok-4-20",
+      "context": 2000000,
+      "max_output": 1800000
     },
     {
       "id": "948892b5-db03-4118-a4a8-ccd51ed871ea",
@@ -6619,7 +7198,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-3"
+      "url": "https://artificialanalysis.ai/models/grok-4-3",
+      "context": 1000000,
+      "max_output": 900000
     },
     {
       "id": "fe2c2289-d261-4433-8681-46448372c1f6",
@@ -6648,7 +7229,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-3-low"
+      "url": "https://artificialanalysis.ai/models/grok-4-3-low",
+      "context": 1000000,
+      "max_output": 900000
     },
     {
       "id": "5e8b0d98-a3b4-42b5-93d8-ecb748788754",
@@ -6677,7 +7260,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-3-medium"
+      "url": "https://artificialanalysis.ai/models/grok-4-3-medium",
+      "context": 1000000,
+      "max_output": 900000
     },
     {
       "id": "90c2a9cf-ad7e-4332-9be2-2fd1309833e2",
@@ -6706,7 +7291,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-3-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/grok-4-3-non-reasoning",
+      "context": 1000000,
+      "max_output": 900000
     },
     {
       "id": "794f69b5-cede-482b-b1cc-d769478497cd",
@@ -6735,7 +7322,9 @@
       "output": 6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-4-5"
+      "url": "https://artificialanalysis.ai/models/grok-4-5",
+      "context": 500000,
+      "max_output": 450000
     },
     {
       "id": "c8adc5cf-fd5a-407b-af51-dc3bede3e49c",
@@ -6762,9 +7351,11 @@
       "blended": 3,
       "input": 2,
       "output": 6,
-      "tps": 84,
-      "ttft": 20.42,
-      "url": "https://artificialanalysis.ai/models/grok-4-6"
+      "tps": 75,
+      "ttft": 22.79,
+      "url": "https://artificialanalysis.ai/models/grok-4-6",
+      "context": 500000,
+      "max_output": 450000
     },
     {
       "id": "c07e65e6-32fc-451e-938d-7477a1c3ffcc",
@@ -6791,9 +7382,11 @@
       "blended": 3,
       "input": 2,
       "output": 6,
-      "tps": 73,
-      "ttft": 3.51,
-      "url": "https://artificialanalysis.ai/models/grok-4-6-low"
+      "tps": 64,
+      "ttft": 3.46,
+      "url": "https://artificialanalysis.ai/models/grok-4-6-low",
+      "context": 500000,
+      "max_output": 450000
     },
     {
       "id": "26614164-6840-4e17-a65a-2deb2fe7e87b",
@@ -6820,9 +7413,11 @@
       "blended": 3,
       "input": 2,
       "output": 6,
-      "tps": 83,
-      "ttft": 16.23,
-      "url": "https://artificialanalysis.ai/models/grok-4-6-medium"
+      "tps": 62,
+      "ttft": 20.69,
+      "url": "https://artificialanalysis.ai/models/grok-4-6-medium",
+      "context": 500000,
+      "max_output": 450000
     },
     {
       "id": "d6f43d0a-e8c4-447c-9ff7-5cf0a9d59aa3",
@@ -6849,9 +7444,11 @@
       "blended": 3,
       "input": 2,
       "output": 6,
-      "tps": 80,
-      "ttft": 22.69,
-      "url": "https://artificialanalysis.ai/models/grok-4-6-xhigh"
+      "tps": 71,
+      "ttft": 24.03,
+      "url": "https://artificialanalysis.ai/models/grok-4-6-xhigh",
+      "context": 500000,
+      "max_output": 450000
     },
     {
       "id": "272f5f03-aea9-4675-a244-2b753b618cdf",
@@ -6878,9 +7475,11 @@
       "blended": 3,
       "input": 2,
       "output": 6,
-      "tps": 82,
-      "ttft": 21.93,
-      "url": "https://artificialanalysis.ai/models/grok-4-7-high"
+      "tps": 81,
+      "ttft": 21.38,
+      "url": "https://artificialanalysis.ai/models/grok-4-7-high",
+      "context": 500000,
+      "max_output": 450000
     },
     {
       "id": "59627802-1546-422c-9a65-65b61c022d36",
@@ -6907,9 +7506,11 @@
       "blended": 3,
       "input": 2,
       "output": 6,
-      "tps": 72,
-      "ttft": 19.93,
-      "url": "https://artificialanalysis.ai/models/grok-4-7"
+      "tps": 78,
+      "ttft": 22.57,
+      "url": "https://artificialanalysis.ai/models/grok-4-7",
+      "context": 500000,
+      "max_output": 450000
     },
     {
       "id": "0b7efa66-2115-49e0-a1b7-a2ba225fe9f6",
@@ -6938,7 +7539,9 @@
       "output": 2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/grok-build-0-1-06-16"
+      "url": "https://artificialanalysis.ai/models/grok-build-0-1-06-16",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "1dcea4f7-7e8b-49f8-abe2-5860ff9f349e",
@@ -6967,7 +7570,9 @@
       "output": 0.7,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/hermes-3-llama-3-1-70b"
+      "url": "https://artificialanalysis.ai/models/hermes-3-llama-3-1-70b",
+      "context": 131072,
+      "max_output": 16384
     },
     {
       "id": "d3968fd3-97d8-4693-8d26-19cefc6f5d5f",
@@ -6995,8 +7600,10 @@
       "input": 1,
       "output": 3,
       "tps": 44,
-      "ttft": 0.67,
-      "url": "https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b"
+      "ttft": 0.68,
+      "url": "https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "82b207dd-d285-4a52-b2fc-2cbd27543899",
@@ -7023,9 +7630,11 @@
       "blended": 1.5,
       "input": 1,
       "output": 3,
-      "tps": 45,
+      "tps": 44,
       "ttft": 0.7,
-      "url": "https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b-reasoning"
+      "url": "https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "b23e6c69-96e5-44c9-8f58-4b42e0c399d5",
@@ -7049,12 +7658,14 @@
       "terminalbench_v2_1": 64.4,
       "tau2": null,
       "tau_banking": 22.9,
-      "blended": 0.25,
-      "input": 0.14,
-      "output": 0.58,
-      "tps": 91,
-      "ttft": 2.06,
-      "url": "https://artificialanalysis.ai/models/hy3"
+      "blended": 0.241,
+      "input": 0.136,
+      "output": 0.555,
+      "tps": 96,
+      "ttft": 1.99,
+      "url": "https://artificialanalysis.ai/models/hy3",
+      "context": 262144,
+      "max_output": 128000
     },
     {
       "id": "b58b8272-cd3f-44b9-9b68-612f40779ce2",
@@ -7083,7 +7694,9 @@
       "output": 0.21,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/hy3-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/hy3-non-reasoning",
+      "context": 262144,
+      "max_output": 128000
     },
     {
       "id": "8ca48626-ff5e-48b3-8401-38081376d706",
@@ -7112,7 +7725,9 @@
       "output": 0.21,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/hy3-preview"
+      "url": "https://artificialanalysis.ai/models/hy3-preview",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "0de09623-2b1a-4c8d-86ef-7f5245d4e24b",
@@ -7139,9 +7754,11 @@
       "blended": 1.762,
       "input": 1,
       "output": 4.05,
-      "tps": 203,
-      "ttft": 2.15,
-      "url": "https://artificialanalysis.ai/models/inkling"
+      "tps": 200,
+      "ttft": 2.17,
+      "url": "https://artificialanalysis.ai/models/inkling",
+      "context": 524288,
+      "max_output": 471859
     },
     {
       "id": "7261504e-503c-4a66-a9d3-a3272cdf9ad6",
@@ -7169,8 +7786,10 @@
       "input": 0.3,
       "output": 1.2,
       "tps": 228,
-      "ttft": 2.08,
-      "url": "https://artificialanalysis.ai/models/inkling-small"
+      "ttft": 1.72,
+      "url": "https://artificialanalysis.ai/models/inkling-small",
+      "context": 524288,
+      "max_output": 262144
     },
     {
       "id": "b4ddb4c8-1400-44ab-8c2b-e2472088e7ff",
@@ -7199,7 +7818,9 @@
       "output": 8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/jamba-1-5-large"
+      "url": "https://artificialanalysis.ai/models/jamba-1-5-large",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "540ebc58-a2d8-4dc9-ba6b-973efa52fab1",
@@ -7228,7 +7849,9 @@
       "output": 0.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/jamba-1-5-mini"
+      "url": "https://artificialanalysis.ai/models/jamba-1-5-mini",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "fc4223e8-4586-4ca1-97ca-bb55ff586947",
@@ -7257,7 +7880,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kat-coder-pro-v2"
+      "url": "https://artificialanalysis.ai/models/kat-coder-pro-v2",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "441734a9-8901-4850-9bae-b474c370291f",
@@ -7286,7 +7911,9 @@
       "output": 2.3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k2"
+      "url": "https://artificialanalysis.ai/models/kimi-k2",
+      "context": 131072,
+      "max_output": 98304
     },
     {
       "id": "66445f84-b2e3-4202-afdc-92ba0f0e5f36",
@@ -7315,7 +7942,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k2-0905"
+      "url": "https://artificialanalysis.ai/models/kimi-k2-0905",
+      "context": 262144,
+      "max_output": 98304
     },
     {
       "id": "bddebfd3-0a8d-47f5-b722-bc4c2ca5a5dc",
@@ -7344,7 +7973,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k2-thinking"
+      "url": "https://artificialanalysis.ai/models/kimi-k2-thinking",
+      "context": 262144,
+      "max_output": 98304
     },
     {
       "id": "ba04694d-326a-4a6a-8f1b-46316f872a7f",
@@ -7373,7 +8004,9 @@
       "output": 3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k2-5-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/kimi-k2-5-non-reasoning",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "a550ffca-f89e-4381-ade6-a85dc6a1fb4c",
@@ -7402,7 +8035,9 @@
       "output": 2.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k2-5"
+      "url": "https://artificialanalysis.ai/models/kimi-k2-5",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "0de67206-4d36-4d10-b8f6-cf37fa747a03",
@@ -7431,7 +8066,9 @@
       "output": 4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k2-6"
+      "url": "https://artificialanalysis.ai/models/kimi-k2-6",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "0fc6308e-fbd2-42d3-a216-06da3c43e34e",
@@ -7460,7 +8097,9 @@
       "output": 4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k2-6-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/kimi-k2-6-non-reasoning",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "8d0cb231-7303-452c-9923-a9620b948475",
@@ -7489,7 +8128,9 @@
       "output": 4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k2-7-code"
+      "url": "https://artificialanalysis.ai/models/kimi-k2-7-code",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "512d17ef-13d2-4f65-bf9b-154b0dec7e8d",
@@ -7518,7 +8159,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k3-low"
+      "url": "https://artificialanalysis.ai/models/kimi-k3-low",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "f7d2fc3e-1f7b-405f-818c-07952a4af78f",
@@ -7547,7 +8190,9 @@
       "output": 15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/kimi-k3"
+      "url": "https://artificialanalysis.ai/models/kimi-k3",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "e33dc369-ae81-40e0-8c4e-28b002d02197",
@@ -7574,9 +8219,11 @@
       "blended": 0.111,
       "input": 0.075,
       "output": 0.22,
-      "tps": 389,
-      "ttft": 1.77,
-      "url": "https://artificialanalysis.ai/models/ling-3-0-flash"
+      "tps": 384,
+      "ttft": 1.79,
+      "url": "https://artificialanalysis.ai/models/ling-3-0-flash",
+      "context": 262144,
+      "max_output": 32768
     },
     {
       "id": "2e46d2fd-eb2b-42b9-9fe4-be50630fe870",
@@ -7605,7 +8252,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/ling-2-6-1t"
+      "url": "https://artificialanalysis.ai/models/ling-2-6-1t",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "6d6fa1c9-b833-40b2-8a58-fa810e24a84e",
@@ -7632,9 +8281,11 @@
       "blended": 0.111,
       "input": 0.075,
       "output": 0.22,
-      "tps": 163,
-      "ttft": 1.38,
-      "url": "https://artificialanalysis.ai/models/ling-3-0-flash-fin"
+      "tps": 164,
+      "ttft": 1.39,
+      "url": "https://artificialanalysis.ai/models/ling-3-0-flash-fin",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "433d5c5d-3092-4026-9727-1587ca07915d",
@@ -7661,9 +8312,11 @@
       "blended": 0.111,
       "input": 0.075,
       "output": 0.22,
-      "tps": 147,
-      "ttft": 1.16,
-      "url": "https://artificialanalysis.ai/models/ling-3-0-flash-vl"
+      "tps": 149,
+      "ttft": 1.15,
+      "url": "https://artificialanalysis.ai/models/ling-3-0-flash-vl",
+      "context": 262144,
+      "max_output": 32768
     },
     {
       "id": "882a5da3-94ca-4602-8693-c45970df17e2",
@@ -7692,7 +8345,9 @@
       "output": 0.57,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/ling-flash-2-0"
+      "url": "https://artificialanalysis.ai/models/ling-flash-2-0",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "ffd65ef7-fbdb-4145-98ae-b5d01cda770b",
@@ -7721,7 +8376,9 @@
       "output": 0.25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/llama-2-chat-7b"
+      "url": "https://artificialanalysis.ai/models/llama-2-chat-7b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "aa83359a-d804-4f0b-b5bf-dc637711c26f",
@@ -7750,7 +8407,9 @@
       "output": 2.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/llama-3-instruct-70b"
+      "url": "https://artificialanalysis.ai/models/llama-3-instruct-70b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "82879bb8-89fb-4adc-b519-315b8ef30b77",
@@ -7779,7 +8438,9 @@
       "output": 0.145,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/llama-3-instruct-8b"
+      "url": "https://artificialanalysis.ai/models/llama-3-instruct-8b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "466aecdb-3d96-4191-bc52-b3366db38851",
@@ -7808,7 +8469,9 @@
       "output": 0.56,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/llama-3-1-instruct-70b"
+      "url": "https://artificialanalysis.ai/models/llama-3-1-instruct-70b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "739684ba-0f63-4e2a-b4ee-30741c9e9320",
@@ -7837,7 +8500,9 @@
       "output": 0.05,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/llama-3-1-instruct-8b"
+      "url": "https://artificialanalysis.ai/models/llama-3-1-instruct-8b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "5fb47ff6-a30e-4c2c-96f2-55e95a13390f",
@@ -7864,9 +8529,11 @@
       "blended": 0.345,
       "input": 0.345,
       "output": 0.345,
-      "tps": 14,
-      "ttft": 1.06,
-      "url": "https://artificialanalysis.ai/models/llama-3-2-instruct-11b-vision"
+      "tps": 15,
+      "ttft": 1.19,
+      "url": "https://artificialanalysis.ai/models/llama-3-2-instruct-11b-vision",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "976cc8ad-7904-4056-83c5-960181f47d5f",
@@ -7893,9 +8560,11 @@
       "blended": 0.712,
       "input": 0.71,
       "output": 0.72,
-      "tps": 93,
+      "tps": 96,
       "ttft": 0.62,
-      "url": "https://artificialanalysis.ai/models/llama-3-3-instruct-70b"
+      "url": "https://artificialanalysis.ai/models/llama-3-3-instruct-70b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "922c69c7-9037-43c6-8bcf-a1c555e7f3eb",
@@ -7922,9 +8591,11 @@
       "blended": 0.422,
       "input": 0.26,
       "output": 0.91,
-      "tps": 115,
-      "ttft": 0.58,
-      "url": "https://artificialanalysis.ai/models/llama-4-maverick"
+      "tps": 108,
+      "ttft": 0.57,
+      "url": "https://artificialanalysis.ai/models/llama-4-maverick",
+      "context": 1048576,
+      "max_output": 16384
     },
     {
       "id": "adf9a85e-abc3-4f28-937b-db6655cc5238",
@@ -7951,9 +8622,11 @@
       "blended": 0.313,
       "input": 0.19,
       "output": 0.68,
-      "tps": 108,
-      "ttft": 0.63,
-      "url": "https://artificialanalysis.ai/models/llama-4-scout"
+      "tps": 130,
+      "ttft": 0.66,
+      "url": "https://artificialanalysis.ai/models/llama-4-scout",
+      "context": 1310720,
+      "max_output": 16384
     },
     {
       "id": "5c3bdc0d-abab-4526-8079-34de4089bb4a",
@@ -7982,7 +8655,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/longcat-2-0"
+      "url": "https://artificialanalysis.ai/models/longcat-2-0",
+      "context": 1048756,
+      "max_output": 262144
     },
     {
       "id": "70152cb0-fb36-4732-a925-89ef40994be1",
@@ -8011,7 +8686,9 @@
       "output": 1.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/magistral-small-2509"
+      "url": "https://artificialanalysis.ai/models/magistral-small-2509",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "016d330a-2141-4afa-b2fc-62b314423dc1",
@@ -8040,7 +8717,9 @@
       "output": 0.75,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mercury-2"
+      "url": "https://artificialanalysis.ai/models/mercury-2",
+      "context": 128000,
+      "max_output": 50000
     },
     {
       "id": "765c9f31-95ec-4f14-900a-80614c3b0777",
@@ -8067,9 +8746,11 @@
       "blended": 0.375,
       "input": 0.25,
       "output": 0.75,
-      "tps": 920,
-      "ttft": 2.78,
-      "url": "https://artificialanalysis.ai/models/mercury-2-5"
+      "tps": 769,
+      "ttft": 2.83,
+      "url": "https://artificialanalysis.ai/models/mercury-2-5",
+      "context": 260000,
+      "max_output": 65536
     },
     {
       "id": "be185709-ddb4-4268-9597-856464359b25",
@@ -8098,7 +8779,9 @@
       "output": 0.3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mimo-v2-flash-reasoning"
+      "url": "https://artificialanalysis.ai/models/mimo-v2-flash-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "22d09131-343b-4adf-8760-533e20a2155f",
@@ -8125,9 +8808,11 @@
       "blended": 0.175,
       "input": 0.14,
       "output": 0.28,
-      "tps": 44,
-      "ttft": 3.12,
-      "url": "https://artificialanalysis.ai/models/mimo-v2-5-0424"
+      "tps": 47,
+      "ttft": 2.35,
+      "url": "https://artificialanalysis.ai/models/mimo-v2-5-0424",
+      "context": 1050000,
+      "max_output": 131072
     },
     {
       "id": "00f1248e-78e3-4230-8dc8-5e13ba8645e2",
@@ -8154,9 +8839,11 @@
       "blended": 0.544,
       "input": 0.435,
       "output": 0.87,
-      "tps": 31,
-      "ttft": 1.86,
-      "url": "https://artificialanalysis.ai/models/mimo-v2-5-pro"
+      "tps": 29,
+      "ttft": 2.1,
+      "url": "https://artificialanalysis.ai/models/mimo-v2-5-pro",
+      "context": 1050000,
+      "max_output": 131072
     },
     {
       "id": "4764d31d-f4af-4297-8bd1-e993f26bcb64",
@@ -8183,9 +8870,11 @@
       "blended": 0.544,
       "input": 0.435,
       "output": 0.87,
-      "tps": 30,
-      "ttft": 1.45,
-      "url": "https://artificialanalysis.ai/models/mimo-v2-5-pro-non-reasoning"
+      "tps": 28,
+      "ttft": 1.44,
+      "url": "https://artificialanalysis.ai/models/mimo-v2-5-pro-non-reasoning",
+      "context": 1050000,
+      "max_output": 131072
     },
     {
       "id": "127de816-57d3-4037-8484-480a613cd413",
@@ -8212,9 +8901,11 @@
       "blended": 0.175,
       "input": 0.14,
       "output": 0.28,
-      "tps": 52,
-      "ttft": 3.1,
-      "url": "https://artificialanalysis.ai/models/mimo-v2-6-flash"
+      "tps": 48,
+      "ttft": 3.78,
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-flash",
+      "context": 1048576,
+      "max_output": 131072
     },
     {
       "id": "24d8fdfe-6241-424e-b7b7-1b6efb06e4fb",
@@ -8241,9 +8932,11 @@
       "blended": 0.544,
       "input": 0.435,
       "output": 0.87,
-      "tps": 41,
-      "ttft": 2.65,
-      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro"
+      "tps": 45,
+      "ttft": 2.83,
+      "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
+      "context": 1050000,
+      "max_output": 131072
     },
     {
       "id": "9ca246a7-cf13-42c9-9182-5b5ad6b79026",
@@ -8272,7 +8965,9 @@
       "output": 2.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/minimax-m1-80k"
+      "url": "https://artificialanalysis.ai/models/minimax-m1-80k",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "f74ea286-cd29-4eb4-af14-1389b19c21e5",
@@ -8301,7 +8996,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/minimax-m2"
+      "url": "https://artificialanalysis.ai/models/minimax-m2",
+      "context": 204800,
+      "max_output": 176947
     },
     {
       "id": "272ff333-442f-4169-a804-ac9177bc99d7",
@@ -8330,7 +9027,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/minimax-m2-1"
+      "url": "https://artificialanalysis.ai/models/minimax-m2-1",
+      "context": 204800,
+      "max_output": 131072
     },
     {
       "id": "12adec16-19fe-4d92-aeff-5ef3eb7e780a",
@@ -8359,7 +9058,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/minimax-m2-5"
+      "url": "https://artificialanalysis.ai/models/minimax-m2-5",
+      "context": 204800,
+      "max_output": 128000
     },
     {
       "id": "4bbceacb-cf47-464b-b60f-e1d1fe016d67",
@@ -8388,7 +9089,9 @@
       "output": 1.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/minimax-m2-7"
+      "url": "https://artificialanalysis.ai/models/minimax-m2-7",
+      "context": 204800,
+      "max_output": 176947
     },
     {
       "id": "277f939a-985b-4b37-859d-b3eabc7c0b26",
@@ -8415,9 +9118,11 @@
       "blended": 0.525,
       "input": 0.3,
       "output": 1.2,
-      "tps": 119,
-      "ttft": 0.87,
-      "url": "https://artificialanalysis.ai/models/minimax-m3"
+      "tps": 138,
+      "ttft": 0.91,
+      "url": "https://artificialanalysis.ai/models/minimax-m3",
+      "context": 1048576,
+      "max_output": 512000
     },
     {
       "id": "713fae11-c75c-4f10-ae2c-8e4074cd58af",
@@ -8444,9 +9149,11 @@
       "blended": 0.2,
       "input": 0.2,
       "output": 0.2,
-      "tps": 98,
+      "tps": 91,
       "ttft": 0.51,
-      "url": "https://artificialanalysis.ai/models/ministral-3-14b"
+      "url": "https://artificialanalysis.ai/models/ministral-3-14b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "66f4ce73-9a9b-4b49-9c6e-bedb9bfdc720",
@@ -8473,9 +9180,11 @@
       "blended": 0.1,
       "input": 0.1,
       "output": 0.1,
-      "tps": 220,
-      "ttft": 0.51,
-      "url": "https://artificialanalysis.ai/models/ministral-3-3b"
+      "tps": 239,
+      "ttft": 0.55,
+      "url": "https://artificialanalysis.ai/models/ministral-3-3b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "9741f3c2-cbb1-4a3f-99ee-7bd7384d9038",
@@ -8502,9 +9211,11 @@
       "blended": 0.15,
       "input": 0.15,
       "output": 0.15,
-      "tps": 103,
-      "ttft": 0.51,
-      "url": "https://artificialanalysis.ai/models/ministral-3-8b"
+      "tps": 105,
+      "ttft": 0.49,
+      "url": "https://artificialanalysis.ai/models/ministral-3-8b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "217b34ec-5920-4fc1-8886-6a70a324837d",
@@ -8533,7 +9244,9 @@
       "output": 0.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mistral-7b-instruct"
+      "url": "https://artificialanalysis.ai/models/mistral-7b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "5e4e4590-a77e-4b66-95f8-f3960a1a7c68",
@@ -8562,7 +9275,9 @@
       "output": 12,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mistral-large"
+      "url": "https://artificialanalysis.ai/models/mistral-large",
+      "context": 128000,
+      "max_output": 102400
     },
     {
       "id": "1b05e346-e86a-4a20-8feb-7da8c65a99aa",
@@ -8591,7 +9306,9 @@
       "output": 6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mistral-large-2407"
+      "url": "https://artificialanalysis.ai/models/mistral-large-2407",
+      "context": 131072,
+      "max_output": 104857
     },
     {
       "id": "4928e950-7f37-4475-b0dc-c5bad781a321",
@@ -8618,9 +9335,11 @@
       "blended": 0.75,
       "input": 0.5,
       "output": 1.5,
-      "tps": 77,
+      "tps": 79,
       "ttft": 0.78,
-      "url": "https://artificialanalysis.ai/models/mistral-large-3"
+      "url": "https://artificialanalysis.ai/models/mistral-large-3",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "59e22326-1bca-4432-a5fa-147fbe8854e7",
@@ -8649,7 +9368,9 @@
       "output": 2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mistral-medium-3"
+      "url": "https://artificialanalysis.ai/models/mistral-medium-3",
+      "context": 131072,
+      "max_output": 104857
     },
     {
       "id": "dd059b25-d82a-4ead-82a4-4adceaaec48b",
@@ -8677,8 +9398,10 @@
       "input": 1.5,
       "output": 7.5,
       "tps": 170,
-      "ttft": 0.63,
-      "url": "https://artificialanalysis.ai/models/mistral-medium-3-5"
+      "ttft": 0.62,
+      "url": "https://artificialanalysis.ai/models/mistral-medium-3-5",
+      "context": 262144,
+      "max_output": 209715
     },
     {
       "id": "e5dd499f-c330-45ec-9ff0-a99209c82af7",
@@ -8707,7 +9430,9 @@
       "output": 0.08,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mistral-small-3"
+      "url": "https://artificialanalysis.ai/models/mistral-small-3",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "24ac5b00-5f03-4c47-8e37-522d1195383e",
@@ -8736,7 +9461,9 @@
       "output": 0.17,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mistral-small-3-1"
+      "url": "https://artificialanalysis.ai/models/mistral-small-3-1",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "43da3718-3d6e-40dd-901a-05664179ff7f",
@@ -8765,7 +9492,9 @@
       "output": 0.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mistral-small-3-2"
+      "url": "https://artificialanalysis.ai/models/mistral-small-3-2",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "12f6a061-0ab3-4c76-b225-49abee253651",
@@ -8793,8 +9522,10 @@
       "input": 0.15,
       "output": 0.6,
       "tps": 156,
-      "ttft": 0.58,
-      "url": "https://artificialanalysis.ai/models/mistral-small-4-non-reasoning"
+      "ttft": 0.56,
+      "url": "https://artificialanalysis.ai/models/mistral-small-4-non-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "3fd96175-4ef1-434c-8795-f873aec2abc1",
@@ -8822,8 +9553,10 @@
       "input": 0.15,
       "output": 0.6,
       "tps": 174,
-      "ttft": 0.57,
-      "url": "https://artificialanalysis.ai/models/mistral-small-4"
+      "ttft": 0.56,
+      "url": "https://artificialanalysis.ai/models/mistral-small-4",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "3edcb2ed-6981-4f88-a556-563f7f8f00aa",
@@ -8852,7 +9585,9 @@
       "output": 0.7,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/mixtral-8x7b-instruct"
+      "url": "https://artificialanalysis.ai/models/mixtral-8x7b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "583f98fb-c4b8-4df3-8d40-60ac0ed69882",
@@ -8879,9 +9614,11 @@
       "blended": 0.581,
       "input": 0.325,
       "output": 1.35,
-      "tps": 136,
-      "ttft": 0.51,
-      "url": "https://artificialanalysis.ai/models/muse-glimmer"
+      "tps": 162,
+      "ttft": 0.48,
+      "url": "https://artificialanalysis.ai/models/muse-glimmer",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "d61493e2-43ff-460c-9054-eaf6ba317360",
@@ -8910,7 +9647,9 @@
       "output": 4.25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/muse-spark-1-1"
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-1",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "04ee6719-0327-463b-a1a1-70a6a78254f9",
@@ -8939,7 +9678,9 @@
       "output": 4.25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/muse-spark-1-2"
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-2",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "9999672c-b687-4026-9c15-5cef02ff53bb",
@@ -8966,9 +9707,11 @@
       "blended": 2,
       "input": 1.25,
       "output": 4.25,
-      "tps": 160,
-      "ttft": 31.68,
-      "url": "https://artificialanalysis.ai/models/muse-spark-1-3"
+      "tps": 189,
+      "ttft": 20.92,
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "d5170215-69be-4129-849b-26d8d8825bfc",
@@ -8995,9 +9738,11 @@
       "blended": 2,
       "input": 1.25,
       "output": 4.25,
-      "tps": 171,
-      "ttft": 36.09,
-      "url": "https://artificialanalysis.ai/models/muse-spark-1-3-xhigh"
+      "tps": 153,
+      "ttft": 43.44,
+      "url": "https://artificialanalysis.ai/models/muse-spark-1-3-xhigh",
+      "context": 1048576,
+      "max_output": 943718
     },
     {
       "id": "8c748e53-61ae-48b8-af8d-eb8298b1e9db",
@@ -9024,9 +9769,11 @@
       "blended": 0.42,
       "input": 0.195,
       "output": 1.095,
-      "tps": 260,
-      "ttft": 0.29,
-      "url": "https://artificialanalysis.ai/models/nemotron-3-nano-omni-30b-a3b"
+      "tps": 266,
+      "ttft": 0.27,
+      "url": "https://artificialanalysis.ai/models/nemotron-3-nano-omni-30b-a3b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "63872e9c-3377-4a6b-b477-7bba244c38e9",
@@ -9053,9 +9800,11 @@
       "blended": 0.45,
       "input": 0.3,
       "output": 0.9,
-      "tps": 164,
-      "ttft": 0.89,
-      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-super-120b-a12b"
+      "tps": 165,
+      "ttft": 0.81,
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-super-120b-a12b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "5b52def2-ac9b-4465-ad80-91ea8079e253",
@@ -9082,9 +9831,11 @@
       "blended": 1.075,
       "input": 0.6,
       "output": 2.5,
-      "tps": 200,
-      "ttft": 0.88,
-      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b"
+      "tps": 215,
+      "ttft": 0.83,
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "29976311-665a-4b2f-ac72-557c33e0758e",
@@ -9111,9 +9862,11 @@
       "blended": 0.108,
       "input": 0.07,
       "output": 0.22,
-      "tps": 259,
-      "ttft": 0.46,
-      "url": "https://artificialanalysis.ai/models/nemotron-3-5-lightning"
+      "tps": 263,
+      "ttft": 0.47,
+      "url": "https://artificialanalysis.ai/models/nemotron-3-5-lightning",
+      "context": 1000000,
+      "max_output": 32768
     },
     {
       "id": "61bd9367-e520-4ec8-989e-5fbf50e61610",
@@ -9140,9 +9893,11 @@
       "blended": 0.85,
       "input": 0.3,
       "output": 2.5,
-      "tps": 216,
-      "ttft": 11.25,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-lite-reasoning"
+      "tps": 217,
+      "ttft": 13.83,
+      "url": "https://artificialanalysis.ai/models/nova-2-0-lite-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "6fd796d3-f346-4f66-97df-5da81714fc73",
@@ -9169,9 +9924,11 @@
       "blended": 0.85,
       "input": 0.3,
       "output": 2.5,
-      "tps": 218,
+      "tps": 216,
       "ttft": 4.69,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-lite-reasoning-low"
+      "url": "https://artificialanalysis.ai/models/nova-2-0-lite-reasoning-low",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "fbdf8da1-b341-448c-b3cb-8aff1d8f70b9",
@@ -9198,9 +9955,11 @@
       "blended": 0.85,
       "input": 0.3,
       "output": 2.5,
-      "tps": 238,
-      "ttft": 10.64,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-lite-reasoning-medium"
+      "tps": 218,
+      "ttft": 13.04,
+      "url": "https://artificialanalysis.ai/models/nova-2-0-lite-reasoning-medium",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "76bce7fb-3a3f-4b66-a78d-35ccf3edf5d2",
@@ -9227,9 +9986,11 @@
       "blended": 0.85,
       "input": 0.3,
       "output": 2.5,
-      "tps": 228,
-      "ttft": 0.84,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-lite"
+      "tps": 227,
+      "ttft": 0.82,
+      "url": "https://artificialanalysis.ai/models/nova-2-0-lite",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "b36ff8f3-0323-49d1-a063-ab09704fdb0c",
@@ -9258,7 +10019,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-omni-reasoning-low"
+      "url": "https://artificialanalysis.ai/models/nova-2-0-omni-reasoning-low",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "018c60e8-e908-431a-ba57-c840b1df3987",
@@ -9287,7 +10050,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-omni-reasoning-medium"
+      "url": "https://artificialanalysis.ai/models/nova-2-0-omni-reasoning-medium",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "1f6478c9-3e22-4586-adbe-841782859677",
@@ -9316,7 +10081,9 @@
       "output": 2.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-omni"
+      "url": "https://artificialanalysis.ai/models/nova-2-0-omni",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "f4274721-ef28-4121-aa88-8e97267a5a82",
@@ -9343,9 +10110,11 @@
       "blended": 3.438,
       "input": 1.25,
       "output": 10,
-      "tps": 134,
-      "ttft": 3.04,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-pro-reasoning-low"
+      "tps": 132,
+      "ttft": 3.98,
+      "url": "https://artificialanalysis.ai/models/nova-2-0-pro-reasoning-low",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "0d94dc87-12c8-4d4a-8d99-804ce3f17bc2",
@@ -9372,9 +10141,11 @@
       "blended": 3.438,
       "input": 1.25,
       "output": 10,
-      "tps": 129,
-      "ttft": 13.44,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-pro-reasoning-medium"
+      "tps": 128,
+      "ttft": 17.3,
+      "url": "https://artificialanalysis.ai/models/nova-2-0-pro-reasoning-medium",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "a20ae33a-46e1-41e6-81a0-fe8b00d2e538",
@@ -9403,7 +10174,9 @@
       "output": 10,
       "tps": 134,
       "ttft": 0.69,
-      "url": "https://artificialanalysis.ai/models/nova-2-0-pro"
+      "url": "https://artificialanalysis.ai/models/nova-2-0-pro",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "5c3dd927-48a3-4f3c-8045-9b135f62dfbb",
@@ -9432,7 +10205,9 @@
       "output": 0.24,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/nova-lite"
+      "url": "https://artificialanalysis.ai/models/nova-lite",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "344c6718-c573-41d4-9556-10287a3fa1fc",
@@ -9459,9 +10234,11 @@
       "blended": 0.061,
       "input": 0.035,
       "output": 0.14,
-      "tps": 297,
+      "tps": 282,
       "ttft": 0.58,
-      "url": "https://artificialanalysis.ai/models/nova-micro"
+      "url": "https://artificialanalysis.ai/models/nova-micro",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "546ec53f-273c-4af7-b13f-b88c41f45905",
@@ -9490,7 +10267,9 @@
       "output": 3.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/nova-pro"
+      "url": "https://artificialanalysis.ai/models/nova-pro",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "23b379f7-18df-492a-9fc1-a56c5a5b9cfc",
@@ -9518,8 +10297,10 @@
       "input": 0.05,
       "output": 0.2,
       "tps": 234,
-      "ttft": 0.34,
-      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b"
+      "ttft": 0.38,
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "76dcf6ef-39ea-4be0-b693-b88da25b4caf",
@@ -9546,9 +10327,11 @@
       "blended": 0.088,
       "input": 0.05,
       "output": 0.2,
-      "tps": 170,
-      "ttft": 0.55,
-      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b-reasoning"
+      "tps": 180,
+      "ttft": 0.53,
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "ab7f016c-a29b-4710-bdf6-6a5cd96aacca",
@@ -9575,9 +10358,11 @@
       "blended": 0.3,
       "input": 0.2,
       "output": 0.6,
-      "tps": 205,
-      "ttft": 0.78,
-      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-nano-12b-v2-vl"
+      "tps": 206,
+      "ttft": 0.77,
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-nano-12b-v2-vl",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "2e8694f9-7782-47a6-a6ba-fdce89d939c8",
@@ -9604,9 +10389,11 @@
       "blended": 0.086,
       "input": 0.05,
       "output": 0.195,
-      "tps": 162,
-      "ttft": 1.06,
-      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2"
+      "tps": 160,
+      "ttft": 1.16,
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "f1d52583-9d20-4099-99ac-b5df9430c3b6",
@@ -9633,9 +10420,11 @@
       "blended": 0.07,
       "input": 0.04,
       "output": 0.16,
-      "tps": 113,
-      "ttft": 4.13,
-      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2-reasoning"
+      "tps": 91,
+      "ttft": 5.55,
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "5ad2f60f-ee05-49fd-85a0-cef69aa7cb7b",
@@ -9664,7 +10453,9 @@
       "output": 60,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/o1"
+      "url": "https://artificialanalysis.ai/models/o1",
+      "context": 200000,
+      "max_output": 100000
     },
     {
       "id": "078f4dc8-5350-40a2-a5ea-e8359f795b70",
@@ -9693,7 +10484,9 @@
       "output": 66,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/o1-preview"
+      "url": "https://artificialanalysis.ai/models/o1-preview",
+      "context": 200000,
+      "max_output": 100000
     },
     {
       "id": "e8d4100e-165b-4c5d-ac11-ac553590a334",
@@ -9722,7 +10515,9 @@
       "output": 600,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/o1-pro"
+      "url": "https://artificialanalysis.ai/models/o1-pro",
+      "context": 200000,
+      "max_output": 100000
     },
     {
       "id": "16c5b637-8bce-4252-81f2-1b87a36a4e4c",
@@ -9749,9 +10544,11 @@
       "blended": 3.5,
       "input": 2,
       "output": 8,
-      "tps": 162,
-      "ttft": 5.65,
-      "url": "https://artificialanalysis.ai/models/o3"
+      "tps": 173,
+      "ttft": 5.31,
+      "url": "https://artificialanalysis.ai/models/o3",
+      "context": 200000,
+      "max_output": 100000
     },
     {
       "id": "2dad8957-4c16-4e74-bf2d-8b21514e0ae9",
@@ -9780,7 +10577,9 @@
       "output": 4.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/o3-mini"
+      "url": "https://artificialanalysis.ai/models/o3-mini",
+      "context": 200000,
+      "max_output": 100000
     },
     {
       "id": "076f2674-bc4b-4925-be59-50832eb8c090",
@@ -9809,7 +10608,9 @@
       "output": 4.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/o3-mini-high"
+      "url": "https://artificialanalysis.ai/models/o3-mini-high",
+      "context": 200000,
+      "max_output": 100000
     },
     {
       "id": "ca04852c-eaae-4881-a208-f9b2ca3b7cd6",
@@ -9838,7 +10639,9 @@
       "output": 80,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/o3-pro"
+      "url": "https://artificialanalysis.ai/models/o3-pro",
+      "context": 200000,
+      "max_output": 100000
     },
     {
       "id": "84b49308-6b93-47aa-a4f6-776ee1a1e8cd",
@@ -9867,7 +10670,9 @@
       "output": 4.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/o4-mini"
+      "url": "https://artificialanalysis.ai/models/o4-mini",
+      "context": 200000,
+      "max_output": 100000
     },
     {
       "id": "8f74a6ed-f82f-4a2f-a96b-4914993e47da",
@@ -9896,7 +10701,9 @@
       "output": 0.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/olmo-3-7b-instruct"
+      "url": "https://artificialanalysis.ai/models/olmo-3-7b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "ee708f92-374e-4123-b900-e22d7b2afc19",
@@ -9924,8 +10731,10 @@
       "input": 0.125,
       "output": 0.5,
       "tps": 44,
-      "ttft": 0.98,
-      "url": "https://artificialanalysis.ai/models/phi-4"
+      "ttft": 1.02,
+      "url": "https://artificialanalysis.ai/models/phi-4",
+      "context": 16384,
+      "max_output": 14745
     },
     {
       "id": "f9739750-6d42-450f-ba1e-2f76c869b4fe",
@@ -9952,9 +10761,11 @@
       "blended": 0.9,
       "input": 0.6,
       "output": 1.8,
-      "tps": 170,
-      "ttft": 0.51,
-      "url": "https://artificialanalysis.ai/models/quasar-438b"
+      "tps": 167,
+      "ttft": 0.47,
+      "url": "https://artificialanalysis.ai/models/quasar-438b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "b4f7d7a4-869a-4ee7-b17a-4046cd1e79fd",
@@ -9983,7 +10794,9 @@
       "output": 0.495,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen2-5-72b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen2-5-72b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "352f834f-a03c-4117-8a29-c3ccd8a568ce",
@@ -10012,7 +10825,9 @@
       "output": 0.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen-turbo"
+      "url": "https://artificialanalysis.ai/models/qwen-turbo",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "ecc6524a-d521-458a-8327-5009e8ce6549",
@@ -10041,7 +10856,9 @@
       "output": 1.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-14b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-14b-instruct",
+      "context": 131072,
+      "max_output": 16384
     },
     {
       "id": "4559e9f0-8aad-4681-89fb-68cb915e0f16",
@@ -10070,7 +10887,9 @@
       "output": 4.2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-14b-instruct-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-14b-instruct-reasoning",
+      "context": 131072,
+      "max_output": 16384
     },
     {
       "id": "43573c57-2403-46fb-af4b-a93de9a0c3f5",
@@ -10099,7 +10918,9 @@
       "output": 2.8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "bbe6d782-e630-48d5-b11c-3ce37f373f1e",
@@ -10128,7 +10949,9 @@
       "output": 8.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-reasoning",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "f6ccbe1d-bd7e-484b-9795-18cc9f91552d",
@@ -10157,7 +10980,9 @@
       "output": 2.3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-2507-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-2507-reasoning",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "3373245b-e6dc-4b66-a7b0-3f06f9b7bd46",
@@ -10186,7 +11011,9 @@
       "output": 0.92,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-2507"
+      "url": "https://artificialanalysis.ai/models/qwen3-235b-a22b-instruct-2507",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "f3169f25-8c6f-48e4-ae87-0cf872dc0ec1",
@@ -10215,7 +11042,9 @@
       "output": 0.8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-30b-a3b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-30b-a3b-instruct",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "3e6cf518-a1f4-42d3-8fcf-827c9bd8e6d5",
@@ -10244,7 +11073,9 @@
       "output": 2.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-30b-a3b-instruct-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-30b-a3b-instruct-reasoning",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "5e0164b3-d902-4bcb-a1b2-83b4f4cd6143",
@@ -10273,7 +11104,9 @@
       "output": 2.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-30b-a3b-2507-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-30b-a3b-2507-reasoning",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "7ec1065a-c90e-41e4-bd17-abb7042eed76",
@@ -10302,7 +11135,9 @@
       "output": 0.8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-30b-a3b-2507"
+      "url": "https://artificialanalysis.ai/models/qwen3-30b-a3b-2507",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "bf60740e-6aa5-422f-ba49-ef6e9d171205",
@@ -10331,7 +11166,9 @@
       "output": 0.64,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-32b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-32b-instruct",
+      "context": 131072,
+      "max_output": 16384
     },
     {
       "id": "b00ecd62-a53f-4aed-b833-3e9d6b0170ba",
@@ -10360,7 +11197,9 @@
       "output": 0.64,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-32b-instruct-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-32b-instruct-reasoning",
+      "context": 131072,
+      "max_output": 16384
     },
     {
       "id": "b2dd592a-fbc5-458a-b26d-f3964cbab82f",
@@ -10389,7 +11228,9 @@
       "output": 0.7,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-8b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-8b-instruct",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "9dba61f5-78ee-4190-8d1d-8e7063ffd386",
@@ -10418,7 +11259,9 @@
       "output": 2.1,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-8b-instruct-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-8b-instruct-reasoning",
+      "context": 131072,
+      "max_output": 8192
     },
     {
       "id": "da9fe224-8af3-46d7-a8c4-6220779c3f35",
@@ -10447,7 +11290,9 @@
       "output": 2.25,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-coder-30b-a3b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-coder-30b-a3b-instruct",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "093883ed-f5fc-443b-8e18-afbfb166699e",
@@ -10476,7 +11321,9 @@
       "output": 7.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-coder-480b-a35b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-coder-480b-a35b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "fc92f822-04b7-420d-9c07-a21af5e9aac7",
@@ -10503,9 +11350,11 @@
       "blended": 0.563,
       "input": 0.35,
       "output": 1.2,
-      "tps": 119,
-      "ttft": 0.92,
-      "url": "https://artificialanalysis.ai/models/qwen3-coder-next"
+      "tps": 130,
+      "ttft": 0.87,
+      "url": "https://artificialanalysis.ai/models/qwen3-coder-next",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "7ae943a9-9310-4472-a834-c61f0ab68485",
@@ -10534,7 +11383,9 @@
       "output": 6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-max"
+      "url": "https://artificialanalysis.ai/models/qwen3-max",
+      "context": 262144,
+      "max_output": 65536
     },
     {
       "id": "5b2beb12-81a9-47a1-8a2a-d0a727185b50",
@@ -10563,7 +11414,9 @@
       "output": 6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-max-preview"
+      "url": "https://artificialanalysis.ai/models/qwen3-max-preview",
+      "context": 262144,
+      "max_output": 65536
     },
     {
       "id": "cbac8c35-e069-4c73-823e-0953e6ed0e85",
@@ -10592,7 +11445,9 @@
       "output": 6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-max-thinking-preview"
+      "url": "https://artificialanalysis.ai/models/qwen3-max-thinking-preview",
+      "context": 262144,
+      "max_output": 65536
     },
     {
       "id": "c8a79180-7d16-4474-8701-9a77c0baa56a",
@@ -10619,9 +11474,11 @@
       "blended": 0.412,
       "input": 0.15,
       "output": 1.2,
-      "tps": 188,
-      "ttft": 1.16,
-      "url": "https://artificialanalysis.ai/models/qwen3-next-80b-a3b-reasoning"
+      "tps": 195,
+      "ttft": 1.18,
+      "url": "https://artificialanalysis.ai/models/qwen3-next-80b-a3b-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "2698f6c6-e436-47ce-a583-dbc25596c571",
@@ -10649,8 +11506,10 @@
       "input": 0.15,
       "output": 1.2,
       "tps": 183,
-      "ttft": 1.04,
-      "url": "https://artificialanalysis.ai/models/qwen3-next-80b-a3b-instruct"
+      "ttft": 1.07,
+      "url": "https://artificialanalysis.ai/models/qwen3-next-80b-a3b-instruct",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "b97ef678-2d31-4375-9416-67ea97f87204",
@@ -10678,8 +11537,10 @@
       "input": 0.25,
       "output": 0.97,
       "tps": 111,
-      "ttft": 0.92,
-      "url": "https://artificialanalysis.ai/models/qwen3-omni-30b-a3b-reasoning"
+      "ttft": 0.95,
+      "url": "https://artificialanalysis.ai/models/qwen3-omni-30b-a3b-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "0b226b82-1462-4860-bf1a-f8aed7024791",
@@ -10708,7 +11569,9 @@
       "output": 0.97,
       "tps": 110,
       "ttft": 0.89,
-      "url": "https://artificialanalysis.ai/models/qwen3-omni-30b-a3b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-omni-30b-a3b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "a803d3d0-d22e-49a0-ac2c-b9c6f1141065",
@@ -10737,7 +11600,9 @@
       "output": 4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "d58cf573-1bd3-4d1f-9182-5482a460f570",
@@ -10766,7 +11631,9 @@
       "output": 1.6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-vl-235b-a22b-instruct",
+      "context": 262144,
+      "max_output": 32768
     },
     {
       "id": "ce3d286e-093d-413d-a81a-0270309f039e",
@@ -10795,7 +11662,9 @@
       "output": 2.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-vl-30b-a3b-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-vl-30b-a3b-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "51d0b717-953d-4b44-af61-406c6b7dff39",
@@ -10824,7 +11693,9 @@
       "output": 0.8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-vl-30b-a3b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-vl-30b-a3b-instruct",
+      "context": 262144,
+      "max_output": 16384
     },
     {
       "id": "d370fcbf-c4a1-41a2-abc4-d204fcc3fcbf",
@@ -10853,7 +11724,9 @@
       "output": 0.64,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-vl-32b-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-vl-32b-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "6da314d3-a984-4734-8f31-47dd32fb4699",
@@ -10882,7 +11755,9 @@
       "output": 0.64,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-vl-32b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-vl-32b-instruct",
+      "context": 131072,
+      "max_output": 32768
     },
     {
       "id": "dec8073c-57e2-41c0-b1aa-7a62960f103f",
@@ -10911,7 +11786,9 @@
       "output": 2.1,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-vl-8b-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-vl-8b-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "3cf875b8-b6b5-42c0-ad70-617d5be59d00",
@@ -10940,7 +11817,9 @@
       "output": 0.7,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-vl-8b-instruct"
+      "url": "https://artificialanalysis.ai/models/qwen3-vl-8b-instruct",
+      "context": 262144,
+      "max_output": 32768
     },
     {
       "id": "021b1b31-d2fc-4653-ab74-c10bd2f41c8e",
@@ -10969,7 +11848,9 @@
       "output": 3.2,
       "tps": 149,
       "ttft": 1,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-122b-a10b-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-5-122b-a10b-non-reasoning",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "2236df45-0699-40d1-b5cc-69ee345d2257",
@@ -10996,9 +11877,11 @@
       "blended": 1.1,
       "input": 0.4,
       "output": 3.2,
-      "tps": 134,
-      "ttft": 1.09,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-122b-a10b"
+      "tps": 135,
+      "ttft": 1.05,
+      "url": "https://artificialanalysis.ai/models/qwen3-5-122b-a10b",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "509e94e3-f1cb-43fb-98ff-e0e9872cfd1f",
@@ -11027,7 +11910,9 @@
       "output": 2.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-27b-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-5-27b-non-reasoning",
+      "context": 262144,
+      "max_output": 65536
     },
     {
       "id": "169e47f5-3d4d-4ad4-8f8b-ab46f0c73f67",
@@ -11056,7 +11941,9 @@
       "output": 2.4,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-27b"
+      "url": "https://artificialanalysis.ai/models/qwen3-5-27b",
+      "context": 262144,
+      "max_output": 65536
     },
     {
       "id": "eebfef01-709e-4ffe-b72f-0db75ef2434b",
@@ -11085,7 +11972,9 @@
       "output": 2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-35b-a3b-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-5-35b-a3b-non-reasoning",
+      "context": 262144,
+      "max_output": 65536
     },
     {
       "id": "46d8315e-1630-463f-ab62-84185fa0faab",
@@ -11114,7 +12003,9 @@
       "output": 2,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-35b-a3b"
+      "url": "https://artificialanalysis.ai/models/qwen3-5-35b-a3b",
+      "context": 262144,
+      "max_output": 65536
     },
     {
       "id": "30ef2a79-e800-4165-9f13-2a338f120db7",
@@ -11141,9 +12032,11 @@
       "blended": 1.35,
       "input": 0.6,
       "output": 3.6,
-      "tps": 91,
-      "ttft": 1.67,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-397b-a17b-non-reasoning"
+      "tps": 87,
+      "ttft": 1.69,
+      "url": "https://artificialanalysis.ai/models/qwen3-5-397b-a17b-non-reasoning",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "0e66bae9-41f1-42fc-9276-ce8cb6f72919",
@@ -11170,9 +12063,11 @@
       "blended": 1.35,
       "input": 0.6,
       "output": 3.6,
-      "tps": 90,
-      "ttft": 1.66,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-397b-a17b"
+      "tps": 89,
+      "ttft": 1.69,
+      "url": "https://artificialanalysis.ai/models/qwen3-5-397b-a17b",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "30c9ba61-d0a1-4794-938e-35865f379d15",
@@ -11199,9 +12094,11 @@
       "blended": 0.06,
       "input": 0.03,
       "output": 0.15,
-      "tps": 23,
+      "tps": 26,
       "ttft": 0.49,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-4b-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-5-4b-non-reasoning",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "651ef7ae-9a8f-477e-9c8e-460aa156ba02",
@@ -11229,8 +12126,10 @@
       "input": 0.03,
       "output": 0.15,
       "tps": 26,
-      "ttft": 0.53,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-4b"
+      "ttft": 0.47,
+      "url": "https://artificialanalysis.ai/models/qwen3-5-4b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "20da3b31-fc0a-4359-abec-d59367bf1d9f",
@@ -11257,9 +12156,11 @@
       "blended": 0.19,
       "input": 0.17,
       "output": 0.25,
-      "tps": 83,
-      "ttft": 0.48,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-9b-non-reasoning"
+      "tps": 68,
+      "ttft": 0.87,
+      "url": "https://artificialanalysis.ai/models/qwen3-5-9b-non-reasoning",
+      "context": 262144,
+      "max_output": 32768
     },
     {
       "id": "2d28a13a-096e-475a-beb8-26bbd1c7d51c",
@@ -11268,7 +12169,7 @@
       "creator": "Alibaba",
       "creator_slug": "alibaba",
       "release_date": "2026-03-02",
-      "index": 13.7,
+      "index": 11.2,
       "coding": 28.7,
       "math": null,
       "mmlu_pro": null,
@@ -11286,9 +12187,11 @@
       "blended": 0.151,
       "input": 0.135,
       "output": 0.2,
-      "tps": 38,
-      "ttft": 1.09,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-9b"
+      "tps": 33,
+      "ttft": 1.13,
+      "url": "https://artificialanalysis.ai/models/qwen3-5-9b",
+      "context": 262144,
+      "max_output": 32768
     },
     {
       "id": "6f3534b1-1168-472e-b3e3-23ab521504f5",
@@ -11315,9 +12218,11 @@
       "blended": 0.275,
       "input": 0.1,
       "output": 0.8,
-      "tps": 245,
-      "ttft": 1.07,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-omni-flash"
+      "tps": 234,
+      "ttft": 0.97,
+      "url": "https://artificialanalysis.ai/models/qwen3-5-omni-flash",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "0179b427-93dc-415c-bb4c-f980ddf8d088",
@@ -11344,9 +12249,11 @@
       "blended": 1.5,
       "input": 0.4,
       "output": 4.8,
-      "tps": 98,
-      "ttft": 1.14,
-      "url": "https://artificialanalysis.ai/models/qwen3-5-omni-plus"
+      "tps": 91,
+      "ttft": 1.18,
+      "url": "https://artificialanalysis.ai/models/qwen3-5-omni-plus",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "3b156101-b0d7-4438-b350-2d1f1168f40a",
@@ -11375,7 +12282,9 @@
       "output": 3.6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-6-27b-non-reasoning"
+      "url": "https://artificialanalysis.ai/models/qwen3-6-27b-non-reasoning",
+      "context": 262144,
+      "max_output": 81920
     },
     {
       "id": "8c29d66d-bf98-4ea3-8572-5409353ecc66",
@@ -11404,7 +12313,9 @@
       "output": 3.6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-6-27b"
+      "url": "https://artificialanalysis.ai/models/qwen3-6-27b",
+      "context": 262144,
+      "max_output": 81920
     },
     {
       "id": "66938aab-78fa-49d7-8461-b48b6833e837",
@@ -11431,9 +12342,11 @@
       "blended": 0.844,
       "input": 0.375,
       "output": 2.25,
-      "tps": 151,
-      "ttft": 1.15,
-      "url": "https://artificialanalysis.ai/models/qwen3-6-35b-a3b-non-reasoning"
+      "tps": 144,
+      "ttft": 1.17,
+      "url": "https://artificialanalysis.ai/models/qwen3-6-35b-a3b-non-reasoning",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "8665ca00-c687-44c7-875c-22618cb31c4f",
@@ -11461,8 +12374,10 @@
       "input": 0.375,
       "output": 2.25,
       "tps": 139,
-      "ttft": 1.12,
-      "url": "https://artificialanalysis.ai/models/qwen3-6-35b-a3b"
+      "ttft": 1.15,
+      "url": "https://artificialanalysis.ai/models/qwen3-6-35b-a3b",
+      "context": 262144,
+      "max_output": 235929
     },
     {
       "id": "6000692c-f9a6-47f8-a5c0-e0874ac488bb",
@@ -11491,7 +12406,9 @@
       "output": 7.8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-6-max"
+      "url": "https://artificialanalysis.ai/models/qwen3-6-max",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "f371ad68-6947-4767-a78f-1f6c81f96b93",
@@ -11520,7 +12437,9 @@
       "output": 3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-6-plus"
+      "url": "https://artificialanalysis.ai/models/qwen3-6-plus",
+      "context": 1000000,
+      "max_output": 65536
     },
     {
       "id": "69534bed-2ffd-4235-832b-e20a810333ab",
@@ -11549,7 +12468,9 @@
       "output": 7.5,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-7-max"
+      "url": "https://artificialanalysis.ai/models/qwen3-7-max",
+      "context": 1000000,
+      "max_output": 131072
     },
     {
       "id": "a87fce42-eea3-4e45-a96d-fe057814f371",
@@ -11576,9 +12497,11 @@
       "blended": 0.7,
       "input": 0.4,
       "output": 1.6,
-      "tps": 69,
-      "ttft": 1.34,
-      "url": "https://artificialanalysis.ai/models/qwen3-7-plus"
+      "tps": 58,
+      "ttft": 1.61,
+      "url": "https://artificialanalysis.ai/models/qwen3-7-plus",
+      "context": 1000000,
+      "max_output": 131072
     },
     {
       "id": "8df710d3-9dae-4498-9b4e-9818238e6f31",
@@ -11605,9 +12528,11 @@
       "blended": 3,
       "input": 2,
       "output": 6,
-      "tps": 38,
-      "ttft": 1.98,
-      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"
+      "tps": 39,
+      "ttft": 2,
+      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+      "context": 1048576,
+      "max_output": 131072
     },
     {
       "id": "7e30585f-fad7-40df-a8cb-03c1d96df38a",
@@ -11635,8 +12560,10 @@
       "input": 0.5,
       "output": 3,
       "tps": 52,
-      "ttft": 1.25,
-      "url": "https://artificialanalysis.ai/models/qwen3-8-27b-low"
+      "ttft": 1.2,
+      "url": "https://artificialanalysis.ai/models/qwen3-8-27b-low",
+      "context": 1000000,
+      "max_output": 235929
     },
     {
       "id": "6657d7de-a2a9-40bc-a32f-86e80ad63698",
@@ -11663,9 +12590,11 @@
       "blended": 1.125,
       "input": 0.5,
       "output": 3,
-      "tps": 51,
-      "ttft": 1.18,
-      "url": "https://artificialanalysis.ai/models/qwen3-8-27b-medium"
+      "tps": 50,
+      "ttft": 1.19,
+      "url": "https://artificialanalysis.ai/models/qwen3-8-27b-medium",
+      "context": 1000000,
+      "max_output": 235929
     },
     {
       "id": "353c92f3-2148-4c2d-9231-aa7e1322a1fd",
@@ -11692,9 +12621,11 @@
       "blended": 1.125,
       "input": 0.5,
       "output": 3,
-      "tps": 53,
-      "ttft": 1.24,
-      "url": "https://artificialanalysis.ai/models/qwen3-8-27b-non-reasoning"
+      "tps": 51,
+      "ttft": 1.19,
+      "url": "https://artificialanalysis.ai/models/qwen3-8-27b-non-reasoning",
+      "context": 1000000,
+      "max_output": 235929
     },
     {
       "id": "b01dee41-c62b-48ed-8d16-984adc405e5c",
@@ -11723,7 +12654,9 @@
       "output": 3,
       "tps": 47,
       "ttft": 1.27,
-      "url": "https://artificialanalysis.ai/models/qwen3-8-27b"
+      "url": "https://artificialanalysis.ai/models/qwen3-8-27b",
+      "context": 1000000,
+      "max_output": 235929
     },
     {
       "id": "5e5b4ce7-bc54-47b2-b911-21b9cad8394c",
@@ -11752,7 +12685,9 @@
       "output": 6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwen3-8-max-0803"
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max-0803",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "b112af07-3bd5-4647-b09f-b23204361bb2",
@@ -11781,7 +12716,9 @@
       "output": 6,
       "tps": 38,
       "ttft": 1.96,
-      "url": "https://artificialanalysis.ai/models/qwen3-8-max"
+      "url": "https://artificialanalysis.ai/models/qwen3-8-max",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "9ac3908c-9eb2-44db-8c01-3ec7da6fc2ae",
@@ -11809,8 +12746,10 @@
       "input": 0.15,
       "output": 0.47,
       "tps": 53,
-      "ttft": 1.46,
-      "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next"
+      "ttft": 1.53,
+      "url": "https://artificialanalysis.ai/models/qwen3-8-flash-next",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "ceb4d610-d0a4-48c1-bea0-80ed76f1e5ca",
@@ -11839,7 +12778,9 @@
       "output": 1,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/qwq-32b"
+      "url": "https://artificialanalysis.ai/models/qwq-32b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "a971b0c0-4c0f-484a-b018-e36b5be3409e",
@@ -11868,7 +12809,9 @@
       "output": 0.8,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/reka-flash"
+      "url": "https://artificialanalysis.ai/models/reka-flash",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "dbbcf240-a69e-4078-8f16-7c94c7a8c514",
@@ -11895,9 +12838,11 @@
       "blended": 0.35,
       "input": 0.2,
       "output": 0.8,
-      "tps": 98,
-      "ttft": 0.82,
-      "url": "https://artificialanalysis.ai/models/reka-flash-3"
+      "tps": 96,
+      "ttft": 0.81,
+      "url": "https://artificialanalysis.ai/models/reka-flash-3",
+      "context": 65536,
+      "max_output": 58982
     },
     {
       "id": "eb4ba465-3fcd-4065-9fe2-e8225e7b2c6c",
@@ -11925,8 +12870,10 @@
       "input": 0.3,
       "output": 2.5,
       "tps": 120,
-      "ttft": 2.12,
-      "url": "https://artificialanalysis.ai/models/ring-2-6-1t"
+      "ttft": 2.4,
+      "url": "https://artificialanalysis.ai/models/ring-2-6-1t",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "47b7df55-5804-40de-ba11-317de786710a",
@@ -11955,7 +12902,9 @@
       "output": 0.57,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/ring-flash-2-0"
+      "url": "https://artificialanalysis.ai/models/ring-flash-2-0",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "45790612-02e3-4c42-b5bd-cd7ed2ea1f2f",
@@ -11984,7 +12933,9 @@
       "output": 0.17,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/sarvam-105b"
+      "url": "https://artificialanalysis.ai/models/sarvam-105b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "764dd095-6ebd-4760-8eb3-cbc40964db2e",
@@ -12013,7 +12964,9 @@
       "output": 0.11,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/sarvam-30b"
+      "url": "https://artificialanalysis.ai/models/sarvam-30b",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "5c6533f3-75a2-4109-b9a9-3623afc6b86a",
@@ -12042,7 +12995,9 @@
       "output": 0.57,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/seed-oss-36b-instruct"
+      "url": "https://artificialanalysis.ai/models/seed-oss-36b-instruct",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "d97713f2-afa6-4f8d-b2f3-ac89a24c4d6c",
@@ -12071,7 +13026,9 @@
       "output": 0.15,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/solar-mini"
+      "url": "https://artificialanalysis.ai/models/solar-mini",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "b89c4faf-219e-4171-a1aa-e3bd2fd0a924",
@@ -12100,7 +13057,9 @@
       "output": 0.6,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/solar-pro-3"
+      "url": "https://artificialanalysis.ai/models/solar-pro-3",
+      "context": 131072,
+      "max_output": 117964
     },
     {
       "id": "1b64aa81-c223-4b8f-909b-82185a234765",
@@ -12127,9 +13086,11 @@
       "blended": 0.525,
       "input": 0.3,
       "output": 1.2,
-      "tps": 75,
-      "ttft": 1.23,
-      "url": "https://artificialanalysis.ai/models/solar-pro4"
+      "tps": 84,
+      "ttft": 1.32,
+      "url": "https://artificialanalysis.ai/models/solar-pro4",
+      "context": 524288,
+      "max_output": 131072
     },
     {
       "id": "c8158c23-6fff-4c31-911d-954c32d80c28",
@@ -12158,7 +13119,9 @@
       "output": 0.3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/step-3-5-flash-0202"
+      "url": "https://artificialanalysis.ai/models/step-3-5-flash-0202",
+      "context": 262144,
+      "max_output": 65536
     },
     {
       "id": "1aa3694e-b656-4dbe-8f84-0c65d8897abb",
@@ -12187,7 +13150,9 @@
       "output": 0.3,
       "tps": null,
       "ttft": null,
-      "url": "https://artificialanalysis.ai/models/step-3-5-flash"
+      "url": "https://artificialanalysis.ai/models/step-3-5-flash",
+      "context": 262144,
+      "max_output": 65536
     },
     {
       "id": "6c7b322e-2f35-48ff-9171-fb621a726fc0",
@@ -12214,9 +13179,11 @@
       "blended": 0.438,
       "input": 0.2,
       "output": 1.15,
-      "tps": 204,
-      "ttft": 1.52,
-      "url": "https://artificialanalysis.ai/models/step-3-7-flash"
+      "tps": 200,
+      "ttft": 1.5,
+      "url": "https://artificialanalysis.ai/models/step-3-7-flash",
+      "context": 262144,
+      "max_output": 230400
     },
     {
       "id": "094ea3e3-ce41-419e-8bd1-723389663158",
@@ -12243,9 +13210,11 @@
       "blended": 1.425,
       "input": 1,
       "output": 2.7,
-      "tps": 80,
-      "ttft": 2.1,
-      "url": "https://artificialanalysis.ai/models/step-5"
+      "tps": 83,
+      "ttft": 1.9,
+      "url": "https://artificialanalysis.ai/models/step-5",
+      "context": null,
+      "max_output": null
     },
     {
       "id": "b6d2e43d-3082-43f5-9318-0f4dbcb54163",
@@ -12272,9 +13241,11 @@
       "blended": 0.388,
       "input": 0.25,
       "output": 0.8,
-      "tps": 347,
+      "tps": 342,
       "ttft": 1.22,
-      "url": "https://artificialanalysis.ai/models/trinity-large-thinking"
+      "url": "https://artificialanalysis.ai/models/trinity-large-thinking",
+      "context": 262144,
+      "max_output": 80000
     }
   ]
 }
