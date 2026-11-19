@@ -15,7 +15,7 @@ cp .env.example .env   # .env에 API 키 입력
 npm start              # 필요하면 데이터 갱신 후 http://127.0.0.1:8080 에서 서빙
 ```
 
-API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(Insights Platform → API keys). 하루 1,000회까지 호출할 수 있고, 데이터를 쓸 때는 출처 표기가 필요합니다.
+API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(Insights Platform → API keys). 무료 키는 하루 100회까지 호출할 수 있고, 데이터를 쓸 때는 출처 표기가 필요합니다.
 
 키가 없거나 데이터를 받아오지 못하면 `data/`에 이미 있는 스냅샷으로 페이지를 띄웁니다.
 
@@ -45,7 +45,7 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 
 - `npm start`는 서버를 띄우기 전에 최신 데이터를 받아옵니다. 단, **마지막으로 API를 확인한 지 6시간이 안 됐으면 호출을 건너뛰고** 바로 서버를 띄웁니다. 바로 갱신하고 싶으면 `npm run fetch`를 실행합니다.
 - 마지막 확인 시각은 git에 올라가지 않는 `.last-fetch` 파일에 기록합니다. 데이터가 그대로여서 `models.json`을 다시 쓰지 않은 경우에도 확인 시각은 남습니다. 이 파일이 없으면 `models.json`의 `fetched_at`을 기준으로 삼고, API 호출에 실패하면 기록하지 않아 다음 실행 때 다시 시도합니다.
-- API 호출은 `npm start`(6시간이 지난 경우)와 `npm run fetch`에서 한 번씩만 일어납니다. 요청 한 번에 전체 모델 목록을 받고, 무료 한도는 하루 1,000회입니다.
+- API 호출은 `npm start`(6시간이 지난 경우)와 `npm run fetch`에서 한 번씩만 일어납니다. 무료 엔드포인트는 4페이지로 나뉘어 한 번 갱신에 4회를 쓰고, 무료 한도는 하루 100회입니다.
 - 페이지를 열지 않아도 매일 갱신하려면 cron에 `npm run fetch`를 걸어 둡니다(`crontab -e`, 예: 매일 오전 9시).
 
   ```
@@ -69,7 +69,7 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 
 ### 기준
 
-- **출처**: Artificial Analysis API `https://artificialanalysis.ai/api/v2/data/llms/models`. 컨텍스트 크기만 OpenRouter `https://openrouter.ai/api/v1/models`, 지원 언어는 제조사 공식 문서(수동 정리)
+- **출처**: Artificial Analysis API `https://artificialanalysis.ai/api/v2/language/models/free`(구 `/api/v2/data/*`는 2026-11-04 폐기). 무료 티어는 헤드라인 지수가 있는 모델만 내려주고 세부 벤치마크·Coding·Math Index는 비어 있습니다. 전체 데이터는 Pro 티어(`/api/v2/language/models`)가 필요합니다. 컨텍스트 크기만 OpenRouter `https://openrouter.ai/api/v1/models`, 지원 언어는 제조사 공식 문서(수동 정리)
 - **포함 모델**: Intelligence Index 점수가 있고 혼합 단가가 0보다 큰 모델만 넣습니다. 받아온 모델이 10개 미만이면 API 이상으로 보고 기존 스냅샷을 덮어쓰지 않습니다.
 - **점수**: AA Intelligence / Coding / Math Index(소수점 첫째 자리)
 - **세부 벤치마크**: 정답률(%)로 저장합니다(AA는 0~1 비율로 제공).

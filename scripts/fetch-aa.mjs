@@ -26,7 +26,7 @@ const CHANGELOG_PATH = path.join(DATA_DIR, "changelog.json");
 const LAST_FETCH_PATH = path.join(ROOT, ".last-fetch"); // local-only (gitignored): when the API was last checked, changed or not
 const CONTEXT_MAP_PATH = path.join(DATA_DIR, "context-map.json");
 const LANGUAGES_PATH = path.join(DATA_DIR, "languages.json"); // hand-maintained; the page reads it directly
-const ENDPOINT = "https://artificialanalysis.ai/api/v2/data/llms/models";
+const ENDPOINT = "https://artificialanalysis.ai/api/v2/language/models/free"; // legacy /api/v2/data/* was retired 2026-11-04
 const OPENROUTER_ENDPOINT = "https://openrouter.ai/api/v1/models";
 const CHANGELOG_MAX = 90;
 
@@ -42,6 +42,9 @@ const positive = (v) => (v != null && v > 0 ? v : null); // AA reports 0 when a 
 const round = (v, dp = 2) => (v == null || Number.isNaN(+v) ? null : Math.round(+v * 10 ** dp) / 10 ** dp);
 const pct = (v) => (v == null || Number.isNaN(+v) ? null : round(+v * 100, 1));
 
+// The free tier omits model_creator.slug; reuse the slugs from the previous snapshot (languages.json keys on them).
+const creatorSlugs = new Map();
+
 function normalise(raw) {
   const ev = raw.evaluations ?? {};
   const pr = raw.pricing ?? {};
@@ -50,29 +53,32 @@ function normalise(raw) {
     name: raw.name,
     slug: raw.slug,
     creator: raw.model_creator?.name ?? "Unknown",
-    creator_slug: raw.model_creator?.slug ?? null,
+    creator_slug: raw.model_creator?.slug ?? creatorSlugs.get(raw.model_creator?.name) ?? slugKey(raw.model_creator?.name ?? "unknown"),
     release_date: raw.release_date ?? null,
     index: round(ev.artificial_analysis_intelligence_index, 1),
     coding: round(ev.artificial_analysis_coding_index, 1),
     math: round(ev.artificial_analysis_math_index, 1),
-    // individual benchmarks: AA reports 0-1 fractions, stored as percentages
+    // The free tier only exposes the headline indexes; per-benchmark scores need a Pro key.
     mmlu_pro: pct(ev.mmlu_pro),
-    gpqa: pct(ev.gpqa),
+    gpqa: pct(ev.gpqa_diamond ?? ev.gpqa),
     hle: pct(ev.hle),
     livecodebench: pct(ev.livecodebench),
     scicode: pct(ev.scicode),
     aime25: pct(ev.aime_25),
     ifbench: pct(ev.ifbench),
-    lcr: pct(ev.lcr),
+    lcr: pct(ev.aa_lcr ?? ev.lcr),
     terminalbench_hard: pct(ev.terminalbench_hard),
     terminalbench_v2_1: pct(ev.terminalbench_v2_1),
     tau2: pct(ev.tau2),
     tau_banking: pct(ev.tau_banking),
-    blended: round(pr.price_1m_blended_3_to_1, 3),
+    // free tier has no blended price: derive it with AA's 3:1 input:output weighting
+    blended: pr.price_1m_blended_3_to_1 != null ? round(pr.price_1m_blended_3_to_1, 3)
+      : pr.price_1m_input_tokens != null && pr.price_1m_output_tokens != null ? round((3 * pr.price_1m_input_tokens + pr.price_1m_output_tokens) / 4, 3) : null,
     input: round(pr.price_1m_input_tokens, 3),
     output: round(pr.price_1m_output_tokens, 3),
-    tps: positive(round(raw.median_output_tokens_per_second, 0)),
-    ttft: positive(round(raw.median_time_to_first_token_seconds, 2)),
+    // performance is deprecated (null from 2026-12-10); performance_v3 reports means
+    tps: positive(round(raw.performance_v3?.mean_output_tokens_per_second ?? raw.performance?.median_output_tokens_per_second, 0)),
+    ttft: positive(round(raw.performance_v3?.mean_time_to_first_token_seconds ?? raw.performance?.median_time_to_first_token_seconds, 2)),
     url: raw.slug ? `https://artificialanalysis.ai/models/${raw.slug}` : null,
   };
 }
@@ -175,14 +181,23 @@ const stableKey = (models) => JSON.stringify(models.map((m) => {
 }));
 
 async function main() {
-  const res = await fetch(ENDPOINT, { headers: { "x-api-key": apiKey, accept: "application/json" } });
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(`AA API ${res.status} ${res.statusText}: ${body.slice(0, 300)}`);
+  const rows = [];
+  let json;
+  for (let page = 1, more = true; more && page <= 20; page++) {
+    const res = await fetch(`${ENDPOINT}?page=${page}`, { headers: { "x-api-key": apiKey, accept: "application/json" } });
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      throw new Error(`AA API ${res.status} ${res.statusText}: ${body.slice(0, 300)}`);
+    }
+    json = await res.json();
+    if (!Array.isArray(json.data)) throw new Error("Unexpected response shape: no data[]");
+    rows.push(...json.data);
+    more = json.pagination?.has_more === true;
   }
-  const json = await res.json();
-  if (!Array.isArray(json.data)) throw new Error("Unexpected response shape: no data[]");
+  json = { ...json, data: rows };
 
+  const prevSnap = await readJson(MODELS_PATH, null);
+  for (const m of prevSnap?.models ?? []) if (m.creator_slug) creatorSlugs.set(m.creator, m.creator_slug);
   const models = json.data
     .map(normalise)
     .filter((m) => m.index != null && m.blended != null && m.blended > 0)
