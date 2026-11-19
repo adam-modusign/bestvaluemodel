@@ -261,2018 +261,7 @@
         "blended": 1.251
       }
     ],
-    "removed": [
-      {
-        "name": "Agnes 2.5 Pro Beta",
-        "creator": "Sapiens AI",
-        "index": 35.2,
-        "blended": 0.15
-      },
-      {
-        "name": "Apertus 8B Instruct",
-        "creator": "Swiss AI Initiative",
-        "index": 4.8,
-        "blended": 0.125
-      },
-      {
-        "name": "Celeris-1",
-        "creator": "Celeris",
-        "index": 6.3,
-        "blended": 0.325
-      },
-      {
-        "name": "Claude 3 Haiku",
-        "creator": "Anthropic",
-        "index": 5.6,
-        "blended": 0.5
-      },
-      {
-        "name": "Claude 3 Opus",
-        "creator": "Anthropic",
-        "index": 8.7,
-        "blended": 30
-      },
-      {
-        "name": "Claude 3.5 Sonnet (June '24)",
-        "creator": "Anthropic",
-        "index": 7.2,
-        "blended": 6
-      },
-      {
-        "name": "Claude 3.5 Sonnet (Oct '24)",
-        "creator": "Anthropic",
-        "index": 7.9,
-        "blended": 6
-      },
-      {
-        "name": "Claude 3.7 Sonnet (Non-reasoning)",
-        "creator": "Anthropic",
-        "index": 15.3,
-        "blended": 6
-      },
-      {
-        "name": "Claude 4 Opus (Non-reasoning)",
-        "creator": "Anthropic",
-        "index": 16.6,
-        "blended": 30
-      },
-      {
-        "name": "Claude 4 Opus (Reasoning)",
-        "creator": "Anthropic",
-        "index": 20.6,
-        "blended": 30
-      },
-      {
-        "name": "Claude 4.1 Opus (Non-reasoning)",
-        "creator": "Anthropic",
-        "index": 18.6,
-        "blended": 30
-      },
-      {
-        "name": "Claude 4.1 Opus (Reasoning)",
-        "creator": "Anthropic",
-        "index": 22.8,
-        "blended": 30
-      },
-      {
-        "name": "Claude 4.5 Haiku (Non-reasoning)",
-        "creator": "Anthropic",
-        "index": 15.4,
-        "blended": 2
-      },
-      {
-        "name": "Claude 4.5 Sonnet (Non-reasoning)",
-        "creator": "Anthropic",
-        "index": 19.3,
-        "blended": 6
-      },
-      {
-        "name": "Claude 4.5 Sonnet (Reasoning)",
-        "creator": "Anthropic",
-        "index": 20.7,
-        "blended": 6
-      },
-      {
-        "name": "Claude Fable 5 (Max, Opus 4.8 Fallback)",
-        "creator": "Anthropic",
-        "index": 49.6,
-        "blended": 20
-      },
-      {
-        "name": "Claude Opus 4.5 (Non-reasoning)",
-        "creator": "Anthropic",
-        "index": 23.7,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 4.5 (Reasoning)",
-        "creator": "Anthropic",
-        "index": 29.1,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 4.6 (Max)",
-        "creator": "Anthropic",
-        "index": 31.9,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 4.6 (Non-reasoning, High)",
-        "creator": "Anthropic",
-        "index": 26.4,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 4.7 (Max)",
-        "creator": "Anthropic",
-        "index": 40.7,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 4.7 (Non-reasoning, High)",
-        "creator": "Anthropic",
-        "index": 30.9,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 4.8 (Max)",
-        "creator": "Anthropic",
-        "index": 41.8,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 5 (High)",
-        "creator": "Anthropic",
-        "index": 48.1,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 5 (Low)",
-        "creator": "Anthropic",
-        "index": 39.4,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 5 (Medium)",
-        "creator": "Anthropic",
-        "index": 44.8,
-        "blended": 10
-      },
-      {
-        "name": "Claude Opus 5 (Xhigh)",
-        "creator": "Anthropic",
-        "index": 49.7,
-        "blended": 10
-      },
-      {
-        "name": "Claude Sonnet 4.6 (Max)",
-        "creator": "Anthropic",
-        "index": 30.1,
-        "blended": 6
-      },
-      {
-        "name": "Claude Sonnet 4.6 (Non-reasoning, High)",
-        "creator": "Anthropic",
-        "index": 24.7,
-        "blended": 6
-      },
-      {
-        "name": "Claude Sonnet 4.6 (Non-reasoning, Low)",
-        "creator": "Anthropic",
-        "index": 23.3,
-        "blended": 6
-      },
-      {
-        "name": "Claude Sonnet 5 (High)",
-        "creator": "Anthropic",
-        "index": 31.7,
-        "blended": 4
-      },
-      {
-        "name": "Claude Sonnet 5 (Low)",
-        "creator": "Anthropic",
-        "index": 24.3,
-        "blended": 4
-      },
-      {
-        "name": "Claude Sonnet 5 (Max)",
-        "creator": "Anthropic",
-        "index": 38.2,
-        "blended": 4
-      },
-      {
-        "name": "Claude Sonnet 5 (Medium)",
-        "creator": "Anthropic",
-        "index": 28.1,
-        "blended": 4
-      },
-      {
-        "name": "Claude Sonnet 5 (Non-reasoning, High)",
-        "creator": "Anthropic",
-        "index": 23.2,
-        "blended": 4
-      },
-      {
-        "name": "Claude Sonnet 5 (Xhigh)",
-        "creator": "Anthropic",
-        "index": 34.4,
-        "blended": 4
-      },
-      {
-        "name": "Command A",
-        "creator": "Cohere",
-        "index": 7,
-        "blended": 4.375
-      },
-      {
-        "name": "DeepSeek R1 (Jan '25)",
-        "creator": "DeepSeek",
-        "index": 11.4,
-        "blended": 2.5
-      },
-      {
-        "name": "DeepSeek R1 0528 (May '25)",
-        "creator": "DeepSeek",
-        "index": 13.1,
-        "blended": 2.075
-      },
-      {
-        "name": "DeepSeek R1 Distill Llama 70B",
-        "creator": "DeepSeek",
-        "index": 7.9,
-        "blended": 0.8
-      },
-      {
-        "name": "DeepSeek V3 (Dec '24)",
-        "creator": "DeepSeek",
-        "index": 8.5,
-        "blended": 0.463
-      },
-      {
-        "name": "DeepSeek V3 0324",
-        "creator": "DeepSeek",
-        "index": 9.7,
-        "blended": 0.405
-      },
-      {
-        "name": "DeepSeek V3.1 (Non-reasoning)",
-        "creator": "DeepSeek",
-        "index": 13.7,
-        "blended": 0.84
-      },
-      {
-        "name": "DeepSeek V3.1 (Reasoning)",
-        "creator": "DeepSeek",
-        "index": 13.5,
-        "blended": 0.855
-      },
-      {
-        "name": "DeepSeek V3.1 Terminus (Non-reasoning)",
-        "creator": "DeepSeek",
-        "index": 13.9,
-        "blended": 0.453
-      },
-      {
-        "name": "DeepSeek V3.1 Terminus (Reasoning)",
-        "creator": "DeepSeek",
-        "index": 14.8,
-        "blended": 1.914
-      },
-      {
-        "name": "DeepSeek V3.2 (Non-reasoning)",
-        "creator": "DeepSeek",
-        "index": 16,
-        "blended": 0.315
-      },
-      {
-        "name": "DeepSeek V3.2 (Reasoning)",
-        "creator": "DeepSeek",
-        "index": 21.5,
-        "blended": 0.315
-      },
-      {
-        "name": "DeepSeek V3.2 Exp (Non-reasoning)",
-        "creator": "DeepSeek",
-        "index": 13.9,
-        "blended": 0.315
-      },
-      {
-        "name": "DeepSeek V3.2 Exp (Reasoning)",
-        "creator": "DeepSeek",
-        "index": 16.6,
-        "blended": 0.315
-      },
-      {
-        "name": "DeepSeek V4 Flash 0420 (High)",
-        "creator": "DeepSeek",
-        "index": 24.4,
-        "blended": 0.142
-      },
-      {
-        "name": "DeepSeek V4 Flash 0420 (Max)",
-        "creator": "DeepSeek",
-        "index": 24.2,
-        "blended": 0.142
-      },
-      {
-        "name": "DeepSeek V4 Flash 0420 (Non-reasoning)",
-        "creator": "DeepSeek",
-        "index": 18.9,
-        "blended": 0.117
-      },
-      {
-        "name": "DeepSeek V4 Flash 0731 (Max)",
-        "creator": "DeepSeek",
-        "index": 34.3,
-        "blended": 0.175
-      },
-      {
-        "name": "DeepSeek V4 Flash Vision (Max)",
-        "creator": "DeepSeek",
-        "index": 34.8,
-        "blended": 0.66
-      },
-      {
-        "name": "DeepSeek V4 Pro 0424 (High)",
-        "creator": "DeepSeek",
-        "index": 30.1,
-        "blended": 0.544
-      },
-      {
-        "name": "DeepSeek V4 Pro 0424 (Max)",
-        "creator": "DeepSeek",
-        "index": 30.4,
-        "blended": 0.544
-      },
-      {
-        "name": "DeepSeek V4 Pro 0424 (Non-reasoning)",
-        "creator": "DeepSeek",
-        "index": 20.8,
-        "blended": 0.544
-      },
-      {
-        "name": "DeepSeek V4.1 Flash (Max)",
-        "creator": "DeepSeek",
-        "index": 39.5,
-        "blended": 0.525
-      },
-      {
-        "name": "DeepSeek V4.1 Flash (Non-reasoning)",
-        "creator": "DeepSeek",
-        "index": 24.7,
-        "blended": 0.525
-      },
-      {
-        "name": "Gemini 2.5 Flash (Non-reasoning)",
-        "creator": "Google",
-        "index": 9.9,
-        "blended": 0.85
-      },
-      {
-        "name": "Gemini 2.5 Flash (Reasoning)",
-        "creator": "Google",
-        "index": 13.1,
-        "blended": 0.85
-      },
-      {
-        "name": "Gemini 2.5 Flash-Lite (Non-reasoning)",
-        "creator": "Google",
-        "index": 6.7,
-        "blended": 0.175
-      },
-      {
-        "name": "Gemini 2.5 Flash-Lite (Reasoning)",
-        "creator": "Google",
-        "index": 8.5,
-        "blended": 0.175
-      },
-      {
-        "name": "Gemini 2.5 Flash-Lite Preview (Sep '25) (Non-reasoning)",
-        "creator": "Google",
-        "index": 9.3,
-        "blended": 0.175
-      },
-      {
-        "name": "Gemini 2.5 Flash-Lite Preview (Sep '25) (Reasoning)",
-        "creator": "Google",
-        "index": 10.4,
-        "blended": 0.175
-      },
-      {
-        "name": "Gemini 2.5 Pro",
-        "creator": "Google",
-        "index": 16.1,
-        "blended": 3.438
-      },
-      {
-        "name": "Gemini 2.5 Pro Preview (May' 25)",
-        "creator": "Google",
-        "index": 14.5,
-        "blended": 3.438
-      },
-      {
-        "name": "Gemini 3 Flash Preview (Non-reasoning)",
-        "creator": "Google",
-        "index": 17.9,
-        "blended": 1.125
-      },
-      {
-        "name": "Gemini 3 Flash Preview (Reasoning)",
-        "creator": "Google",
-        "index": 26.3,
-        "blended": 1.125
-      },
-      {
-        "name": "Gemini 3 Pro Preview (High)",
-        "creator": "Google",
-        "index": 28,
-        "blended": 4.5
-      },
-      {
-        "name": "Gemini 3 Pro Preview (Low)",
-        "creator": "Google",
-        "index": 22.3,
-        "blended": 4.5
-      },
-      {
-        "name": "Gemini 3.1 Pro Preview",
-        "creator": "Google",
-        "index": 29.7,
-        "blended": 4.5
-      },
-      {
-        "name": "Gemini 3.5 Flash (High)",
-        "creator": "Google",
-        "index": 32.6,
-        "blended": 3.375
-      },
-      {
-        "name": "Gemini 3.5 Flash (Medium)",
-        "creator": "Google",
-        "index": 33.6,
-        "blended": 3.375
-      },
-      {
-        "name": "Gemini 3.5 Flash (Minimal)",
-        "creator": "Google",
-        "index": 23.8,
-        "blended": 3.375
-      },
-      {
-        "name": "Gemini 3.6 Flash (High)",
-        "creator": "Google",
-        "index": 34,
-        "blended": 1.5
-      },
-      {
-        "name": "Gemini 3.7 Flash (High)",
-        "creator": "Google",
-        "index": 39.1,
-        "blended": 1.5
-      },
-      {
-        "name": "Gemma 4 12B (Non-reasoning)",
-        "creator": "Google",
-        "index": 9.4,
-        "blended": 0.15
-      },
-      {
-        "name": "Gemma 4 12B (Reasoning)",
-        "creator": "Google",
-        "index": 14.2,
-        "blended": 0.15
-      },
-      {
-        "name": "Gemma 4 26B A4B (Non-reasoning)",
-        "creator": "Google",
-        "index": 13.1,
-        "blended": 0.186
-      },
-      {
-        "name": "Gemma 4 26B A4B (Reasoning)",
-        "creator": "Google",
-        "index": 16.7,
-        "blended": 0.16
-      },
-      {
-        "name": "Gemma 4 31B (Non-reasoning)",
-        "creator": "Google",
-        "index": 13.9,
-        "blended": 0.224
-      },
-      {
-        "name": "Gemma 4 E4B (Non-reasoning)",
-        "creator": "Google",
-        "index": 7.5,
-        "blended": 0.04
-      },
-      {
-        "name": "GLM-4.5-Air",
-        "creator": "Z AI",
-        "index": 11.1,
-        "blended": 0.372
-      },
-      {
-        "name": "GLM-4.5V (Non-reasoning)",
-        "creator": "Z AI",
-        "index": 6.7,
-        "blended": 0.9
-      },
-      {
-        "name": "GLM-4.5V (Reasoning)",
-        "creator": "Z AI",
-        "index": 7.6,
-        "blended": 0.9
-      },
-      {
-        "name": "GLM-4.6 (Non-reasoning)",
-        "creator": "Z AI",
-        "index": 14.9,
-        "blended": 0.981
-      },
-      {
-        "name": "GLM-4.6 (Reasoning)",
-        "creator": "Z AI",
-        "index": 18.5,
-        "blended": 0.963
-      },
-      {
-        "name": "GLM-4.6V (Non-reasoning)",
-        "creator": "Z AI",
-        "index": 8.4,
-        "blended": 0.45
-      },
-      {
-        "name": "GLM-4.6V (Reasoning)",
-        "creator": "Z AI",
-        "index": 11.2,
-        "blended": 0.45
-      },
-      {
-        "name": "GLM-4.7 (Non-reasoning)",
-        "creator": "Z AI",
-        "index": 17.4,
-        "blended": 0.919
-      },
-      {
-        "name": "GLM-4.7 (Reasoning)",
-        "creator": "Z AI",
-        "index": 22.2,
-        "blended": 0.919
-      },
-      {
-        "name": "GLM-4.7-Flash (Non-reasoning)",
-        "creator": "Z AI",
-        "index": 10.6,
-        "blended": 0.153
-      },
-      {
-        "name": "GLM-4.7-Flash (Reasoning)",
-        "creator": "Z AI",
-        "index": 14.9,
-        "blended": 0.153
-      },
-      {
-        "name": "GLM-5 (Non-reasoning)",
-        "creator": "Z AI",
-        "index": 21.8,
-        "blended": 1.55
-      },
-      {
-        "name": "GLM-5 (Reasoning)",
-        "creator": "Z AI",
-        "index": 27.9,
-        "blended": 1.55
-      },
-      {
-        "name": "GLM-5.1 (Non-reasoning)",
-        "creator": "Z AI",
-        "index": 24.2,
-        "blended": 2.135
-      },
-      {
-        "name": "GLM-5.1 (Reasoning)",
-        "creator": "Z AI",
-        "index": 26.1,
-        "blended": 1.981
-      },
-      {
-        "name": "GLM-5.2 (Max)",
-        "creator": "Z AI",
-        "index": 33.7,
-        "blended": 2.15
-      },
-      {
-        "name": "GLM-5.2 (Non-reasoning)",
-        "creator": "Z AI",
-        "index": 22.4,
-        "blended": 2.15
-      },
-      {
-        "name": "GPT-3.5 Turbo",
-        "creator": "OpenAI",
-        "index": 5.5,
-        "blended": 0.75
-      },
-      {
-        "name": "GPT-4",
-        "creator": "OpenAI",
-        "index": 6.7,
-        "blended": 37.5
-      },
-      {
-        "name": "GPT-4 Turbo",
-        "creator": "OpenAI",
-        "index": 7,
-        "blended": 15
-      },
-      {
-        "name": "GPT-4.1",
-        "creator": "OpenAI",
-        "index": 12.7,
-        "blended": 3.5
-      },
-      {
-        "name": "GPT-4.1 mini",
-        "creator": "OpenAI",
-        "index": 10.2,
-        "blended": 0.7
-      },
-      {
-        "name": "GPT-4.1 nano",
-        "creator": "OpenAI",
-        "index": 7.8,
-        "blended": 0.175
-      },
-      {
-        "name": "GPT-4o (Aug '24)",
-        "creator": "OpenAI",
-        "index": 7.7,
-        "blended": 4.375
-      },
-      {
-        "name": "GPT-4o (May '24)",
-        "creator": "OpenAI",
-        "index": 7.3,
-        "blended": 7.5
-      },
-      {
-        "name": "GPT-4o (Nov '24)",
-        "creator": "OpenAI",
-        "index": 8.4,
-        "blended": 4.375
-      },
-      {
-        "name": "GPT-4o mini",
-        "creator": "OpenAI",
-        "index": 6.7,
-        "blended": 0.262
-      },
-      {
-        "name": "GPT-5 (High)",
-        "creator": "OpenAI",
-        "index": 23,
-        "blended": 3.438
-      },
-      {
-        "name": "GPT-5 (Low)",
-        "creator": "OpenAI",
-        "index": 20.8,
-        "blended": 3.438
-      },
-      {
-        "name": "GPT-5 (Medium)",
-        "creator": "OpenAI",
-        "index": 22.9,
-        "blended": 3.438
-      },
-      {
-        "name": "GPT-5 (Minimal)",
-        "creator": "OpenAI",
-        "index": 11.4,
-        "blended": 3.438
-      },
-      {
-        "name": "GPT-5 Codex (High)",
-        "creator": "OpenAI",
-        "index": 24.9,
-        "blended": 3.438
-      },
-      {
-        "name": "GPT-5 mini (High)",
-        "creator": "OpenAI",
-        "index": 16.8,
-        "blended": 0.688
-      },
-      {
-        "name": "GPT-5 mini (Medium)",
-        "creator": "OpenAI",
-        "index": 20.6,
-        "blended": 0.688
-      },
-      {
-        "name": "GPT-5 mini (Minimal)",
-        "creator": "OpenAI",
-        "index": 9.9,
-        "blended": 0.688
-      },
-      {
-        "name": "GPT-5 nano (High)",
-        "creator": "OpenAI",
-        "index": 13,
-        "blended": 0.138
-      },
-      {
-        "name": "GPT-5 nano (Medium)",
-        "creator": "OpenAI",
-        "index": 12.5,
-        "blended": 0.138
-      },
-      {
-        "name": "GPT-5 nano (Minimal)",
-        "creator": "OpenAI",
-        "index": 7.1,
-        "blended": 0.138
-      },
-      {
-        "name": "GPT-5.1 (High)",
-        "creator": "OpenAI",
-        "index": 24.7,
-        "blended": 3.438
-      },
-      {
-        "name": "GPT-5.1 (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 13.3,
-        "blended": 3.438
-      },
-      {
-        "name": "GPT-5.1 Codex (High)",
-        "creator": "OpenAI",
-        "index": 23.7,
-        "blended": 3.438
-      },
-      {
-        "name": "GPT-5.1 Codex mini (High)",
-        "creator": "OpenAI",
-        "index": 20.4,
-        "blended": 0.688
-      },
-      {
-        "name": "GPT-5.2 (Medium)",
-        "creator": "OpenAI",
-        "index": 26.5,
-        "blended": 4.813
-      },
-      {
-        "name": "GPT-5.2 (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 17,
-        "blended": 4.813
-      },
-      {
-        "name": "GPT-5.2 (Xhigh)",
-        "creator": "OpenAI",
-        "index": 30.4,
-        "blended": 4.813
-      },
-      {
-        "name": "GPT-5.2 Codex (Xhigh)",
-        "creator": "OpenAI",
-        "index": 28.5,
-        "blended": 4.813
-      },
-      {
-        "name": "GPT-5.3 Codex (Xhigh)",
-        "creator": "OpenAI",
-        "index": 32.5,
-        "blended": 4.813
-      },
-      {
-        "name": "GPT-5.4 (Low)",
-        "creator": "OpenAI",
-        "index": 27.6,
-        "blended": 5.625
-      },
-      {
-        "name": "GPT-5.4 (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 18.2,
-        "blended": 5.625
-      },
-      {
-        "name": "GPT-5.4 (Xhigh)",
-        "creator": "OpenAI",
-        "index": 39,
-        "blended": 5.625
-      },
-      {
-        "name": "GPT-5.4 mini (Medium)",
-        "creator": "OpenAI",
-        "index": 19.7,
-        "blended": 1.688
-      },
-      {
-        "name": "GPT-5.4 mini (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 11.1,
-        "blended": 1.688
-      },
-      {
-        "name": "GPT-5.4 mini (Xhigh)",
-        "creator": "OpenAI",
-        "index": 24.1,
-        "blended": 1.688
-      },
-      {
-        "name": "GPT-5.4 nano (Medium)",
-        "creator": "OpenAI",
-        "index": 20,
-        "blended": 0.463
-      },
-      {
-        "name": "GPT-5.4 nano (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 11.7,
-        "blended": 0.463
-      },
-      {
-        "name": "GPT-5.4 nano (Xhigh)",
-        "creator": "OpenAI",
-        "index": 20.7,
-        "blended": 0.463
-      },
-      {
-        "name": "GPT-5.5 (High)",
-        "creator": "OpenAI",
-        "index": 37,
-        "blended": 11.25
-      },
-      {
-        "name": "GPT-5.5 (Low)",
-        "creator": "OpenAI",
-        "index": 30.7,
-        "blended": 11.25
-      },
-      {
-        "name": "GPT-5.5 (Medium)",
-        "creator": "OpenAI",
-        "index": 33.8,
-        "blended": 11.25
-      },
-      {
-        "name": "GPT-5.5 (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 23.2,
-        "blended": 11.25
-      },
-      {
-        "name": "GPT-5.5 (Xhigh)",
-        "creator": "OpenAI",
-        "index": 38.4,
-        "blended": 11.25
-      },
-      {
-        "name": "GPT-5.5 Instant (June 2026)",
-        "creator": "OpenAI",
-        "index": 26,
-        "blended": 11.25
-      },
-      {
-        "name": "GPT-5.5 Instant (May 2026)",
-        "creator": "OpenAI",
-        "index": 22.7,
-        "blended": 11.25
-      },
-      {
-        "name": "GPT-5.6 Luna (High)",
-        "creator": "OpenAI",
-        "index": 32.1,
-        "blended": 0.45
-      },
-      {
-        "name": "GPT-5.6 Luna (Low)",
-        "creator": "OpenAI",
-        "index": 21,
-        "blended": 0.45
-      },
-      {
-        "name": "GPT-5.6 Luna (Medium)",
-        "creator": "OpenAI",
-        "index": 25,
-        "blended": 0.45
-      },
-      {
-        "name": "GPT-5.6 Luna (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 15.5,
-        "blended": 0.45
-      },
-      {
-        "name": "GPT-5.6 Luna (Xhigh)",
-        "creator": "OpenAI",
-        "index": 34.6,
-        "blended": 0.45
-      },
-      {
-        "name": "GPT-5.6 Sol (High)",
-        "creator": "OpenAI",
-        "index": 42.3,
-        "blended": 8
-      },
-      {
-        "name": "GPT-5.6 Sol (Low)",
-        "creator": "OpenAI",
-        "index": 33.5,
-        "blended": 8
-      },
-      {
-        "name": "GPT-5.6 Sol (Max)",
-        "creator": "OpenAI",
-        "index": 47,
-        "blended": 8
-      },
-      {
-        "name": "GPT-5.6 Sol (Medium)",
-        "creator": "OpenAI",
-        "index": 39.2,
-        "blended": 8
-      },
-      {
-        "name": "GPT-5.6 Sol (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 28.3,
-        "blended": 8
-      },
-      {
-        "name": "GPT-5.6 Sol (Xhigh)",
-        "creator": "OpenAI",
-        "index": 44,
-        "blended": 8
-      },
-      {
-        "name": "GPT-5.6 Terra (High)",
-        "creator": "OpenAI",
-        "index": 34.2,
-        "blended": 4.5
-      },
-      {
-        "name": "GPT-5.6 Terra (Low)",
-        "creator": "OpenAI",
-        "index": 27.5,
-        "blended": 4.5
-      },
-      {
-        "name": "GPT-5.6 Terra (Medium)",
-        "creator": "OpenAI",
-        "index": 30.1,
-        "blended": 4.5
-      },
-      {
-        "name": "GPT-5.6 Terra (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 20.8,
-        "blended": 4.5
-      },
-      {
-        "name": "GPT-5.6 Terra (Xhigh)",
-        "creator": "OpenAI",
-        "index": 38,
-        "blended": 4.5
-      },
-      {
-        "name": "GPT-6 Sol (High)",
-        "creator": "OpenAI",
-        "index": 42.4,
-        "blended": 4
-      },
-      {
-        "name": "GPT-6 Sol (Low)",
-        "creator": "OpenAI",
-        "index": 34.2,
-        "blended": 4
-      },
-      {
-        "name": "GPT-6 Sol (Medium)",
-        "creator": "OpenAI",
-        "index": 39.8,
-        "blended": 4
-      },
-      {
-        "name": "GPT-6 Sol (Non-reasoning)",
-        "creator": "OpenAI",
-        "index": 28.5,
-        "blended": 4
-      },
-      {
-        "name": "GPT-6 Sol (Xhigh)",
-        "creator": "OpenAI",
-        "index": 44.2,
-        "blended": 4
-      },
-      {
-        "name": "gpt-oss-120b (Low)",
-        "creator": "OpenAI",
-        "index": 10.2,
-        "blended": 0.242
-      },
-      {
-        "name": "gpt-oss-20b (High)",
-        "creator": "OpenAI",
-        "index": 9,
-        "blended": 0.092
-      },
-      {
-        "name": "gpt-oss-20b (Low)",
-        "creator": "OpenAI",
-        "index": 10,
-        "blended": 0.128
-      },
-      {
-        "name": "Granite 3.3 8B (Non-reasoning)",
-        "creator": "IBM",
-        "index": 4.9,
-        "blended": 0.085
-      },
-      {
-        "name": "Granite 4.2 30B",
-        "creator": "IBM",
-        "index": 12.7,
-        "blended": 0.282
-      },
-      {
-        "name": "Granite 4.2 3B",
-        "creator": "IBM",
-        "index": 9.1,
-        "blended": 0.052
-      },
-      {
-        "name": "Grok 3",
-        "creator": "SpaceXAI",
-        "index": 12.1,
-        "blended": 6
-      },
-      {
-        "name": "Grok 3 mini Reasoning (High)",
-        "creator": "SpaceXAI",
-        "index": 14.6,
-        "blended": 0.35
-      },
-      {
-        "name": "Grok 4",
-        "creator": "SpaceXAI",
-        "index": 22.5,
-        "blended": 6
-      },
-      {
-        "name": "Grok 4 Fast (Non-reasoning)",
-        "creator": "SpaceXAI",
-        "index": 11.1,
-        "blended": 0.275
-      },
-      {
-        "name": "Grok 4 Fast (Reasoning)",
-        "creator": "SpaceXAI",
-        "index": 17.9,
-        "blended": 0.275
-      },
-      {
-        "name": "Grok 4.20 0309 (Non-reasoning)",
-        "creator": "SpaceXAI",
-        "index": 14.6,
-        "blended": 3
-      },
-      {
-        "name": "Grok 4.20 0309 (Reasoning)",
-        "creator": "SpaceXAI",
-        "index": 25.2,
-        "blended": 3
-      },
-      {
-        "name": "Grok 4.20 0309 v2 (Non-reasoning)",
-        "creator": "SpaceXAI",
-        "index": 14.2,
-        "blended": 1.563
-      },
-      {
-        "name": "Grok 4.20 0309 v2 (Reasoning)",
-        "creator": "SpaceXAI",
-        "index": 25.7,
-        "blended": 1.563
-      },
-      {
-        "name": "Grok 4.3 (High)",
-        "creator": "SpaceXAI",
-        "index": 24.9,
-        "blended": 1.563
-      },
-      {
-        "name": "Grok 4.3 (Low)",
-        "creator": "SpaceXAI",
-        "index": 24.3,
-        "blended": 1.563
-      },
-      {
-        "name": "Grok 4.3 (Medium)",
-        "creator": "SpaceXAI",
-        "index": 24.8,
-        "blended": 1.563
-      },
-      {
-        "name": "Grok 4.3 (Non-reasoning)",
-        "creator": "SpaceXAI",
-        "index": 14,
-        "blended": 1.563
-      },
-      {
-        "name": "Grok 4.5 (High)",
-        "creator": "SpaceXAI",
-        "index": 38.8,
-        "blended": 3
-      },
-      {
-        "name": "Grok 4.6 (High)",
-        "creator": "SpaceXAI",
-        "index": 44.3,
-        "blended": 3
-      },
-      {
-        "name": "Grok 4.6 (Low)",
-        "creator": "SpaceXAI",
-        "index": 35.1,
-        "blended": 3
-      },
-      {
-        "name": "Grok 4.6 (Medium)",
-        "creator": "SpaceXAI",
-        "index": 42.8,
-        "blended": 3
-      },
-      {
-        "name": "Grok Build 0.1 0616",
-        "creator": "SpaceXAI",
-        "index": 27.2,
-        "blended": 1.25
-      },
-      {
-        "name": "Hermes 3 - Llama-3.1 70B",
-        "creator": "Nous Research",
-        "index": 6,
-        "blended": 0.7
-      },
-      {
-        "name": "Hermes 4 - Llama-3.1 405B (Non-reasoning)",
-        "creator": "Nous Research",
-        "index": 7.4,
-        "blended": 1.5
-      },
-      {
-        "name": "Hermes 4 - Llama-3.1 405B (Reasoning)",
-        "creator": "Nous Research",
-        "index": 7.5,
-        "blended": 1.5
-      },
-      {
-        "name": "Hy3",
-        "creator": "Tencent",
-        "index": 25.3,
-        "blended": 0.241
-      },
-      {
-        "name": "Hy3-preview (Non-reasoning)",
-        "creator": "Tencent",
-        "index": 17,
-        "blended": 0.1
-      },
-      {
-        "name": "Hy3-preview (Reasoning)",
-        "creator": "Tencent",
-        "index": 22.7,
-        "blended": 0.1
-      },
-      {
-        "name": "Jamba 1.5 Large",
-        "creator": "AI21 Labs",
-        "index": 6,
-        "blended": 3.5
-      },
-      {
-        "name": "Jamba 1.5 Mini",
-        "creator": "AI21 Labs",
-        "index": 5.2,
-        "blended": 0.25
-      },
-      {
-        "name": "Kimi K2",
-        "creator": "Kimi",
-        "index": 12.7,
-        "blended": 1.002
-      },
-      {
-        "name": "Kimi K2 0905",
-        "creator": "Kimi",
-        "index": 15.3,
-        "blended": 1.075
-      },
-      {
-        "name": "Kimi K2 Thinking",
-        "creator": "Kimi",
-        "index": 22,
-        "blended": 1.075
-      },
-      {
-        "name": "Kimi K2.5 (Non-reasoning)",
-        "creator": "Kimi",
-        "index": 19.4,
-        "blended": 1.2
-      },
-      {
-        "name": "Kimi K2.5 (Reasoning)",
-        "creator": "Kimi",
-        "index": 23.5,
-        "blended": 1.2
-      },
-      {
-        "name": "Kimi K2.6 (Non-reasoning)",
-        "creator": "Kimi",
-        "index": 23.6,
-        "blended": 1.712
-      },
-      {
-        "name": "Kimi K2.6 (Reasoning)",
-        "creator": "Kimi",
-        "index": 27,
-        "blended": 1.712
-      },
-      {
-        "name": "Kimi K2.7 Code",
-        "creator": "Kimi",
-        "index": 25.8,
-        "blended": 1.712
-      },
-      {
-        "name": "Kimi K3 (Max)",
-        "creator": "Kimi",
-        "index": 43.6,
-        "blended": 6
-      },
-      {
-        "name": "Ling 3.0 Flash",
-        "creator": "InclusionAI",
-        "index": 20.1,
-        "blended": 0.111
-      },
-      {
-        "name": "Ling 3.1 Flash",
-        "creator": "InclusionAI",
-        "index": 41.1,
-        "blended": 0.45
-      },
-      {
-        "name": "Ling-2.6-1T",
-        "creator": "InclusionAI",
-        "index": 17,
-        "blended": 0.85
-      },
-      {
-        "name": "Ling-flash-2.0",
-        "creator": "InclusionAI",
-        "index": 7.8,
-        "blended": 0.247
-      },
-      {
-        "name": "Llama 2 Chat 7B",
-        "creator": "Meta",
-        "index": 5.7,
-        "blended": 0.1
-      },
-      {
-        "name": "Llama 3 Instruct 70B",
-        "creator": "Meta",
-        "index": 5.5,
-        "blended": 1.175
-      },
-      {
-        "name": "Llama 3 Instruct 8B",
-        "creator": "Meta",
-        "index": 4.8,
-        "blended": 0.07
-      },
-      {
-        "name": "Llama 3.1 Instruct 70B",
-        "creator": "Meta",
-        "index": 6.6,
-        "blended": 0.56
-      },
-      {
-        "name": "Llama 3.1 Instruct 8B",
-        "creator": "Meta",
-        "index": 6.9,
-        "blended": 0.043
-      },
-      {
-        "name": "Llama 3.2 Instruct 11B (Vision)",
-        "creator": "Meta",
-        "index": 5.4,
-        "blended": 0.345
-      },
-      {
-        "name": "Llama 3.3 Instruct 70B",
-        "creator": "Meta",
-        "index": 7.7,
-        "blended": 0.627
-      },
-      {
-        "name": "Llama 4 Maverick",
-        "creator": "Meta",
-        "index": 9.3,
-        "blended": 0.417
-      },
-      {
-        "name": "Llama 4 Scout",
-        "creator": "Meta",
-        "index": 6.5,
-        "blended": 0.3
-      },
-      {
-        "name": "LongCat 2.0",
-        "creator": "LongCat",
-        "index": 19.1,
-        "blended": 1.3
-      },
-      {
-        "name": "Magistral Small 1.2",
-        "creator": "Mistral",
-        "index": 8.6,
-        "blended": 0.75
-      },
-      {
-        "name": "Mercury 2",
-        "creator": "Inception",
-        "index": 10.8,
-        "blended": 0.375
-      },
-      {
-        "name": "Mercury 2.5",
-        "creator": "Inception",
-        "index": 12.3,
-        "blended": 0.375
-      },
-      {
-        "name": "MiMo-V2-Flash (Reasoning)",
-        "creator": "Xiaomi",
-        "index": 20.8,
-        "blended": 0.15
-      },
-      {
-        "name": "MiMo-V2.5",
-        "creator": "Xiaomi",
-        "index": 21.8,
-        "blended": 0.166
-      },
-      {
-        "name": "MiMo-V2.5-Pro (Non-reasoning)",
-        "creator": "Xiaomi",
-        "index": 18.3,
-        "blended": 0.585
-      },
-      {
-        "name": "MiMo-V2.5-Pro (Reasoning)",
-        "creator": "Xiaomi",
-        "index": 26,
-        "blended": 0.564
-      },
-      {
-        "name": "MiniMax M1 80k",
-        "creator": "MiniMax",
-        "index": 11.7,
-        "blended": 0.963
-      },
-      {
-        "name": "MiniMax-M2",
-        "creator": "MiniMax",
-        "index": 18.6,
-        "blended": 0.525
-      },
-      {
-        "name": "MiniMax-M2.1",
-        "creator": "MiniMax",
-        "index": 20.9,
-        "blended": 0.525
-      },
-      {
-        "name": "MiniMax-M2.5",
-        "creator": "MiniMax",
-        "index": 22.8,
-        "blended": 0.525
-      },
-      {
-        "name": "MiniMax-M2.7",
-        "creator": "MiniMax",
-        "index": 22.8,
-        "blended": 0.525
-      },
-      {
-        "name": "Ministral 3 14B",
-        "creator": "Mistral",
-        "index": 6,
-        "blended": 0.2
-      },
-      {
-        "name": "Ministral 3 3B",
-        "creator": "Mistral",
-        "index": 4.8,
-        "blended": 0.1
-      },
-      {
-        "name": "Ministral 3 8B",
-        "creator": "Mistral",
-        "index": 5.5,
-        "blended": 0.15
-      },
-      {
-        "name": "Mistral 7B Instruct",
-        "creator": "Mistral",
-        "index": 5,
-        "blended": 0.162
-      },
-      {
-        "name": "Mistral Large (Feb '24)",
-        "creator": "Mistral",
-        "index": 5.8,
-        "blended": 6
-      },
-      {
-        "name": "Mistral Large 2 (Jul '24)",
-        "creator": "Mistral",
-        "index": 6.8,
-        "blended": 3
-      },
-      {
-        "name": "Mistral Large 3",
-        "creator": "Mistral",
-        "index": 9.3,
-        "blended": 0.75
-      },
-      {
-        "name": "Mistral Medium 3",
-        "creator": "Mistral",
-        "index": 9,
-        "blended": 0.8
-      },
-      {
-        "name": "Mistral Small 3",
-        "creator": "Mistral",
-        "index": 6.7,
-        "blended": 0.058
-      },
-      {
-        "name": "Mistral Small 3.1",
-        "creator": "Mistral",
-        "index": 7.1,
-        "blended": 0.094
-      },
-      {
-        "name": "Mistral Small 3.2",
-        "creator": "Mistral",
-        "index": 7,
-        "blended": 0.106
-      },
-      {
-        "name": "Mistral Small 4 (Non-reasoning)",
-        "creator": "Mistral",
-        "index": 9,
-        "blended": 0.262
-      },
-      {
-        "name": "Mixtral 8x7B Instruct",
-        "creator": "Mistral",
-        "index": 5.1,
-        "blended": 0.512
-      },
-      {
-        "name": "Muse Spark 1.1 (Xhigh)",
-        "creator": "Meta",
-        "index": 33.7,
-        "blended": 2
-      },
-      {
-        "name": "Muse Spark 1.2 (Xhigh)",
-        "creator": "Meta",
-        "index": 39.6,
-        "blended": 2
-      },
-      {
-        "name": "Muse Spark 1.3 (Xhigh)",
-        "creator": "Meta",
-        "index": 45.1,
-        "blended": 2
-      },
-      {
-        "name": "Nemotron 3 Nano Omni 30B A3B Reasoning",
-        "creator": "NVIDIA",
-        "index": 10.3,
-        "blended": 0.641
-      },
-      {
-        "name": "Nemotron 3 Super 120B A12B (Reasoning)",
-        "creator": "NVIDIA",
-        "index": 12.8,
-        "blended": 0.45
-      },
-      {
-        "name": "Nova 2.0 Lite (High)",
-        "creator": "Amazon",
-        "index": 13.4,
-        "blended": 0.85
-      },
-      {
-        "name": "Nova 2.0 Lite (Low)",
-        "creator": "Amazon",
-        "index": 11.8,
-        "blended": 0.85
-      },
-      {
-        "name": "Nova 2.0 Lite (Medium)",
-        "creator": "Amazon",
-        "index": 12.5,
-        "blended": 0.85
-      },
-      {
-        "name": "Nova 2.0 Lite (Non-reasoning)",
-        "creator": "Amazon",
-        "index": 8.7,
-        "blended": 0.85
-      },
-      {
-        "name": "Nova 2.0 Pro Preview (Low)",
-        "creator": "Amazon",
-        "index": 12.8,
-        "blended": 3.438
-      },
-      {
-        "name": "Nova 2.0 Pro Preview (Medium)",
-        "creator": "Amazon",
-        "index": 14.2,
-        "blended": 3.438
-      },
-      {
-        "name": "Nova 2.0 Pro Preview (Non-reasoning)",
-        "creator": "Amazon",
-        "index": 10,
-        "blended": 3.438
-      },
-      {
-        "name": "Nova Lite",
-        "creator": "Amazon",
-        "index": 6.7,
-        "blended": 0.105
-      },
-      {
-        "name": "Nova Micro",
-        "creator": "Amazon",
-        "index": 5.9,
-        "blended": 0.061
-      },
-      {
-        "name": "Nova Pro",
-        "creator": "Amazon",
-        "index": 7,
-        "blended": 1.4
-      },
-      {
-        "name": "NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning)",
-        "creator": "NVIDIA",
-        "index": 6.8,
-        "blended": 0.088
-      },
-      {
-        "name": "NVIDIA Nemotron 3 Nano 30B A3B (Reasoning)",
-        "creator": "NVIDIA",
-        "index": 8.9,
-        "blended": 0.088
-      },
-      {
-        "name": "NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning)",
-        "creator": "NVIDIA",
-        "index": 5.8,
-        "blended": 0.3
-      },
-      {
-        "name": "NVIDIA Nemotron Nano 9B V2 (Non-reasoning)",
-        "creator": "NVIDIA",
-        "index": 6.8,
-        "blended": 0.086
-      },
-      {
-        "name": "NVIDIA Nemotron Nano 9B V2 (Reasoning)",
-        "creator": "NVIDIA",
-        "index": 7.4,
-        "blended": 0.07
-      },
-      {
-        "name": "o1",
-        "creator": "OpenAI",
-        "index": 15.2,
-        "blended": 26.25
-      },
-      {
-        "name": "o1-preview",
-        "creator": "OpenAI",
-        "index": 11.4,
-        "blended": 28.875
-      },
-      {
-        "name": "o1-pro",
-        "creator": "OpenAI",
-        "index": 12.4,
-        "blended": 262.5
-      },
-      {
-        "name": "o3",
-        "creator": "OpenAI",
-        "index": 20.2,
-        "blended": 3.5
-      },
-      {
-        "name": "o3-mini",
-        "creator": "OpenAI",
-        "index": 12.5,
-        "blended": 1.925
-      },
-      {
-        "name": "o3-mini (High)",
-        "creator": "OpenAI",
-        "index": 11,
-        "blended": 1.925
-      },
-      {
-        "name": "o3-pro",
-        "creator": "OpenAI",
-        "index": 21.9,
-        "blended": 35
-      },
-      {
-        "name": "o4-mini (High)",
-        "creator": "OpenAI",
-        "index": 16.7,
-        "blended": 1.925
-      },
-      {
-        "name": "Phi-4",
-        "creator": "Microsoft",
-        "index": 5.9,
-        "blended": 0.219
-      },
-      {
-        "name": "Phi-4 Mini Instruct",
-        "creator": "Microsoft",
-        "index": 6.3,
-        "blended": 0.131
-      },
-      {
-        "name": "Phi-4 Multimodal Instruct",
-        "creator": "Microsoft",
-        "index": 5.8,
-        "blended": 0.14
-      },
-      {
-        "name": "Quasar 438B (Max, Based on GLM-5.2)",
-        "creator": "Multiverse Computing",
-        "index": 26.7,
-        "blended": 0.165
-      },
-      {
-        "name": "Qwen2.5 Instruct 72B",
-        "creator": "Alibaba",
-        "index": 7.7,
-        "blended": 0.48
-      },
-      {
-        "name": "Qwen3 14B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 6.7,
-        "blended": 0.15
-      },
-      {
-        "name": "Qwen3 14B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 6.4,
-        "blended": 0.15
-      },
-      {
-        "name": "Qwen3 235B A22B 2507 (Reasoning)",
-        "creator": "Alibaba",
-        "index": 12.7,
-        "blended": 0.747
-      },
-      {
-        "name": "Qwen3 235B A22B 2507 Instruct",
-        "creator": "Alibaba",
-        "index": 12,
-        "blended": 0.368
-      },
-      {
-        "name": "Qwen3 30B A3B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 6.6,
-        "blended": 0.215
-      },
-      {
-        "name": "Qwen3 30B A3B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 7.6,
-        "blended": 0.239
-      },
-      {
-        "name": "Qwen3 30B A3B 2507 Instruct",
-        "creator": "Alibaba",
-        "index": 7.5,
-        "blended": 0.15
-      },
-      {
-        "name": "Qwen3 32B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 7.3,
-        "blended": 0.262
-      },
-      {
-        "name": "Qwen3 32B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 7.2,
-        "blended": 0.315
-      },
-      {
-        "name": "Qwen3 8B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 6,
-        "blended": 0.2
-      },
-      {
-        "name": "Qwen3 Coder 30B A3B Instruct",
-        "creator": "Alibaba",
-        "index": 9.6,
-        "blended": 0.334
-      },
-      {
-        "name": "Qwen3 Coder 480B A35B Instruct",
-        "creator": "Alibaba",
-        "index": 11.9,
-        "blended": 0.631
-      },
-      {
-        "name": "Qwen3 Coder Next",
-        "creator": "Alibaba",
-        "index": 9.2,
-        "blended": 0.482
-      },
-      {
-        "name": "Qwen3 Next 80B A3B Instruct",
-        "creator": "Alibaba",
-        "index": 9.6,
-        "blended": 0.35
-      },
-      {
-        "name": "Qwen3 Omni 30B A3B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 7.8,
-        "blended": 0.43
-      },
-      {
-        "name": "Qwen3 Omni 30B A3B Instruct",
-        "creator": "Alibaba",
-        "index": 6,
-        "blended": 0.43
-      },
-      {
-        "name": "Qwen3 VL 235B A22B Instruct",
-        "creator": "Alibaba",
-        "index": 9.9,
-        "blended": 0.509
-      },
-      {
-        "name": "Qwen3 VL 30B A3B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 9.5,
-        "blended": 0.5
-      },
-      {
-        "name": "Qwen3 VL 30B A3B Instruct",
-        "creator": "Alibaba",
-        "index": 7.9,
-        "blended": 0.412
-      },
-      {
-        "name": "Qwen3.5 122B A10B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 17.7,
-        "blended": 1.1
-      },
-      {
-        "name": "Qwen3.5 122B A10B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 15.6,
-        "blended": 1.1
-      },
-      {
-        "name": "Qwen3.5 27B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 19.4,
-        "blended": 0.825
-      },
-      {
-        "name": "Qwen3.5 27B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 22.9,
-        "blended": 0.825
-      },
-      {
-        "name": "Qwen3.5 35B A3B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 15.1,
-        "blended": 0.688
-      },
-      {
-        "name": "Qwen3.5 35B A3B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 19.3,
-        "blended": 0.688
-      },
-      {
-        "name": "Qwen3.5 397B A17B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 21.4,
-        "blended": 1.35
-      },
-      {
-        "name": "Qwen3.5 397B A17B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 18.4,
-        "blended": 1.35
-      },
-      {
-        "name": "Qwen3.5 4B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 10.8,
-        "blended": 0.06
-      },
-      {
-        "name": "Qwen3.5 4B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 13.1,
-        "blended": 0.06
-      },
-      {
-        "name": "Qwen3.5 9B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 13.3,
-        "blended": 0.19
-      },
-      {
-        "name": "Qwen3.5 9B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 11.2,
-        "blended": 0.151
-      },
-      {
-        "name": "Qwen3.5 Omni Flash",
-        "creator": "Alibaba",
-        "index": 12.5,
-        "blended": 0.275
-      },
-      {
-        "name": "Qwen3.5 Omni Plus",
-        "creator": "Alibaba",
-        "index": 20.4,
-        "blended": 1.5
-      },
-      {
-        "name": "Qwen3.6 27B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 19.8,
-        "blended": 1.35
-      },
-      {
-        "name": "Qwen3.6 27B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 21.4,
-        "blended": 1.35
-      },
-      {
-        "name": "Qwen3.6 35B A3B (Non-reasoning)",
-        "creator": "Alibaba",
-        "index": 15.2,
-        "blended": 0.844
-      },
-      {
-        "name": "Qwen3.6 35B A3B (Reasoning)",
-        "creator": "Alibaba",
-        "index": 18.2,
-        "blended": 0.844
-      },
-      {
-        "name": "Qwen3.6 Plus",
-        "creator": "Alibaba",
-        "index": 27,
-        "blended": 1.125
-      },
-      {
-        "name": "Qwen3.7 Max",
-        "creator": "Alibaba",
-        "index": 29.5,
-        "blended": 3.75
-      },
-      {
-        "name": "Qwen3.7 Plus",
-        "creator": "Alibaba",
-        "index": 25.2,
-        "blended": 0.7
-      },
-      {
-        "name": "Qwen3.8 2.4T A95B",
-        "creator": "Alibaba",
-        "index": 39.9,
-        "blended": 3
-      },
-      {
-        "name": "Qwen3.8 Max",
-        "creator": "Alibaba",
-        "index": 40.2,
-        "blended": 3
-      },
-      {
-        "name": "Reka Flash (Sep '24)",
-        "creator": "Reka AI",
-        "index": 6.4,
-        "blended": 0.35
-      },
-      {
-        "name": "Reka Flash 3",
-        "creator": "Reka AI",
-        "index": 5.6,
-        "blended": 0.35
-      },
-      {
-        "name": "Ring-2.6-1T",
-        "creator": "InclusionAI",
-        "index": 16.6,
-        "blended": 0.85
-      },
-      {
-        "name": "Sarvam 105B (High)",
-        "creator": "Sarvam",
-        "index": 8.8,
-        "blended": 0.074
-      },
-      {
-        "name": "Seed-OSS-36B-Instruct",
-        "creator": "ByteDance Seed",
-        "index": 12.1,
-        "blended": 0.3
-      },
-      {
-        "name": "Solar Mini",
-        "creator": "Upstage",
-        "index": 6.4,
-        "blended": 0.15
-      },
-      {
-        "name": "Solar Mini 4",
-        "creator": "Upstage",
-        "index": 24.1,
-        "blended": 0.175
-      },
-      {
-        "name": "Solar Pro 3",
-        "creator": "Upstage",
-        "index": 7.8,
-        "blended": 0.262
-      },
-      {
-        "name": "Step 3.5 Flash",
-        "creator": "StepFun",
-        "index": 16.6,
-        "blended": 0.15
-      },
-      {
-        "name": "Step 3.5 Flash 2603",
-        "creator": "StepFun",
-        "index": 17,
-        "blended": 0.15
-      },
-      {
-        "name": "Step 3.7 Flash",
-        "creator": "StepFun",
-        "index": 19.5,
-        "blended": 0.438
-      },
-      {
-        "name": "Trinity Large Thinking",
-        "creator": "Arcee AI",
-        "index": 10.8,
-        "blended": 0.388
-      }
-    ],
+    "removed": [],
     "changed": [
       {
         "name": "Apodex 1.1",
@@ -2539,6 +528,111 @@
         ]
       },
       {
+        "name": "DeepSeek V3.1 (Non-reasoning)",
+        "creator": "DeepSeek",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.84,
+            "to": 0.795
+          },
+          {
+            "field": "input",
+            "from": 0.56,
+            "to": 0.53
+          },
+          {
+            "field": "output",
+            "from": 1.68,
+            "to": 1.59
+          }
+        ]
+      },
+      {
+        "name": "DeepSeek V3.1 (Reasoning)",
+        "creator": "DeepSeek",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.855,
+            "to": 0.654
+          },
+          {
+            "field": "input",
+            "from": 0.58,
+            "to": 0.425
+          },
+          {
+            "field": "output",
+            "from": 1.68,
+            "to": 1.34
+          }
+        ]
+      },
+      {
+        "name": "DeepSeek V4 Pro 0424 (High)",
+        "creator": "DeepSeek",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.544,
+            "to": 2
+          },
+          {
+            "field": "input",
+            "from": 0.435,
+            "to": 1.6
+          },
+          {
+            "field": "output",
+            "from": 0.87,
+            "to": 3.2
+          }
+        ]
+      },
+      {
+        "name": "DeepSeek V4 Pro 0424 (Max)",
+        "creator": "DeepSeek",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.544,
+            "to": 1.926
+          },
+          {
+            "field": "input",
+            "from": 0.435,
+            "to": 1.502
+          },
+          {
+            "field": "output",
+            "from": 0.87,
+            "to": 3.2
+          }
+        ]
+      },
+      {
+        "name": "DeepSeek V4 Pro 0424 (Non-reasoning)",
+        "creator": "DeepSeek",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.544,
+            "to": 2.175
+          },
+          {
+            "field": "input",
+            "from": 0.435,
+            "to": 1.74
+          },
+          {
+            "field": "output",
+            "from": 0.87,
+            "to": 3.48
+          }
+        ]
+      },
+      {
         "name": "DeepSeek V4 Pro 0813 (Max)",
         "creator": "DeepSeek",
         "fields": [
@@ -2638,6 +732,59 @@
         ]
       },
       {
+        "name": "Gemma 4 26B A4B (Non-reasoning)",
+        "creator": "Google",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.186,
+            "to": 0.198
+          },
+          {
+            "field": "input",
+            "from": 0.115,
+            "to": 0.13
+          }
+        ]
+      },
+      {
+        "name": "Gemma 4 26B A4B (Reasoning)",
+        "creator": "Google",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.16,
+            "to": 0.151
+          },
+          {
+            "field": "input",
+            "from": 0.1,
+            "to": 0.095
+          },
+          {
+            "field": "output",
+            "from": 0.34,
+            "to": 0.32
+          }
+        ]
+      },
+      {
+        "name": "Gemma 4 31B (Non-reasoning)",
+        "creator": "Google",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.224,
+            "to": 0.213
+          },
+          {
+            "field": "input",
+            "from": 0.165,
+            "to": 0.15
+          }
+        ]
+      },
+      {
         "name": "Gemma 4 E4B (Reasoning)",
         "creator": "Google",
         "fields": [
@@ -2645,6 +792,59 @@
             "field": "index",
             "from": 8.9,
             "to": 4.8
+          }
+        ]
+      },
+      {
+        "name": "GLM-4.5-Air",
+        "creator": "Z AI",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.372,
+            "to": 0.373
+          }
+        ]
+      },
+      {
+        "name": "GLM-5.1 (Non-reasoning)",
+        "creator": "Z AI",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 2.135,
+            "to": 1.981
+          },
+          {
+            "field": "input",
+            "from": 1.38,
+            "to": 1.285
+          },
+          {
+            "field": "output",
+            "from": 4.4,
+            "to": 4.07
+          }
+        ]
+      },
+      {
+        "name": "GLM-5.1 (Reasoning)",
+        "creator": "Z AI",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 1.981,
+            "to": 1.828
+          },
+          {
+            "field": "input",
+            "from": 1.285,
+            "to": 1.19
+          },
+          {
+            "field": "output",
+            "from": 4.07,
+            "to": 3.74
           }
         ]
       },
@@ -2973,6 +1173,28 @@
         ]
       },
       {
+        "name": "gpt-oss-120b (Low)",
+        "creator": "OpenAI",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.242,
+            "to": 0.243
+          }
+        ]
+      },
+      {
+        "name": "gpt-oss-20b (High)",
+        "creator": "OpenAI",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.092,
+            "to": 0.093
+          }
+        ]
+      },
+      {
         "name": "Granite 4.2 8B",
         "creator": "IBM",
         "fields": [
@@ -2985,6 +1207,22 @@
             "field": "blended",
             "from": 0.107,
             "to": 0.108
+          }
+        ]
+      },
+      {
+        "name": "Grok 3 mini Reasoning (High)",
+        "creator": "SpaceXAI",
+        "fields": [
+          {
+            "field": "input",
+            "from": 0.3,
+            "to": 0
+          },
+          {
+            "field": "output",
+            "from": 0.5,
+            "to": 0
           }
         ]
       },
@@ -3060,6 +1298,50 @@
         ]
       },
       {
+        "name": "Kimi K2",
+        "creator": "Kimi",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 1.002,
+            "to": 1.003
+          }
+        ]
+      },
+      {
+        "name": "Kimi K2.6 (Non-reasoning)",
+        "creator": "Kimi",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 1.712,
+            "to": 1.713
+          }
+        ]
+      },
+      {
+        "name": "Kimi K2.6 (Reasoning)",
+        "creator": "Kimi",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 1.712,
+            "to": 1.713
+          }
+        ]
+      },
+      {
+        "name": "Kimi K2.7 Code",
+        "creator": "Kimi",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 1.712,
+            "to": 1.713
+          }
+        ]
+      },
+      {
         "name": "Kimi K3 (Low)",
         "creator": "Kimi",
         "fields": [
@@ -3089,6 +1371,128 @@
             "field": "index",
             "from": 43.9,
             "to": 29.6
+          }
+        ]
+      },
+      {
+        "name": "Ling-flash-2.0",
+        "creator": "InclusionAI",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.247,
+            "to": 0.248
+          }
+        ]
+      },
+      {
+        "name": "Llama 3.3 Instruct 70B",
+        "creator": "Meta",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.627,
+            "to": 0.665
+          },
+          {
+            "field": "input",
+            "from": 0.6,
+            "to": 0.65
+          }
+        ]
+      },
+      {
+        "name": "Llama 4 Maverick",
+        "creator": "Meta",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.417,
+            "to": 0.43
+          },
+          {
+            "field": "output",
+            "from": 0.92,
+            "to": 0.97
+          }
+        ]
+      },
+      {
+        "name": "Mercury 2.5",
+        "creator": "Inception",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.375,
+            "to": 0.338
+          },
+          {
+            "field": "input",
+            "from": 0.25,
+            "to": 0.2
+          }
+        ]
+      },
+      {
+        "name": "MiMo-V2.5",
+        "creator": "Xiaomi",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.166,
+            "to": 0.14
+          },
+          {
+            "field": "input",
+            "from": 0.133,
+            "to": 0.112
+          },
+          {
+            "field": "output",
+            "from": 0.266,
+            "to": 0.224
+          }
+        ]
+      },
+      {
+        "name": "MiMo-V2.5-Pro (Non-reasoning)",
+        "creator": "Xiaomi",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.585,
+            "to": 0.435
+          },
+          {
+            "field": "input",
+            "from": 0.39,
+            "to": 0.348
+          },
+          {
+            "field": "output",
+            "from": 1.17,
+            "to": 0.696
+          }
+        ]
+      },
+      {
+        "name": "MiMo-V2.5-Pro (Reasoning)",
+        "creator": "Xiaomi",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.564,
+            "to": 0.435
+          },
+          {
+            "field": "input",
+            "from": 0.412,
+            "to": 0.348
+          },
+          {
+            "field": "output",
+            "from": 1.02,
+            "to": 0.696
           }
         ]
       },
@@ -3181,6 +1585,17 @@
             "field": "index",
             "from": 11.3,
             "to": 4.3
+          }
+        ]
+      },
+      {
+        "name": "Mixtral 8x7B Instruct",
+        "creator": "Mistral",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.512,
+            "to": 0.513
           }
         ]
       },
@@ -3302,6 +1717,49 @@
         ]
       },
       {
+        "name": "Qwen3 235B A22B 2507 Instruct",
+        "creator": "Alibaba",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.368,
+            "to": 0.385
+          },
+          {
+            "field": "input",
+            "from": 0.21,
+            "to": 0.22
+          },
+          {
+            "field": "output",
+            "from": 0.84,
+            "to": 0.88
+          }
+        ]
+      },
+      {
+        "name": "Qwen3 Coder Next",
+        "creator": "Alibaba",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.482,
+            "to": 0.483
+          }
+        ]
+      },
+      {
+        "name": "Qwen3 VL 30B A3B Instruct",
+        "creator": "Alibaba",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.412,
+            "to": 0.413
+          }
+        ]
+      },
+      {
         "name": "Qwen3.8 27B (Low)",
         "creator": "Alibaba",
         "fields": [
@@ -3364,6 +1822,27 @@
             "field": "index",
             "from": 39.8,
             "to": 28.6
+          }
+        ]
+      },
+      {
+        "name": "Reka Flash 3",
+        "creator": "Reka AI",
+        "fields": [
+          {
+            "field": "blended",
+            "from": 0.35,
+            "to": 0.125
+          },
+          {
+            "field": "input",
+            "from": 0.2,
+            "to": 0.1
+          },
+          {
+            "field": "output",
+            "from": 0.8,
+            "to": 0.2
           }
         ]
       },

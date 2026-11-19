@@ -198,10 +198,37 @@ async function main() {
 
   const prevSnap = await readJson(MODELS_PATH, null);
   for (const m of prevSnap?.models ?? []) if (m.creator_slug) creatorSlugs.set(m.creator, m.creator_slug);
-  const models = json.data
-    .map(normalise)
-    .filter((m) => m.index != null && m.blended != null && m.blended > 0)
-    .sort((a, b) => a.name.localeCompare(b.name));
+  const all = json.data.map(normalise);
+  const usable = (m) => m.index != null && m.blended != null && m.blended > 0;
+  const prevById = new Map((prevSnap?.models ?? []).map((m) => [m.id, m]));
+  // Benchmarks the free tier omits (null) keep their previous value rather than being wiped.
+  const KEEP = ["coding", "math", "mmlu_pro", "gpqa", "hle", "livecodebench", "scicode", "aime25", "ifbench", "lcr", "terminalbench_hard", "terminalbench_v2_1", "tau2", "tau_banking"];
+  const fresh = all.filter(usable).map((m) => {
+    const p = prevById.get(m.id);
+    if (p) for (const k of KEEP) if (m[k] == null && p[k] != null) m[k] = p[k];
+    return m;
+  });
+  const freshIds = new Set(fresh.map((m) => m.id));
+
+  // The free tier returns index = null for older models AA still lists. Keep their last known scores
+  // (flagged carried) and refresh only price / speed. Models AA no longer lists at all are dropped.
+  const carried = [];
+  for (const m of all) {
+    if (freshIds.has(m.id)) continue;
+    const p = prevById.get(m.id);
+    if (!p || p.index == null) continue;
+    carried.push({
+      ...p,
+      carried: true,
+      blended: m.blended > 0 ? m.blended : p.blended,
+      input: m.input ?? p.input,
+      output: m.output ?? p.output,
+      tps: m.tps ?? p.tps,
+      ttft: m.ttft ?? p.ttft,
+    });
+  }
+
+  const models = [...fresh, ...carried].sort((a, b) => a.name.localeCompare(b.name));
 
   if (models.length < 10) throw new Error(`Only ${models.length} usable models returned; refusing to overwrite snapshot.`);
 

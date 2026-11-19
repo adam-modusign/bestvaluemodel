@@ -69,7 +69,7 @@ API 키는 https://artificialanalysis.ai/ 에서 무료로 발급받습니다(In
 
 ### 기준
 
-- **출처**: Artificial Analysis API `https://artificialanalysis.ai/api/v2/language/models/free`(구 `/api/v2/data/*`는 2026-11-04 폐기). 무료 티어는 헤드라인 지수가 있는 모델만 내려주고 세부 벤치마크·Coding·Math Index는 비어 있습니다. 전체 데이터는 Pro 티어(`/api/v2/language/models`)가 필요합니다. 컨텍스트 크기만 OpenRouter `https://openrouter.ai/api/v1/models`, 지원 언어는 제조사 공식 문서(수동 정리)
+- **출처**: Artificial Analysis API `https://artificialanalysis.ai/api/v2/language/models/free`(구 `/api/v2/data/*`는 2026-11-04 폐기). 무료 티어는 헤드라인 지수가 있는 모델만 내려주고 세부 벤치마크·Coding·Math Index는 비어 있습니다. 전체 데이터는 Pro 티어(`/api/v2/language/models`)가 필요합니다. 그래서 점수가 비어 내려오는 과거 모델은 이전 스냅샷의 점수를 유지하고(`carried: true`) 가격·속도만 갱신하며, 세부 벤치마크도 새 값이 없으면 이전 값을 남깁니다. AA가 목록에서 뺀 모델만 제거됩니다. 컨텍스트 크기만 OpenRouter `https://openrouter.ai/api/v1/models`, 지원 언어는 제조사 공식 문서(수동 정리)
 - **포함 모델**: Intelligence Index 점수가 있고 혼합 단가가 0보다 큰 모델만 넣습니다. 받아온 모델이 10개 미만이면 API 이상으로 보고 기존 스냅샷을 덮어쓰지 않습니다.
 - **점수**: AA Intelligence / Coding / Math Index(소수점 첫째 자리)
 - **세부 벤치마크**: 정답률(%)로 저장합니다(AA는 0~1 비율로 제공).
